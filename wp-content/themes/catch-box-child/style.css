@@ -1,0 +1,17 @@
+/*
+Theme Name: Catch box Child
+Theme URI: http://example.com/catch-box-child/
+Description: Catch box Child Theme
+Version: 0.1
+Author: Drall
+Author URI: http://drall.com.br
+Template: catch-box
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags:light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+Text Domain: catch-box-child
+*/
+
+.sticky{}
+.gallery-caption{}
+.bypostauthor{}

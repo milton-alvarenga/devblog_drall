@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+
+<title>Mapa Mental &#8211; Modelagem de requisitos baseados em objetivo &#8211; Drall Dev Community</title>
+<link rel="dns-prefetch" href="//connect.facebook.net">
+<link rel='dns-prefetch' href='//connect.facebook.net' />
+<link rel='dns-prefetch' href='//s.w.org' />
+
+
+
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/devblog.drall.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+		<style type="text/css">
+	.wp-pagenavi{margin-left:auto !important; margin-right:auto; !important}
+	</style>
+  <link rel='stylesheet' id='yarppWidgetCss-css'  href='/wp-content/plugins/yet-another-related-posts-plugin/style/widget.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cp_frontend_css-css'  href='/wp-content/plugins/collabpress/includes/css/front.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-theme-css'  href='/wp-includes/css/dist/block-library/theme.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cptch_stylesheet-css'  href='/wp-content/plugins/captcha/css/front_end_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cptch_desktop_style-css'  href='/wp-content/plugins/captcha/css/desktop_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='/wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pdfprnt_frontend-css'  href='/wp-content/plugins/pdf-print/css/frontend.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ce_responsive-css'  href='/wp-content/plugins/simple-embed-code/css/video-container.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='parent-style-css'  href='/wp-content/themes/catch-box/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='/wp-content/themes/catch-box/genericons/genericons.css' type='text/css' media='all' />
+<link rel='stylesheet' id='catchbox-style-css'  href='/wp-content/themes/catch-box-child/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='catchbox-block-style-css'  href='/wp-content/themes/catch-box/css/blocks.css' type='text/css' media='all' />
+<link rel='stylesheet' id='blue-css'  href='/wp-content/themes/catch-box/colors/blue.css' type='text/css' media='all' />
+<link rel='stylesheet' id='yarpp-thumbnails-yarpp-thumbnail-css'  href='/wp-content/plugins/yet-another-related-posts-plugin/includes/styles_thumbnails.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cb_p6-css-main-css'  href='/wp-content/plugins/patron-button-and-widgets-by-codebard/plugin/templates/default/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css'  href='/wp-content/plugins/add-to-any/addtoany.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='__EPYT__style-css'  href='/wp-content/plugins/youtube-embed-plus/styles/ytprefs.min.css' type='text/css' media='all' />
+<style id='__EPYT__style-inline-css' type='text/css'>
+
+                .epyt-gallery-thumb {
+                        width: 33.333%;
+                }
+                
+</style>
+<link rel='stylesheet' id='cp_jquery-ui-css'  href='/wp-content/plugins/collabpress/includes/css/jquery-ui/jquery-ui-1.8.16.custom.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-pagenavi-style-css'  href='/wp-content/plugins/wp-pagenavi-style/css/default.css' type='text/css' media='all' />
+	<script language="JavaScript">
+
+	function checkAll(field)
+	{
+	for (i = 0; i < field.length; i++)
+		field[i].checked = true ;
+	}
+
+	function uncheckAll(field)
+	{
+	for (i = 0; i < field.length; i++)
+		field[i].checked = false ;
+	}
+	</script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/collabpress/includes/js/frontend.js' id='cp_frontend_js-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/add-to-any/addtoany.min.js' id='addtoany-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/pdf-print/js/html2canvas.js' id='html2canvas.js-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/pdf-print/js/jspdf.js' id='jspdf.js-js'></script>
+<script type='text/javascript' id='pdfprnt_front_script-js-extra'>
+/* <![CDATA[ */
+var pdfprnt_file_settings = {"margin_left":"15","margin_right":"15","margin_top":"16","margin_bottom":"16","page_size":"A4","file_action":"open","file_name":"Mapa Mental - Modelagem de requisitos baseados em objetivo"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/plugins/pdf-print/js/front-script.js' id='pdfprnt_front_script-js'></script>
+<script type='text/javascript' id='catchbox-menu-js-extra'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/themes/catch-box/js/menu.min.js' id='catchbox-menu-js'></script>
+<script type='text/javascript' src='/wp-content/themes/catch-box/js/html5.min.js' id='catchbox-html5-js'></script>
+<script type='text/javascript' id='__ytprefs__-js-extra'>
+/* <![CDATA[ */
+var _EPYT_ = {"ajaxurl":"http:\/\/devblog.drall.com.br\/wp-admin\/admin-ajax.php","security":"ee032b5dbc","gallery_scrolloffset":"20","eppathtoscripts":"http:\/\/devblog.drall.com.br\/wp-content\/plugins\/youtube-embed-plus\/scripts\/","eppath":"http:\/\/devblog.drall.com.br\/wp-content\/plugins\/youtube-embed-plus\/","epresponsiveselector":"[\"iframe.__youtube_prefs_widget__\"]","epdovol":"1","version":"13.4.1.1","evselector":"iframe.__youtube_prefs__[src], iframe[src*=\"youtube.com\/embed\/\"], iframe[src*=\"youtube-nocookie.com\/embed\/\"]","ajax_compat":"","ytapi_load":"light","pause_others":"","stopMobileBuffer":"1","vi_active":"","vi_js_posttypes":[]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/plugins/youtube-embed-plus/scripts/ytprefs.min.js' id='__ytprefs__-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/collabpress/includes/js/frontend.js' id='cp_frontend-js'></script>
+
+ 
+<link rel='prev' title='Procedimento Operacional Padrão – POP_TEC – Dados de rede da sede Audipam' href='/procedimento-operacional-padrao-pop_tec-dados-de-rede-da-sede-audipam' />
+<link rel='next' title='Mapa Mental &#8211; Modelagem de requisitos baseados em objetivo' href='/mapa-mental-modelagem-de-requisitos-baseados-em-objetivo-2' />
+
+
+
+
+
+
+<script data-cfasync="false">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+(function(d,s,a,b){a=d.createElement(s);b=d.getElementsByTagName(s)[0];a.async=1;a.src="https://static.addtoany.com/menu/page.js";b.parentNode.insertBefore(a,b);})(document,"script");
+</script>
+<script language="JavaScript" src="/wp-content/plugins/contact-form-captcha/cfc.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="/wp-content/plugins/contact-form-captcha/contact.css" />
+<script type="text/javascript">
+	window._se_plugin_version = '8.1.9';
+</script>
+	<style type="text/css">
+	 .wp-pagenavi
+	{
+		font-size:12px !important;
+	}
+	</style>
+	<script type="text/javascript" src="/wp-content/plugins/si-captcha-for-wordpress/captcha/si_captcha.js"></script>
+<!-- begin SI CAPTCHA Anti-Spam - login/register form style -->
+<style type="text/css">
+.si_captcha_small { width:175px; height:45px; padding-top:10px; padding-bottom:10px; }
+.si_captcha_large { width:250px; height:60px; padding-top:10px; padding-bottom:10px; }
+img#si_image_com { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_reg { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_log { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_side_login { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_checkout { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_jetpack { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_bbpress_topic { border-style:none; margin:0; padding-right:5px; float:left; }
+.si_captcha_refresh { border-style:none; margin:0; vertical-align:bottom; }
+div#si_captcha_input { display:block; padding-top:15px; padding-bottom:5px; }
+label#si_captcha_code_label { margin:0; }
+input#si_captcha_code_input { width:65px; }
+p#si_captcha_code_p { clear: left; padding-top:10px; }
+.si-captcha-jetpack-error { color:#DC3232; }
+</style>
+<!-- end SI CAPTCHA Anti-Spam - login/register form style -->
+	<style type="text/css">
+			#site-title,
+		#site-description {
+			position: absolute !important;
+			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		</style>
+	<meta property="og:site_name" content="Drall Dev Community">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="fb:app_id" content="807028999313203">
+<meta property="og:url" content="http://devblog.drall.com.br/mapa-mental-modelagem-de-requisitos-baseados-em-objetivo/">
+<meta property="og:title" content="Mapa Mental &#8211; Modelagem de requisitos baseados em objetivo">
+<meta property="og:description" content="Modelagem_de_Requisitos_baseados_em_objetivo">
+<meta property="og:image" content="http://devblog.drall.com.br/wp-content/uploads/2017/04/Modelagem_de_Requisitos_baseados_em_objetivo.png">
+<meta property="og:image:width" content="1020">
+<meta property="og:image:height" content="427">
+<meta property="article:published_time" content="2017-04-15T09:23:24+00:00">
+<meta property="article:modified_time" content="2017-04-09T02:56:21+00:00">
+<meta property="article:author" content="http://devblog.drall.com.br/author/alvarenga-milton/">
+<meta property="article:section" content="Modelo">
+<meta property="article:tag" content="apresentação">
+		<style type="text/css" id="wp-custom-css">
+			@import url("../catch-box/style.css");		</style>
+		<style type="text/css">
+.paypal-donations { text-align: center !important }
+</style>
+</head>
+
+<body class="post-template-default single single-post postid-7030 single-format-standard wp-custom-logo wp-embed-responsive right-sidebar one-menu header-image-top">
+
+
+
+<div id="page" class="hfeed site">
+
+	<a href="#main" class="skip-link screen-reader-text">Skip to content</a>
+	<header id="branding" role="banner">
+
+    	
+    	<div id="header-content" class="clearfix">
+
+			<div class="logo-wrap clearfix"><div id="site-logo"><a href="/" class="custom-logo-link" rel="home"><img width="495" height="112" src="/wp-content/uploads/2017/04/cropped-Logo_oficial-495x112-1.png" class="custom-logo" alt="Drall Dev Community" /></a></div><!-- #site-logo -->	<div id="hgroup" class="site-details">
+					<p id="site-title"><a href="/" rel="home">Drall Dev Community</a></p>
+					<p id="site-description">Blog de compartilhamento de informações de desenvolvimento de sistemas</p>
+			
+   	</div><!-- #hgroup -->
+</div><!-- .logo-wrap -->	<form role="search" method="get" class="searchform" action="http://devblog.drall.com.br/">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input type="search" class="search-field" placeholder="Search" value="" name="s" title="Search for:" />
+		</label>
+		<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+	</form>
+
+		</div><!-- #header-content -->
+
+    	    <div class="menu-access-wrap mobile-header-menu clearfix">
+        <div id="mobile-header-left-menu" class="mobile-menu-anchor primary-menu">
+            <a href="#mobile-header-left-nav" id="menu-toggle-primary" class="genericon genericon-menu">
+                <span class="mobile-menu-text">Menu</span>
+            </a>
+        </div><!-- #mobile-header-left-menu -->
+            
+        
+        <div id="site-header-menu-primary" class="site-header-menu">
+            <nav id="access" class="main-navigation menu-focus" role="navigation" aria-label="Primary Menu">
+            
+                <h3 class="screen-reader-text">Primary menu</h3>
+                <div class="menu-header-container"><ul class="menu"><li id="menu-item-1905" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1905"><a href="/">Home</a></li>
+<li id="menu-item-1907" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1907"><a href="/sample-page">Sobre</a></li>
+<li id="menu-item-1906" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1906"><a href="/contato">Contato</a></li>
+<li id="menu-item-2034" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2034"><a href="http://blog.drall.com.br">Últimas Novidades</a></li>
+</ul></div>            </nav><!-- #access -->
+        </div><!-- .site-header-menu -->
+
+            </div><!-- .menu-access-wrap -->
+    
+	</header><!-- #branding -->
+
+	
+	
+	<div id="main" class="clearfix">
+
+		
+		<div id="primary" class="content-area">
+
+			
+			<div id="content" role="main">
+				
+				
+<article id="post-7030" class="post-7030 post type-post status-publish format-standard hentry category-modelo tag-apresentacao">
+	<header class="entry-header">
+		<h1 class="entry-title">Mapa Mental &#8211; Modelagem de requisitos baseados em objetivo</h1>
+
+		            <div class="entry-meta">
+                <span class="sep">Posted on </span><a href="/mapa-mental-modelagem-de-requisitos-baseados-em-objetivo" title="06:23" rel="bookmark"><time class="entry-date updated" datetime="2017-04-15T06:23:24-03:00" pubdate>April 15, 2017</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/alvarenga-milton" title="View all posts by Alvarenga Milton" rel="author">Alvarenga Milton</a></span></span>                                    <span class="sep sep-comment"> &mdash; </span>
+                    <span class="comments-link">
+                        <a href="/mapa-mental-modelagem-de-requisitos-baseados-em-objetivo"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/mapa-mental-modelagem-de-requisitos-baseados-em-objetivo"></fb:comments-count> Comments</a>                    </span>
+                            </div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/mapa-mental-modelagem-de-requisitos-baseados-em-objetivo/" data-a2a-title="Mapa Mental – Modelagem de requisitos baseados em objetivo"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmapa-mental-modelagem-de-requisitos-baseados-em-objetivo%2F&amp;linkname=Mapa%20Mental%20%E2%80%93%20Modelagem%20de%20requisitos%20baseados%20em%20objetivo" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmapa-mental-modelagem-de-requisitos-baseados-em-objetivo%2F&amp;linkname=Mapa%20Mental%20%E2%80%93%20Modelagem%20de%20requisitos%20baseados%20em%20objetivo" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmapa-mental-modelagem-de-requisitos-baseados-em-objetivo%2F&amp;linkname=Mapa%20Mental%20%E2%80%93%20Modelagem%20de%20requisitos%20baseados%20em%20objetivo" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmapa-mental-modelagem-de-requisitos-baseados-em-objetivo%2F&amp;linkname=Mapa%20Mental%20%E2%80%93%20Modelagem%20de%20requisitos%20baseados%20em%20objetivo" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmapa-mental-modelagem-de-requisitos-baseados-em-objetivo%2F&amp;linkname=Mapa%20Mental%20%E2%80%93%20Modelagem%20de%20requisitos%20baseados%20em%20objetivo" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmapa-mental-modelagem-de-requisitos-baseados-em-objetivo%2F&amp;linkname=Mapa%20Mental%20%E2%80%93%20Modelagem%20de%20requisitos%20baseados%20em%20objetivo" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmapa-mental-modelagem-de-requisitos-baseados-em-objetivo%2F&amp;linkname=Mapa%20Mental%20%E2%80%93%20Modelagem%20de%20requisitos%20baseados%20em%20objetivo" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><div class="pdfprnt-buttons pdfprnt-buttons-post pdfprnt-top-right"><a href="/mapa-mental-modelagem-de-requisitos-baseados-em-objetivo" class="pdfprnt-button pdfprnt-button-pdf" target="_blank"><img src="/wp-content/plugins/pdf-print/images/pdf.png" alt="image_pdf" title="View PDF" /></a><a href="/mapa-mental-modelagem-de-requisitos-baseados-em-objetivo" class="pdfprnt-button pdfprnt-button-print" target="_blank"><img src="/wp-content/plugins/pdf-print/images/print.png" alt="image_print" title="Print Content" /></a></div><p><a href="/wp-content/uploads/2017/04/Modelagem_de_Requisitos_baseados_em_objetivo.png"><img loading="lazy" class="aligncenter size-full wp-image-7039" src="/wp-content/uploads/2017/04/Modelagem_de_Requisitos_baseados_em_objetivo.png" alt="" width="1020" height="427" /></a></p>
+<p><a href="/wp-content/uploads/2017/04/Modelagem_de_Requisitos_baseados_em_objetivo.pdf">Modelagem_de_Requisitos_baseados_em_objetivo</a></p>
+<div class="cb_p6_patreon_button" style="text-align:center !important;margin-top:15px;margin-bottom:15px;"><div class="cb_p6_message_over_post_button" style="font-size:20px;margin-top:10px;margin-bottom:10px;">Gostou? Tire um minutinho e dê sua contribuição para Drall Dev Community no Patreon!</div><a rel="nofollow" href="https://www.patreon.com/drallconsult?utm_content=post_button&utm_medium=patron_button_and_widgets_plugin&utm_campaign=&utm_term=&utm_source=http://devblog.drall.com.br/mapa-mental-modelagem-de-requisitos-baseados-em-objetivo/"><img style="margin-top: 10px;margin-bottom: 10px;max-width:200px;width:100%;height:auto;" src="/wp-content/plugins/patron-button-and-widgets-by-codebard/images/become_a_patron_button.png"></a></div><div class='yarpp-related'>
+<h3>Artigos relacionados:</h3>
+<div class="yarpp-thumbnails-horizontal">
+<a class='yarpp-thumbnail' rel='norewrite' href='/configurando-o-teclado-abnt2-no-debian-8' title='Configurando o teclado ABNT2 no Debian 8'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Configurando o teclado ABNT2 no Debian 8</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/configurando-o-teclado-abnt2-no-gnome-do-debian-8-jessie' title='Configurando o teclado ABNT2 no Gnome do Debian 8 &#8211; Jessie'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Configurando o teclado ABNT2 no Gnome do Debian 8 &#8211; Jessie</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/mapa-de-cores-para-webdesigner' title='Mapa de cores para webdesigner'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Mapa de cores para webdesigner</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/alterando-mapa-de-teclado-no-linux-via-linha-de-comando' title='Alterando mapa de teclado no Linux via linha de comando'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Alterando mapa de teclado no Linux via linha de comando</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/como-efetuar-o-click-do-mouse-no-linux-via-linha-de-comando' title='Como efetuar o click do mouse no linux via linha de comando'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Como efetuar o click do mouse no linux via linha de comando</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/como-configurar-sua-placa-sis900-onboard-no-linux' title='Como configurar sua placa SIS900 onboard no Linux'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Como configurar sua placa SIS900 onboard no Linux</span></a>
+</div>
+</div>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="/category/modelo" rel="category tag">Modelo</a> and tagged <a href="/tag/apresentacao" rel="tag">apresentação</a> by <a href="/author/alvarenga-milton">Alvarenga Milton</a>. Bookmark the <a href="/mapa-mental-modelagem-de-requisitos-baseados-em-objetivo" title="Permalink to Mapa Mental &#8211; Modelagem de requisitos baseados em objetivo" rel="bookmark">permalink</a>.		
+		
+	</footer><!-- .entry-meta -->
+</article><!-- #post-7030 -->
+
+
+<div id="comments" class="comments-area">
+<div id="respond" class="comment-respond">
+<div class="fb-social-plugin comment-form fb-comments" id="commentform" data-href="http://devblog.drall.com.br/mapa-mental-modelagem-de-requisitos-baseados-em-objetivo/" data-width="470" data-order-by="social"></div>
+</div></div>
+
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="/procedimento-operacional-padrao-pop_tec-dados-de-rede-da-sede-audipam" rel="prev"><span class="meta-nav" aria-hidden="true"><span class="nav-icon">&larr;</span> Previous</span> <span class="screen-reader-text">Previous post:</span> <span class="post-title">Procedimento Operacional Padrão – POP_TEC – Dados de rede da sede Audipam</span></a></div><div class="nav-next"><a href="/mapa-mental-modelagem-de-requisitos-baseados-em-objetivo-2" rel="next"><span class="meta-nav" aria-hidden="true">Next <span class="nav-icon">&rarr;</span></span> <span class="screen-reader-text">Next post:</span> <span class="post-title">Mapa Mental &#8211; Modelagem de requisitos baseados em objetivo</span></a></div></div>
+	</nav>
+		</div><!-- #content -->
+        
+		            
+	</div><!-- #primary -->
+    
+	    
+
+
+		<aside id="secondary" class="sidebar widget-area" role="complementary">
+			<h2 class="screen-reader-text">Primary Sidebar Widget Area</h2>
+			<section id="text-2" class="widget widget_text"><h2 class="widget-title">Patrocinado por:</h2>			<div class="textwidget"><div id="drall_ads">
+
+<!-- Popcash -->
+<script>
+        var uid = '26667';
+        var wid = '50456';
+
+  jQuery( document ).ready(function() { 
+    /*Is mobile?*/
+    if( window.matchMedia("only screen and (max-width: 760px)").matches ) {
+      /*Yes*/
+    } else {
+        /*No*/
+        jQuery('<script type="text/javascript" src="//cdn.popcash.net/pop.js">').appendTo(document.head);
+
+    }
+});
+</script>
+<!-- End Popcash Code -->
+
+
+<script data-cfasync="false" type="text/javascript" src="https://www.tradeadexchange.com/a/display.php?r=1600381"></script>
+</div>
+</div>
+		</section><section id="paypal_donations-2" class="widget widget_paypal_donations"><h2 class="widget-title">Faça sua doação via Paypal</h2><p>Colabore com a Drall Dev Community fazendo sua doação via Paypal!</p>
+<!-- Begin PayPal Donations by https://www.tipsandtricks-hq.com/paypal-donations-widgets-plugin -->
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+    <div class="paypal-donations">
+        <input type="hidden" name="cmd" value="_donations" />
+        <input type="hidden" name="bn" value="TipsandTricks_SP" />
+        <input type="hidden" name="business" value="maajdrall@gmail.com" />
+        <input type="hidden" name="return" value="http://devblog.drall.com.br" />
+        <input type="hidden" name="item_name" value="Ajudar-nos a criar conteúdo relevante para os nossos leitores" />
+        <input type="hidden" name="item_number" value="maajdrall@gmail.com" />
+        <input type="hidden" name="rm" value="0" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <input type="image" style="cursor: pointer;" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online." />
+        <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+    </div>
+</form>
+<!-- End PayPal Donations -->
+</section><section id="text-4" class="widget widget_text"><h2 class="widget-title">Anúncios &#8211; Airbnb</h2>			<div class="textwidget"><div class="airbnb-embed-frame" data-city-link-index="0" data-id="10084899" data-view="listing_frame" style="max-width:600px;margin:auto;transition:height .2s;"><a href="https://www.airbnb.com.br/rooms/14083170" target="_blank" rel="noopener noreferrer"><img src="https://a0.muscache.com/im/pictures/5f44875d-f44c-4187-9709-866e75452073.jpg?interpolation=lanczos-none&amp;size=x_large_cover&amp;output-format=jpg&amp;output-quality=70" style="max-width:100%;" alt=""></a><div><a href="https://www.airbnb.com.br/rooms/10084899" target="_blank" rel="noopener noreferrer"><h4>Apartamento próximo à UFMG/Mineirão</h4></a><div>Belo Horizonte, Minas Gerais, Brasil</div><blockquote>Quarto para 2 pessoas, próximo à UFMG e ao Mineirão. Próximo às principais vias de acesso ao centro / zona sul. *** Room for 2 people, next to UFMG and Mineirao stadium. E...</blockquote></div></div></div>
+		</section><section id="popularitypostswidget-2" class="widget popularitypostswidget"><h2 class="widget-title">Posts Mais Vistos</h2><ul> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-solucionar-o-problema-erro-rh01-rpcs-5aec-0-da-google-play-store" title="Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Google Play Store" rel="nofollow">Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Googl...</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/remover-conta-do-android-ou-como-desvincular-uma-conta-google-do-android" title="Remover conta do Android ou como desvincular uma conta Google do Android" rel="nofollow">Remover conta do Android ou como desvincular uma conta Googl...</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-salvar-seus-apps-antes-de-formatar-seu-android" title="Como salvar seus apps antes de formatar seu Android" rel="nofollow">Como salvar seus apps antes de formatar seu Android</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/qual-login-e-password-padrao-modem-roteador-humax-hg100r-l2" title="Qual login e password padrão &#8211; Modem / Roteador Humax HG100R-L2" rel="nofollow">Qual login e password padrão &#8211; Modem / Roteador Humax ...</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-determinar-o-estado-de-origem-de-um-cpf" title="Como determinar o estado de origem de um CPF" rel="nofollow">Como determinar o estado de origem de um CPF</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-assistir-videos-do-youtube-em-velocidade-x2-no-android" title="Como assistir vídeos do Youtube em velocidade x2 no Android" rel="nofollow">Como assistir vídeos do Youtube em velocidade x2 no Android</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-limpar-o-cache-de-seu-android" title="Como limpar o cache de seu Android" rel="nofollow">Como limpar o cache de seu Android</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-solucionar-o-problema-erro-rh01-rpcs-5aec-0-da-google-play-store-segunda-maneira-nova-solucao" title="Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Google Play Store &#8211; Segunda maneira (Nova solução)" rel="nofollow">Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Googl...</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-usar-o-inspecionar-elemento-do-google-chrome" title="Como usar o “Inspecionar elemento” do Google Chrome" rel="nofollow">Como usar o “Inspecionar elemento” do Google Chrome</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-solucionar-o-erro-920-da-google-play" title="Como solucionar o erro 920 da Google Play" rel="nofollow">Como solucionar o erro 920 da Google Play</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/javascript-string-para-float-com-2-casas-decimais" title="JavaScript &#8211; String para float com 2 casas decimais" rel="nofollow">JavaScript &#8211; String para float com 2 casas decimais</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/fazer-upload-de-varios-arquivos-com-um-html-input-typefile-e-sem-uso-de-js-e-flash" title="Fazer upload de vários arquivos com um HTML input type=&#8221;file&#8221; e sem uso de JS e Flash" rel="nofollow">Fazer upload de vários arquivos com um HTML input type=&#822...</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li></ul></section><section id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widget-title">Palavras-chave</h2><div class="tagcloud"><a href="/tag/android" class="tag-cloud-link tag-link-109 tag-link-position-1" style="font-size: 13.557251908397pt;" aria-label="android (35 items)">android</a>
+<a href="/tag/angularjs" class="tag-cloud-link tag-link-99 tag-link-position-2" style="font-size: 10.992366412214pt;" aria-label="angularjs (20 items)">angularjs</a>
+<a href="/tag/apache" class="tag-cloud-link tag-link-119 tag-link-position-3" style="font-size: 8.7480916030534pt;" aria-label="apache (12 items)">apache</a>
+<a href="/tag/api" class="tag-cloud-link tag-link-121 tag-link-position-4" style="font-size: 8pt;" aria-label="api (10 items)">api</a>
+<a href="/tag/banco-de-dados" class="tag-cloud-link tag-link-81 tag-link-position-5" style="font-size: 11.206106870229pt;" aria-label="banco de dados (21 items)">banco de dados</a>
+<a href="/tag/browsers" class="tag-cloud-link tag-link-101 tag-link-position-6" style="font-size: 11.206106870229pt;" aria-label="browsers (21 items)">browsers</a>
+<a href="/tag/chrome" class="tag-cloud-link tag-link-133 tag-link-position-7" style="font-size: 14.198473282443pt;" aria-label="chrome (41 items)">chrome</a>
+<a href="/tag/chromium" class="tag-cloud-link tag-link-152 tag-link-position-8" style="font-size: 12.702290076336pt;" aria-label="chromium (29 items)">chromium</a>
+<a href="/tag/configuracoes" class="tag-cloud-link tag-link-116 tag-link-position-9" style="font-size: 13.343511450382pt;" aria-label="configurações (34 items)">configurações</a>
+<a href="/tag/css" class="tag-cloud-link tag-link-95 tag-link-position-10" style="font-size: 14.625954198473pt;" aria-label="css (45 items)">css</a>
+<a href="/tag/curiosidades" class="tag-cloud-link tag-link-126 tag-link-position-11" style="font-size: 11.954198473282pt;" aria-label="curiosidades (25 items)">curiosidades</a>
+<a href="/tag/debian-2" class="tag-cloud-link tag-link-57 tag-link-position-12" style="font-size: 14.519083969466pt;" aria-label="debian (44 items)">debian</a>
+<a href="/tag/debug" class="tag-cloud-link tag-link-118 tag-link-position-13" style="font-size: 11.63358778626pt;" aria-label="debug (23 items)">debug</a>
+<a href="/tag/depuracao" class="tag-cloud-link tag-link-117 tag-link-position-14" style="font-size: 10.992366412214pt;" aria-label="depuração (20 items)">depuração</a>
+<a href="/tag/dica" class="tag-cloud-link tag-link-210 tag-link-position-15" style="font-size: 12.381679389313pt;" aria-label="dica (27 items)">dica</a>
+<a href="/tag/dns" class="tag-cloud-link tag-link-149 tag-link-position-16" style="font-size: 9.7099236641221pt;" aria-label="dns (15 items)">dns</a>
+<a href="/tag/eletronica" class="tag-cloud-link tag-link-179 tag-link-position-17" style="font-size: 8pt;" aria-label="eletrônica (10 items)">eletrônica</a>
+<a href="/tag/google" class="tag-cloud-link tag-link-106 tag-link-position-18" style="font-size: 17.297709923664pt;" aria-label="google (80 items)">google</a>
+<a href="/tag/google-busca" class="tag-cloud-link tag-link-161 tag-link-position-19" style="font-size: 8.4274809160305pt;" aria-label="google. busca (11 items)">google. busca</a>
+<a href="/tag/google-play-store" class="tag-cloud-link tag-link-111 tag-link-position-20" style="font-size: 10.992366412214pt;" aria-label="google play store (20 items)">google play store</a>
+<a href="/tag/hard-disk" class="tag-cloud-link tag-link-230 tag-link-position-21" style="font-size: 8.4274809160305pt;" aria-label="hard disk (11 items)">hard disk</a>
+<a href="/tag/hardware" class="tag-cloud-link tag-link-167 tag-link-position-22" style="font-size: 11.63358778626pt;" aria-label="hardware (23 items)">hardware</a>
+<a href="/tag/html" class="tag-cloud-link tag-link-94 tag-link-position-23" style="font-size: 13.022900763359pt;" aria-label="html (31 items)">html</a>
+<a href="/tag/humor" class="tag-cloud-link tag-link-140 tag-link-position-24" style="font-size: 12.381679389313pt;" aria-label="humor (27 items)">humor</a>
+<a href="/tag/imagem" class="tag-cloud-link tag-link-304 tag-link-position-25" style="font-size: 8pt;" aria-label="imagem (10 items)">imagem</a>
+<a href="/tag/javascript" class="tag-cloud-link tag-link-100 tag-link-position-26" style="font-size: 15.801526717557pt;" aria-label="javascript (58 items)">javascript</a>
+<a href="/tag/linha-de-comando" class="tag-cloud-link tag-link-258 tag-link-position-27" style="font-size: 10.778625954198pt;" aria-label="linha de comando (19 items)">linha de comando</a>
+<a href="/tag/linux" class="tag-cloud-link tag-link-113 tag-link-position-28" style="font-size: 18.045801526718pt;" aria-label="linux (95 items)">linux</a>
+<a href="/tag/modem" class="tag-cloud-link tag-link-211 tag-link-position-29" style="font-size: 22pt;" aria-label="modem (225 items)">modem</a>
+<a href="/tag/mysql" class="tag-cloud-link tag-link-144 tag-link-position-30" style="font-size: 11.954198473282pt;" aria-label="mysql (25 items)">mysql</a>
+<a href="/tag/pdf" class="tag-cloud-link tag-link-114 tag-link-position-31" style="font-size: 9.175572519084pt;" aria-label="pdf (13 items)">pdf</a>
+<a href="/tag/php" class="tag-cloud-link tag-link-130 tag-link-position-32" style="font-size: 15.801526717557pt;" aria-label="php (58 items)">php</a>
+<a href="/tag/postgresql" class="tag-cloud-link tag-link-163 tag-link-position-33" style="font-size: 11.954198473282pt;" aria-label="postgresql (25 items)">postgresql</a>
+<a href="/tag/programacao" class="tag-cloud-link tag-link-96 tag-link-position-34" style="font-size: 18.36641221374pt;" aria-label="programação (102 items)">programação</a>
+<a href="/tag/raspberry" class="tag-cloud-link tag-link-338 tag-link-position-35" style="font-size: 13.236641221374pt;" aria-label="raspberry (33 items)">raspberry</a>
+<a href="/tag/raspbian" class="tag-cloud-link tag-link-337 tag-link-position-36" style="font-size: 11.63358778626pt;" aria-label="raspbian (23 items)">raspbian</a>
+<a href="/tag/redes" class="tag-cloud-link tag-link-166 tag-link-position-37" style="font-size: 9.4961832061069pt;" aria-label="redes (14 items)">redes</a>
+<a href="/tag/router" class="tag-cloud-link tag-link-353 tag-link-position-38" style="font-size: 22pt;" aria-label="router (224 items)">router</a>
+<a href="/tag/seguranca" class="tag-cloud-link tag-link-137 tag-link-position-39" style="font-size: 9.175572519084pt;" aria-label="segurança (13 items)">segurança</a>
+<a href="/tag/shell" class="tag-cloud-link tag-link-277 tag-link-position-40" style="font-size: 12.702290076336pt;" aria-label="shell (29 items)">shell</a>
+<a href="/tag/shell-script" class="tag-cloud-link tag-link-112 tag-link-position-41" style="font-size: 14.732824427481pt;" aria-label="shell script (46 items)">shell script</a>
+<a href="/tag/ssh" class="tag-cloud-link tag-link-165 tag-link-position-42" style="font-size: 8.4274809160305pt;" aria-label="ssh (11 items)">ssh</a>
+<a href="/tag/ubuntu" class="tag-cloud-link tag-link-76 tag-link-position-43" style="font-size: 10.351145038168pt;" aria-label="Ubuntu (17 items)">Ubuntu</a>
+<a href="/tag/windows" class="tag-cloud-link tag-link-142 tag-link-position-44" style="font-size: 11.847328244275pt;" aria-label="windows (24 items)">windows</a>
+<a href="/tag/wordpress-2" class="tag-cloud-link tag-link-84 tag-link-position-45" style="font-size: 10.778625954198pt;" aria-label="wordpress (19 items)">wordpress</a></div>
+</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categorias</h2>
+			<ul>
+					<li class="cat-item cat-item-25"><a href="/category/administrativo">Administrativo</a> (64)
+</li>
+	<li class="cat-item cat-item-19"><a href="/category/android">Android</a> (42)
+</li>
+	<li class="cat-item cat-item-27"><a href="/category/angularjs" title="Tudo relativo a biblioteca javascript AngularJS">AngularJS</a> (42)
+</li>
+	<li class="cat-item cat-item-21"><a href="/category/apache">Apache</a> (29)
+</li>
+	<li class="cat-item cat-item-446"><a href="/category/artificial-intelligence">Artificial Intelligence</a> (9)
+</li>
+	<li class="cat-item cat-item-529"><a href="/category/automacao">Automação</a> (6)
+</li>
+	<li class="cat-item cat-item-44"><a href="/category/backup">Backup</a> (5)
+</li>
+	<li class="cat-item cat-item-75"><a href="/category/bind">Bind</a> (12)
+</li>
+	<li class="cat-item cat-item-79"><a href="/category/chrome">Chrome</a> (39)
+</li>
+	<li class="cat-item cat-item-386"><a href="/category/criptografia">Criptografia</a> (4)
+</li>
+	<li class="cat-item cat-item-473"><a href="/category/cryptomoedas">Cryptomoedas</a> (8)
+</li>
+	<li class="cat-item cat-item-43"><a href="/category/css">CSS</a> (52)
+</li>
+	<li class="cat-item cat-item-28"><a href="/category/curiosidades">Curiosidades</a> (241)
+</li>
+	<li class="cat-item cat-item-623"><a href="/category/data-mining">Data Mining</a> (3)
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/debian">Debian</a> (84)
+</li>
+	<li class="cat-item cat-item-494"><a href="/category/docker">Docker</a> (2)
+</li>
+	<li class="cat-item cat-item-549"><a href="/category/dres">DRES</a> (5)
+</li>
+	<li class="cat-item cat-item-532"><a href="/category/eletronica">Eletrônica</a> (11)
+</li>
+	<li class="cat-item cat-item-377"><a href="/category/energia">Energia</a> (13)
+</li>
+	<li class="cat-item cat-item-313"><a href="/category/english-required">English Required</a> (7)
+</li>
+	<li class="cat-item cat-item-451"><a href="/category/excel">Excel</a> (4)
+</li>
+	<li class="cat-item cat-item-77"><a href="/category/exim">Exim</a> (13)
+</li>
+	<li class="cat-item cat-item-85"><a href="/category/firefox">Firefox</a> (7)
+</li>
+	<li class="cat-item cat-item-352"><a href="/category/ftp">FTP</a> (7)
+</li>
+	<li class="cat-item cat-item-350"><a href="/category/fuse">FUSE</a> (1)
+</li>
+	<li class="cat-item cat-item-384"><a href="/category/ged">GED</a> (1)
+</li>
+	<li class="cat-item cat-item-624"><a href="/category/gis">GIS</a> (2)
+</li>
+	<li class="cat-item cat-item-45"><a href="/category/git">GIT</a> (23)
+</li>
+	<li class="cat-item cat-item-22"><a href="/category/gnome">Gnome</a> (10)
+</li>
+	<li class="cat-item cat-item-306"><a href="/category/hardware">Hardware</a> (256)
+</li>
+	<li class="cat-item cat-item-42"><a href="/category/html">HTML</a> (34)
+</li>
+	<li class="cat-item cat-item-417"><a href="/category/ios">iOS</a> (1)
+</li>
+	<li class="cat-item cat-item-91"><a href="/category/java">Java</a> (6)
+</li>
+	<li class="cat-item cat-item-16"><a href="/category/javascript">JavaScript</a> (118)
+</li>
+	<li class="cat-item cat-item-26"><a href="/category/juridico">Jurídico</a> (5)
+</li>
+	<li class="cat-item cat-item-37"><a href="/category/linux">Linux</a> (168)
+</li>
+	<li class="cat-item cat-item-388"><a href="/category/marketing">Marketing</a> (1)
+</li>
+	<li class="cat-item cat-item-36"><a href="/category/modelo">Modelo</a> (6)
+</li>
+	<li class="cat-item cat-item-3"><a href="/category/mysql" title="Tudo relativo a banco de dados MySQL">MySQL</a> (45)
+</li>
+	<li class="cat-item cat-item-450"><a href="/category/network">Network</a> (3)
+</li>
+	<li class="cat-item cat-item-78"><a href="/category/nfs">NFS</a> (4)
+</li>
+	<li class="cat-item cat-item-428"><a href="/category/nightwatchjs">NightwatchJS</a> (1)
+</li>
+	<li class="cat-item cat-item-51"><a href="/category/nodejs">NodeJs</a> (13)
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/padronizacao">Padronização</a> (267)
+</li>
+	<li class="cat-item cat-item-508"><a href="/category/perl">Perl</a> (1)
+</li>
+	<li class="cat-item cat-item-364"><a href="/category/phonegap">phoneGap</a> (3)
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/php">PHP</a> (126)
+</li>
+	<li class="cat-item cat-item-2"><a href="/category/postgresql" title="Tudo relativo a banco de dados PostgreSQL">PostgreSQL</a> (69)
+</li>
+	<li class="cat-item cat-item-72"><a href="/category/prs-producao-rapida-de-sistemas">PRS &#8211; Produção Rápida de Sistemas</a> (8)
+</li>
+	<li class="cat-item cat-item-24"><a href="/category/psql">PSQL</a> (10)
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/python">Python</a> (44)
+</li>
+	<li class="cat-item cat-item-92"><a href="/category/rss">RSS</a> (2)
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/ruby">Ruby</a> (6)
+</li>
+	<li class="cat-item cat-item-80"><a href="/category/seguranca">Segurança</a> (6)
+</li>
+	<li class="cat-item cat-item-18"><a href="/category/shell">Shell</a> (174)
+</li>
+	<li class="cat-item cat-item-70"><a href="/category/treinamento/tutoriais-javascript/smarttable-component-para-o-angular" title="Como devemos utilizar este componente.">SmartTable (component para o angular)</a> (2)
+</li>
+	<li class="cat-item cat-item-62"><a href="/category/ssh">SSH</a> (16)
+</li>
+	<li class="cat-item cat-item-41"><a href="/category/svn">SVN</a> (1)
+</li>
+	<li class="cat-item cat-item-470"><a href="/category/thunderbird">Thunderbird</a> (1)
+</li>
+	<li class="cat-item cat-item-17"><a href="/category/treinamento">Treinamento</a> (5)
+</li>
+	<li class="cat-item cat-item-49"><a href="/category/tutorial-2" title="Categoria destinada a tutoriais">Tutorial</a> (46)
+</li>
+	<li class="cat-item cat-item-52"><a href="/category/twitter-bootstrap">Twitter Bootstrap</a> (3)
+</li>
+	<li class="cat-item cat-item-86"><a href="/category/ubuntu">Ubuntu</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized">Uncategorized</a> (11)
+</li>
+	<li class="cat-item cat-item-423"><a href="/category/upnp">UPNP</a> (1)
+</li>
+	<li class="cat-item cat-item-273"><a href="/category/vba">VBA</a> (2)
+</li>
+	<li class="cat-item cat-item-48"><a href="/category/tutorial" title="Categoria destinada a video tutoriais">Video Tutorial</a> (2)
+</li>
+	<li class="cat-item cat-item-608"><a href="/category/virtualbox">VirtualBox</a> (1)
+</li>
+	<li class="cat-item cat-item-296"><a href="/category/vuejs">VueJS</a> (15)
+</li>
+	<li class="cat-item cat-item-265"><a href="/category/windows">Windows</a> (27)
+</li>
+	<li class="cat-item cat-item-23"><a href="/category/wordpress">WordPress</a> (33)
+</li>
+	<li class="cat-item cat-item-20"><a href="/category/xen">Xen</a> (5)
+</li>
+			</ul>
+
+			</section>		</aside><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	
+	<footer id="colophon" role="contentinfo">
+		
+        <div id="site-generator" class="clearfix">
+
+            
+			<nav class="social-profile" role="navigation" aria-label="Footer Social Links Menu">
+ 		 		<ul>
+				</ul>
+			</nav><!-- .social-profile --><div class="copyright">Copyright &copy; 2020 <a href="/" title="Drall Dev Community" ><span>Drall Dev Community</span></a>. All Rights Reserved. </div><div class="powered"><span class="theme-name">Theme: Catch Box by </span><span class="theme-author"><a href="https://catchthemes.com/" title="Catch Themes">Catch Themes</a></span></div>
+        </div> <!-- #site-generator -->
+
+	</footer><!-- #colophon -->
+
+</div><!-- #page -->
+
+<a href="#branding" id="scrollup"><span class="screen-reader-text">Scroll Up</span></a>
+<link rel='stylesheet' id='yarppRelatedCss-css'  href='/wp-content/plugins/yet-another-related-posts-plugin/style/related.css' type='text/css' media='all' />
+<link rel='stylesheet' id='popularity-posts-widget-css'  href='/wp-content/plugins/popularity-posts-widget/style/ppw.css' type='text/css' media='all' />
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/devblog.drall.com.br\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/plugins/contact-form-7/includes/js/scripts.js' id='contact-form-7-js'></script>
+<script type='text/javascript' src='/wp-content/themes/catch-box/js/skip-link-focus-fix.js' id='catchbox-skip-link-focus-fix-js'></script>
+<script type='text/javascript' src='/wp-content/themes/catch-box/js/catchbox-scrollup.min.js' id='catchbox-scrollup-js'></script>
+<script type='text/javascript' id='facebook-jssdk-js-extra'>
+/* <![CDATA[ */
+var FB_WP=FB_WP||{};FB_WP.queue={_methods:[],flushed:false,add:function(fn){FB_WP.queue.flushed?fn():FB_WP.queue._methods.push(fn)},flush:function(){for(var fn;fn=FB_WP.queue._methods.shift();){fn()}FB_WP.queue.flushed=true}};window.fbAsyncInit=function(){FB.init({"xfbml":true,"appId":"807028999313203"});if(FB_WP && FB_WP.queue && FB_WP.queue.flush){FB_WP.queue.flush()}}
+/* ]]> */
+</script>
+<script type="text/javascript">(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="http:\/\/connect.facebook.net\/en_US\/all.js";fjs.parentNode.insertBefore(js,fjs)}(document,"script","facebook-jssdk"));</script>
+<script type='text/javascript' src='/wp-content/plugins/youtube-embed-plus/scripts/fitvids.min.js' id='__ytprefsfitvids__-js'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/ui/core.min.js' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/ui/datepicker.min.js' id='jquery-ui-datepicker-js'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>
+<div id="fb-root"></div>		<script type="text/javascript">
+			var bwpRecaptchaCallback = function() {
+				// render all collected recaptcha instances
+			};
+		</script>
+
+		<script src="https://www.google.com/recaptcha/api.js?onload=bwpRecaptchaCallback&#038;render=explicit" async defer></script>
+
+</body>
+</html>
+<script></script>

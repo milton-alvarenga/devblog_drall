@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+
+<title>Tipos de Armazenamento de rede: DAS, NAS e SAN &#8211; Drall Dev Community</title>
+<link rel="dns-prefetch" href="//connect.facebook.net">
+<link rel='dns-prefetch' href='//connect.facebook.net' />
+<link rel='dns-prefetch' href='//s.w.org' />
+
+
+
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/devblog.drall.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+		<style type="text/css">
+	.wp-pagenavi{margin-left:auto !important; margin-right:auto; !important}
+	</style>
+  <link rel='stylesheet' id='yarppWidgetCss-css'  href='/wp-content/plugins/yet-another-related-posts-plugin/style/widget.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cp_frontend_css-css'  href='/wp-content/plugins/collabpress/includes/css/front.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-theme-css'  href='/wp-includes/css/dist/block-library/theme.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cptch_stylesheet-css'  href='/wp-content/plugins/captcha/css/front_end_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cptch_desktop_style-css'  href='/wp-content/plugins/captcha/css/desktop_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='/wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pdfprnt_frontend-css'  href='/wp-content/plugins/pdf-print/css/frontend.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ce_responsive-css'  href='/wp-content/plugins/simple-embed-code/css/video-container.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='parent-style-css'  href='/wp-content/themes/catch-box/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='/wp-content/themes/catch-box/genericons/genericons.css' type='text/css' media='all' />
+<link rel='stylesheet' id='catchbox-style-css'  href='/wp-content/themes/catch-box-child/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='catchbox-block-style-css'  href='/wp-content/themes/catch-box/css/blocks.css' type='text/css' media='all' />
+<link rel='stylesheet' id='blue-css'  href='/wp-content/themes/catch-box/colors/blue.css' type='text/css' media='all' />
+<link rel='stylesheet' id='yarpp-thumbnails-yarpp-thumbnail-css'  href='/wp-content/plugins/yet-another-related-posts-plugin/includes/styles_thumbnails.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cb_p6-css-main-css'  href='/wp-content/plugins/patron-button-and-widgets-by-codebard/plugin/templates/default/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css'  href='/wp-content/plugins/add-to-any/addtoany.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='__EPYT__style-css'  href='/wp-content/plugins/youtube-embed-plus/styles/ytprefs.min.css' type='text/css' media='all' />
+<style id='__EPYT__style-inline-css' type='text/css'>
+
+                .epyt-gallery-thumb {
+                        width: 33.333%;
+                }
+                
+</style>
+<link rel='stylesheet' id='cp_jquery-ui-css'  href='/wp-content/plugins/collabpress/includes/css/jquery-ui/jquery-ui-1.8.16.custom.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-pagenavi-style-css'  href='/wp-content/plugins/wp-pagenavi-style/css/default.css' type='text/css' media='all' />
+	<script language="JavaScript">
+
+	function checkAll(field)
+	{
+	for (i = 0; i < field.length; i++)
+		field[i].checked = true ;
+	}
+
+	function uncheckAll(field)
+	{
+	for (i = 0; i < field.length; i++)
+		field[i].checked = false ;
+	}
+	</script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/collabpress/includes/js/frontend.js' id='cp_frontend_js-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/add-to-any/addtoany.min.js' id='addtoany-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/pdf-print/js/html2canvas.js' id='html2canvas.js-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/pdf-print/js/jspdf.js' id='jspdf.js-js'></script>
+<script type='text/javascript' id='pdfprnt_front_script-js-extra'>
+/* <![CDATA[ */
+var pdfprnt_file_settings = {"margin_left":"15","margin_right":"15","margin_top":"16","margin_bottom":"16","page_size":"A4","file_action":"open","file_name":"Tipos de Armazenamento de rede: DAS, NAS e SAN"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/plugins/pdf-print/js/front-script.js' id='pdfprnt_front_script-js'></script>
+<script type='text/javascript' id='catchbox-menu-js-extra'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/themes/catch-box/js/menu.min.js' id='catchbox-menu-js'></script>
+<script type='text/javascript' src='/wp-content/themes/catch-box/js/html5.min.js' id='catchbox-html5-js'></script>
+<script type='text/javascript' id='__ytprefs__-js-extra'>
+/* <![CDATA[ */
+var _EPYT_ = {"ajaxurl":"http:\/\/devblog.drall.com.br\/wp-admin\/admin-ajax.php","security":"ee032b5dbc","gallery_scrolloffset":"20","eppathtoscripts":"http:\/\/devblog.drall.com.br\/wp-content\/plugins\/youtube-embed-plus\/scripts\/","eppath":"http:\/\/devblog.drall.com.br\/wp-content\/plugins\/youtube-embed-plus\/","epresponsiveselector":"[\"iframe.__youtube_prefs_widget__\"]","epdovol":"1","version":"13.4.1.1","evselector":"iframe.__youtube_prefs__[src], iframe[src*=\"youtube.com\/embed\/\"], iframe[src*=\"youtube-nocookie.com\/embed\/\"]","ajax_compat":"","ytapi_load":"light","pause_others":"","stopMobileBuffer":"1","vi_active":"","vi_js_posttypes":[]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/plugins/youtube-embed-plus/scripts/ytprefs.min.js' id='__ytprefs__-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/collabpress/includes/js/frontend.js' id='cp_frontend-js'></script>
+
+ 
+<link rel='prev' title='Como extrair o áudio de um vídeo no Linux' href='/como-extrair-o-audio-de-um-video-no-linux' />
+<link rel='next' title='Estabelecer relação de confiança entre máquinas via SSH' href='/estabelecer-relacao-de-confianca-entre-maquinas-via-ssh' />
+
+
+
+
+
+
+<script data-cfasync="false">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+(function(d,s,a,b){a=d.createElement(s);b=d.getElementsByTagName(s)[0];a.async=1;a.src="https://static.addtoany.com/menu/page.js";b.parentNode.insertBefore(a,b);})(document,"script");
+</script>
+<script language="JavaScript" src="/wp-content/plugins/contact-form-captcha/cfc.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="/wp-content/plugins/contact-form-captcha/contact.css" />
+<script type="text/javascript">
+	window._se_plugin_version = '8.1.9';
+</script>
+	<style type="text/css">
+	 .wp-pagenavi
+	{
+		font-size:12px !important;
+	}
+	</style>
+	<script type="text/javascript" src="/wp-content/plugins/si-captcha-for-wordpress/captcha/si_captcha.js"></script>
+<!-- begin SI CAPTCHA Anti-Spam - login/register form style -->
+<style type="text/css">
+.si_captcha_small { width:175px; height:45px; padding-top:10px; padding-bottom:10px; }
+.si_captcha_large { width:250px; height:60px; padding-top:10px; padding-bottom:10px; }
+img#si_image_com { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_reg { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_log { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_side_login { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_checkout { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_jetpack { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_bbpress_topic { border-style:none; margin:0; padding-right:5px; float:left; }
+.si_captcha_refresh { border-style:none; margin:0; vertical-align:bottom; }
+div#si_captcha_input { display:block; padding-top:15px; padding-bottom:5px; }
+label#si_captcha_code_label { margin:0; }
+input#si_captcha_code_input { width:65px; }
+p#si_captcha_code_p { clear: left; padding-top:10px; }
+.si-captcha-jetpack-error { color:#DC3232; }
+</style>
+<!-- end SI CAPTCHA Anti-Spam - login/register form style -->
+	<style type="text/css">
+			#site-title,
+		#site-description {
+			position: absolute !important;
+			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		</style>
+	<meta property="og:site_name" content="Drall Dev Community">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="fb:app_id" content="807028999313203">
+<meta property="og:url" content="http://devblog.drall.com.br/tipos-de-armazenamento-de-rede-das-nas-e-san/">
+<meta property="og:title" content="Tipos de Armazenamento de rede: DAS, NAS e SAN">
+<meta property="og:description" content="DAS, NAS e RAID Quando você precisa de mais espaço de armazenamento no seu micro de trabalho, a opção mais comum é simplesmente comprar outro HD. Quando falamos em redes, entretanto, três siglas vêm à tona: NAS, DAS e SAN,&hellip;">
+<meta property="article:published_time" content="2015-01-30T09:32:01+00:00">
+<meta property="article:modified_time" content="2015-05-29T21:07:10+00:00">
+<meta property="article:author" content="http://devblog.drall.com.br/author/cleriston-santos/">
+<meta property="article:section" content="Curiosidades">
+<meta property="article:tag" content="hardware">
+<meta property="article:tag" content="redes">
+		<style type="text/css" id="wp-custom-css">
+			@import url("../catch-box/style.css");		</style>
+		<style type="text/css">
+.paypal-donations { text-align: center !important }
+</style>
+</head>
+
+<body class="post-template-default single single-post postid-2060 single-format-standard wp-custom-logo wp-embed-responsive right-sidebar one-menu header-image-top">
+
+
+
+<div id="page" class="hfeed site">
+
+	<a href="#main" class="skip-link screen-reader-text">Skip to content</a>
+	<header id="branding" role="banner">
+
+    	
+    	<div id="header-content" class="clearfix">
+
+			<div class="logo-wrap clearfix"><div id="site-logo"><a href="/" class="custom-logo-link" rel="home"><img width="495" height="112" src="/wp-content/uploads/2017/04/cropped-Logo_oficial-495x112-1.png" class="custom-logo" alt="Drall Dev Community" /></a></div><!-- #site-logo -->	<div id="hgroup" class="site-details">
+					<p id="site-title"><a href="/" rel="home">Drall Dev Community</a></p>
+					<p id="site-description">Blog de compartilhamento de informações de desenvolvimento de sistemas</p>
+			
+   	</div><!-- #hgroup -->
+</div><!-- .logo-wrap -->	<form role="search" method="get" class="searchform" action="http://devblog.drall.com.br/">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input type="search" class="search-field" placeholder="Search" value="" name="s" title="Search for:" />
+		</label>
+		<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+	</form>
+
+		</div><!-- #header-content -->
+
+    	    <div class="menu-access-wrap mobile-header-menu clearfix">
+        <div id="mobile-header-left-menu" class="mobile-menu-anchor primary-menu">
+            <a href="#mobile-header-left-nav" id="menu-toggle-primary" class="genericon genericon-menu">
+                <span class="mobile-menu-text">Menu</span>
+            </a>
+        </div><!-- #mobile-header-left-menu -->
+            
+        
+        <div id="site-header-menu-primary" class="site-header-menu">
+            <nav id="access" class="main-navigation menu-focus" role="navigation" aria-label="Primary Menu">
+            
+                <h3 class="screen-reader-text">Primary menu</h3>
+                <div class="menu-header-container"><ul class="menu"><li id="menu-item-1905" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1905"><a href="/">Home</a></li>
+<li id="menu-item-1907" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1907"><a href="/sample-page">Sobre</a></li>
+<li id="menu-item-1906" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1906"><a href="/contato">Contato</a></li>
+<li id="menu-item-2034" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2034"><a href="http://blog.drall.com.br">Últimas Novidades</a></li>
+</ul></div>            </nav><!-- #access -->
+        </div><!-- .site-header-menu -->
+
+            </div><!-- .menu-access-wrap -->
+    
+	</header><!-- #branding -->
+
+	
+	
+	<div id="main" class="clearfix">
+
+		
+		<div id="primary" class="content-area">
+
+			
+			<div id="content" role="main">
+				
+				
+<article id="post-2060" class="post-2060 post type-post status-publish format-standard hentry category-curiosidades tag-hardware tag-redes">
+	<header class="entry-header">
+		<h1 class="entry-title">Tipos de Armazenamento de rede: DAS, NAS e SAN</h1>
+
+		            <div class="entry-meta">
+                <span class="sep">Posted on </span><a href="/tipos-de-armazenamento-de-rede-das-nas-e-san" title="06:32" rel="bookmark"><time class="entry-date updated" datetime="2015-01-30T06:32:01-03:00" pubdate>January 30, 2015</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/cleriston-santos" title="View all posts by Cleriston Santos" rel="author">Cleriston Santos</a></span></span>                                    <span class="sep sep-comment"> &mdash; </span>
+                    <span class="comments-link">
+                        <a href="/tipos-de-armazenamento-de-rede-das-nas-e-san"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/tipos-de-armazenamento-de-rede-das-nas-e-san"></fb:comments-count> Comments</a>                    </span>
+                            </div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/tipos-de-armazenamento-de-rede-das-nas-e-san/" data-a2a-title="Tipos de Armazenamento de rede: DAS, NAS e SAN"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Ftipos-de-armazenamento-de-rede-das-nas-e-san%2F&amp;linkname=Tipos%20de%20Armazenamento%20de%20rede%3A%20DAS%2C%20NAS%20e%20SAN" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Ftipos-de-armazenamento-de-rede-das-nas-e-san%2F&amp;linkname=Tipos%20de%20Armazenamento%20de%20rede%3A%20DAS%2C%20NAS%20e%20SAN" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Ftipos-de-armazenamento-de-rede-das-nas-e-san%2F&amp;linkname=Tipos%20de%20Armazenamento%20de%20rede%3A%20DAS%2C%20NAS%20e%20SAN" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Ftipos-de-armazenamento-de-rede-das-nas-e-san%2F&amp;linkname=Tipos%20de%20Armazenamento%20de%20rede%3A%20DAS%2C%20NAS%20e%20SAN" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Ftipos-de-armazenamento-de-rede-das-nas-e-san%2F&amp;linkname=Tipos%20de%20Armazenamento%20de%20rede%3A%20DAS%2C%20NAS%20e%20SAN" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Ftipos-de-armazenamento-de-rede-das-nas-e-san%2F&amp;linkname=Tipos%20de%20Armazenamento%20de%20rede%3A%20DAS%2C%20NAS%20e%20SAN" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Ftipos-de-armazenamento-de-rede-das-nas-e-san%2F&amp;linkname=Tipos%20de%20Armazenamento%20de%20rede%3A%20DAS%2C%20NAS%20e%20SAN" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><div class="pdfprnt-buttons pdfprnt-buttons-post pdfprnt-top-right"><a href="/tipos-de-armazenamento-de-rede-das-nas-e-san" class="pdfprnt-button pdfprnt-button-pdf" target="_blank"><img src="/wp-content/plugins/pdf-print/images/pdf.png" alt="image_pdf" title="View PDF" /></a><a href="/tipos-de-armazenamento-de-rede-das-nas-e-san" class="pdfprnt-button pdfprnt-button-print" target="_blank"><img src="/wp-content/plugins/pdf-print/images/print.png" alt="image_print" title="Print Content" /></a></div><div>
+<h3 style="text-align: justify;">DAS, NAS e RAID</h3>
+</div>
+<p style="text-align: justify;">Quando você precisa de mais espaço de armazenamento no seu micro de trabalho, a opção mais comum é simplesmente comprar outro HD. Quando falamos em redes, entretanto, três siglas vêm à tona: NAS, DAS e SAN, acompanhadas geralmente por longas discussões sobre qual das três é mais adequada a determinada situação. Pode parecer estranho que uma grande empresa pague 50.000 dólares para implementar uma SAN, que oferece apenas alguns terabytes de espaço de armazenamento, quando seria possível obter o mesmo espaço usando um punhado de HDs comuns instalados em um servidor de arquivos, mas, como de praxe, existem fatores que justificam o investimento em muitas situações. Vamos então a uma explicação sobre as três tecnologias, começando com a mais simples: DAS.</p>
+<p style="text-align: justify;">
+<p style="text-align: justify;">A sigla <strong>DAS</strong> é abreviação de &#8220;Direct Attached Storage&#8221;. Ela se refere a dispositivos de armazenamento externo ligados diretamente ao servidor (ou a qualquer outro micro da rede), como no caso das gavetas de HD ligadas a portas eSATA (o eSATA é uma versão externa das portas SATA, que mantém a mesma velocidade de 150 ou 300 MB/s, mas permite o uso de um cabo externo) ou a portas USB, por exemplo.</p>
+<p style="text-align: justify;">Além de gavetas e suportes baratos para ligar HDs externos, a lista inclui dispositivos mais caros. Nas fotos a seguir temos dois exemplos. O primeiro é uma gaveta de HD simples, ligada em uma porta USB e o segundo é uma unidade eSATA da Micronet, que utiliza 5 HDs, com RAID via hardware e outras funções. Apesar da diferença de complexidade, temos em ambos os casos unidade externa ligada à uma porta USB ou eSATA, que não tem nada a ver com redes:</p>
+<p style="text-align: justify;">
+<p style="text-align: justify;"><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-c16c1105.jpg.optimized.jpg" alt="index_html_m527f4697" width="467" height="450" /></p>
+<p style="text-align: justify;"><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-e5f0316b.jpg.optimized.jpg" alt="index_html_m7343229b" width="500" height="426" /></p>
+<p style="text-align: justify;">Um <strong>NAS</strong> (Network Attached Storage), por sua vez, roda um sistema operacional completo e funciona como um servidor de arquivos, ligado diretamente na rede.</p>
+<p style="text-align: justify;">Muitas vezes, eles são chamados de &#8220;network storage&#8221;, ou simplesmente de &#8220;storage&#8221;, termos que são mais descritivos para o público não técnico do que &#8220;NAS&#8221;. Entre o público técnico, eles são também chamado de &#8220;filers&#8221; (arquivadores). O termo &#8220;storage&#8221; é na verdade um termo técnico genérico para soluções de armazenamento, que é usado também em outras situações, como no caso das SANs.</p>
+<p style="text-align: justify;">Existem muitas opões de NAS, que vão desde sistemas baratos, que custam pouco mais que uma gaveta USB, até equipamentos caros, que utilizam um grande número de HDs. Os modelos mais baratos comportam apenas um ou dois HDs e oferecem apenas funções básicas. Alguns modelos incluem também um transmissor wireless ou disponibilizam uma porta USB, o que permite que sejam ligados ao PC diretamente e seja usados como um DAS. Modelos intermediários suportam em sua maioria 4 drives e modelos high-end ou racks para uso em datacenters suportam muitas vezes 8 drives ou mais.</p>
+<p style="text-align: justify;">Os modelos com apenas um HD são genericamente chamados de single-drive e os que utilizam dois ou mais são chamados de multi-drive. Alguns modelos são vendidos sem os drives, que forma que você pode instalar os HDs que quiser (eles são chamados de &#8220;diskless&#8221;) e são geralmente bem mais baratos, enquanto muitos fabricantes optam por vender os aparelhos com drives pré-instalados (chamados genericamente de &#8220;diskfull&#8221;), de forma a tentar agregar valor e trabalhar com margens de lucro um pouco maiores. Ao ver o anúncio de um &#8220;diskless NAS&#8221; no catálgo de alguma loja do exterior, por exemplo, você pode presumir que se trata de um modelo sem os HDs.</p>
+<p style="text-align: justify;">Um exemplo de NAS é Buffalo TeraStation Pro II, que permite o uso de 4 discos, que podem ser configurados em modo RAID 0, 1, 10 ou RAID 5. Originalmente ele vinha com 4 drives de 250 GB (daí o nome), mas logo foram lançadas versões atualizadas, com drives de 500 GB, 750 GB e 1 TB, totalizando até 4 GB de espaço de armazenamento:</p>
+<p style="text-align: justify;">
+<p style="text-align: justify;"><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-33f3f76f.jpg.optimized.jpg" alt="index_html_m7b0ae8c8" width="500" height="422" /></p>
+<p style="text-align: justify;"><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-6fc3eb11.jpg.optimized.jpg" alt="index_html_19f9ccbb" width="500" height="400" /></p>
+<p style="text-align: justify;">O mostrador frontal exibe informações básicas, como o endereço IP usado pelo servidor, o status da conexão e a configuração dos discos, mas a configuração em si é feita remotamente, através da interface de administração via navegador. É através dela que você escolhe qual modo RAID será usado, altera a configuração de rede do NAS, cria os compartilhamentos de rede, executa operações administrativas (como realizar testes de superfície nos HDs ou recuperar o array RAID em caso de falha em um dos discos) e assim por diante:</p>
+<p style="text-align: justify;"><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-1d4042c6.gif" alt="index_html_m2b6372a7" width="500" height="422" /></p>
+<p style="text-align: justify;">O uso da interface web não é uma exclusividade do TeraStation, muito pelo contrário. Quase todos os modelos de NAS disponíveis são configurados via navegador, com alguns poucos modelos demandando o uso de um software cliente, ou sendo configuráveis apenas via linha de comando (via SSH ou Telnet).</p>
+<p style="text-align: justify;">Via de regra, um NAS não faz nada que um PC tradicional não possa ser configurado para fazer. Um número surpreendente deles utilizam processadores x86, rodam Linux e compartilham os arquivos com a rede utilizando o Samba. Ou seja, nada mais são do que PCs compactos, otimizados para a tarefa.</p>
+<p style="text-align: justify;">A principal vantagem é que eles são soluções prontas, que podem ser instaladas rapidamente, sem exigir muitos conhecimentos técnicos, o que os torna ideais para uso em escritórios e redes domésticas, por exemplo. Os modelos mais simples são bem mais baratos que um PC, além de serem menos compactos e consumirem menos energia, enquanto os modelos mais caros oferecem mais espaço de armazenamento, recursos de redundância e de gerenciamento que permitem o uso em redes que demandam um maior nível de confiabilidade.</p>
+<p style="text-align: justify;">Existem ainda distribuições Linux ou BSD que permitem transformar um PC comum em um NAS de forma prática. Um bom exemplo é o FreeNAS (baseado no FreeBSD), que pode ser instalado de forma simples, ocupando apenas 32 MB, e é inteiramente administrado através de uma interface de gerenciamento via web, sem precisar de monitor. Ele suporta o uso de RAID, compartilhamentos via CIFS (Samba), FTP, NFS e SFTP, além de oferecer um grande volume de recursos de gerenciamento. Você pode baixá-lo no <a style="color: #0093d8;" href="http://www.freenas.org/">http://www.freenas.org</a>. Outro projeto similar é o OpenFiler, disponível no <a style="color: #0093d8;" href="http://www.openfiler.com/">http://www.openfiler.com</a>.</p>
+<p style="text-align: justify;"><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-bd475a04.jpg.optimized.jpg" alt="index_html_5aed20da" width="500" height="407" /></p>
+<p style="text-align: justify;">Com a adoção do WPA2, os pontos de acesso wireless passaram a utilizar controladores muito mais poderosos, de forma a oferecerem suporte à encriptação usando o AES. Muitos fabricantes passaram então a incluir funções de compartilhamento de arquivos, permitindo que o ponto de acesso funcione como um NAS simples, compartilhando pastas em um pendrive ou HD externo, instalado em uma porta USB. Em geral, eles são muito mais limitados que um NAS &#8220;de verdade&#8221;, a começar pelo fato de suportarem um único pendrive ou HD e oferecerem poucas opções de configuração. Apesar disso, eles podem ser uma opção interessante em algumas situações, já que a inclusão do recurso adiciona muito pouco no custo do aparelho.</p>
+<p style="text-align: justify;">Um exemplo é o Linksys WRT600N, que apresenta uma porta USB escondida ao lado do conector da interface WAN (onde você ligaria o cable modem ou o modem ADSL, de forma a compartilhá-lo com a rede). Ao instalar um pendrive ou HD USB, você pode criar compartilhamentos através da opção &#8220;Storage&#8221; da interface de administração. Os recursos são incrivelmente limitados (não é possível sequer alterar o grupo de trabalho), mas a função básica está presente:</p>
+<p style="text-align: justify;">
+<p style="text-align: justify;"><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-5311393e.jpg" alt="index_html_m77d1c1a6" width="321" height="450" /></p>
+<p style="text-align: justify;"><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-eef16bca.png.resized.jpg" alt="index_html_m4b1a1d50" width="500" height="387" /></p>
+<p style="text-align: justify;">Em muitas situações, entretanto, usar um NAS não é suficiente. Muitas empresas precisam de volumes gigantescos de espaço de armazenamento, que deve não apenas oferecer um desempenho muito bom, mas também incluir backup dos dados e redundância.</p>
+<p style="text-align: justify;">De acordo com a escala necessária, usar um único servidor, com HDs SATA regulares seria a solução mais barata, já que muitas placas-mãe possuem até 10 portas SATA (e você poderia adicionar mais portas instalando controladoras adicionais), de forma que, você poderia simplesmente instalar 10 HDs SATA de 1 TB e contar assim com um total de 10 TB de armazenamento.</p>
+<p style="text-align: justify;">Usando o Samba você não gastaria nada com o software, que forma que, além da mão de obra, o custo de resumiria ao preços dos HDs e dos demais componentes escolhidos e usando um array RAID você poderia sacrificar parte do espaço de armazenamento para melhorar o desempenho e a confiabilidade. De acordo com o número de HDs disponíveis e o recursos oferecidos pelo sistema operacional usado, os modos RAID disponíveis são:</p>
+<p style="text-align: justify;"><strong><br />
+RAID 0 (Striping)</strong>: No RAID 0 todos os HDs passam a ser acessados como se fossem um único drive. Ao serem gravados, os arquivos são fragmentados nos vários discos, permitindo que os fragmentos possam ser lidos e gravados simultaneamente, com cada HD realizando parte do trabalho. Isso permite melhorar brutalmente a taxa de leitura e de gravação e continuar usando 100% do espaço disponível nos HDs. O problema é que no RAID 0 não existe redundância. Os HDs armazenam fragmentos de arquivos, e não arquivos completos. Sem um dos HDs, a controladora não tem como reconstruir os arquivos e tudo é perdido. Isso faz com que o modo RAID 0 seja raramente usado em servidores.</p>
+<p style="text-align: justify;"><strong>RAID 1 (Mirroring)</strong>: No RAID 1 são usados dois HDs (ou qualquer outro número par). O primeiro HD armazena dados e o segundo armazena um cópia exata do primeiro, atualizada em tempo real. Se o primeiro HD falha, a controladora automaticamente chaveia para o segundo HD, permitindo que o sistema continue funcionando. Em servidores é comum o uso de HDs com suporte a hot-swap, o que permite que o HD defeituoso seja substituído a quente, com o servidor ligado. A desvantagem em usar RAID 0 é que metade do espaço de armazenamento é sacrificado.</p>
+<p style="text-align: justify;"><strong>RAID 10 (Mirror/Strip)</strong>: Este modo combina os modos 0 e 1 e pode ser usado com a partir de 4 HDs (ou outro número par). Metade dos HDs são usados em modo striping (RAID 0), enquanto a segunda metade armazena uma cópia dos dados dos primeiros, oferecendo redundância.</p>
+<p style="text-align: justify;"><strong>RAID 5</strong>: Este é o modo mais utilizado em servidores com um grande número de HDs. O RAID 5 usa um sistema de paridade para manter a integridade dos dados. Os arquivos são divididos em fragmentos e, para cada grupo de fragmentos, é gerado um fragmento adicional, contendo códigos de paridade. Os códigos de correção são espalhados entre os discos. Dessa forma, é possível gravar dados simultaneamente em todos os HDs, melhorando o desempenho.</p>
+<p style="text-align: justify;">O RAID 5 pode ser usado com a partir de 3 discos. Independentemente da quantidade de discos usados, sempre temos sacrificado o espaço equivalente a um deles. Em um NAS com 4 HDs de 1 TB, por exemplo, você ficaria com 3 TB de espaço disponível, em um servidor com 10 HDs de 1 TB, você ficaria com 9 TB disponíveis e assim por diante. Os dados continuam seguros caso qualquer um dos HDs usados falhe, mas se um segundo HD falhar antes que o primeiro seja substituído (ou antes que a controladora tenha tempo de regravar os dados), todos os dados são perdidos. Você pode pensar no RAID 5 como um RAID 0 com uma camada de redundância.</p>
+<p style="text-align: justify;"><strong>RAID 6</strong>: O RAID 6 dobra o número de bits de paridade, eliminando o ponto fraco do RAID 5, que é a perda de todos os dados caso um segundo HD falhe. No RAID 6, a integridade dos dados é mantida caso dois HDs falhem simultaneamente, o que reduz brutalmente as possibilidades matemáticas de perda de dados.</p>
+<p style="text-align: justify;">A percentagem de espaço sacrificado decai conforme são acrescentados mais discos, de forma que o uso do RAID 6 vai tornado-se progressivamente mais atrativo. No caso de um grande servidor, com 20 HDs, por exemplo, seria sacrificado o espaço equivalente a apenas dois discos, ou seja, apenas 10% do espaço total. O maior problema é que o RAID 6 exige o uso de algoritmos muito mais complexos por parte da controladora, de forma que ele não é suportado por todos os dispositivos.</p>
+<p style="text-align: justify;"><strong><br />
+JBOD</strong>: No JBOD (Just a Bunch Of Disks) os HDs disponíveis são simplesmente concatenados e passam a ser vistos pelo sistema como um único disco, com a capacidade de todos somada. Os arquivos são simplesmente espalhados pelos discos, com cada um armazenando parte dos arquivos (nesse caso arquivos completos, e não fragmentos como no caso do RAID 0). No JBOD não existe qualquer ganho de desempenho, nem de confiabilidade, ele é apenas uma forma simples de juntar vários HDs de forma a criar uma única unidade de armazenamento. Ele não é uma boa opção para armazenamento de dados importantes, mas pode ser usado para tarefas secundária, como no caso de servidores de backup.</p>
+<p style="text-align: justify;">O uso de um NAS, ou de um servidor de arquivos com vários HDs atende bem à maioria das redes de pequeno e médio porte. Entretanto, muitas empresas precisam de muito mais do que 10 TB de espaço de armazenamento, sobretudo quando falamos em grandes bancos de dados e aplicações web. Usar vários pequenos servidores seria uma solução barata, mas em compensação complexa e mais propensa a falhas. Surge então a opção de usar uma <strong>SAN</strong>(Storage Area Network).</p>
+<h2 class="cms-sb-changed" style="color: #0093d8; text-align: justify;"><strong><a style="color: #003366;" href="http://www.hardware.com.br/tutoriais/das-nas-san/pagina2.html">SAN</a></strong></h2>
+<div class="cms-sb-changed" style="text-align: justify;">Toda SAN tem como bloco de montagem HDs tradicionais, que são ligados a uma unidade controladora (que se encarrega do acesso aos dados, RAID e outras funções) e é ligada a um servidor através de uma interface dedicada, que pode ser tanto uma interface Fibre Channel quanto uma interface de rede Gigabit Ethernet ou 10 Gigabit Ethernet (usando o iSCSI). O servidor se encarrega então de distribuir os dados para os clientes da rede ou fornecê-los para aplicativos específicos, como no caso de um cluster de servidores web, que utilizam a SAN para armazenar um grande banco de dados usado para atender às requisições dos clientes.Além da maior capacidade de armazenamento e de recursos de redundância, a principal diferença de uma SAN e um NAS ou um servidor de arquivos tradicional é que o SAN se comporta como se fosse uma única unidade de armazenamento, que o servidor pode acessar diretamente, de forma transparente. Ou seja, é como se você conectasse um único HD de 100 TB (por exemplo) no servidor, diferente de um NAS, que se comporta como um servidor de arquivos e pode ser acessado simultaneamente por vários clientes.Apesar disso, na grande maioria dos casos, o objetivo de usar uma SAN não é simplesmente obter um grande espaço de armazenamento, mas sim obter ganhos de desempenho e de confiabilidade para aplicações críticas. Imagine o caso de um cluster de servidores responsáveis pelo site de um grande portal. As páginas são montadas a partir de um enorme banco de dados, armazenado na SAN, que é acessado de forma conjunta por todos os servidores do cluster. As unidades de armazenamento combinam um grande número de HDs em RAID, o que as torna capazes de atender a um grande volume de requisições por segundo, o que permite atender aos muitos visitantes simultâneos. Além do desempenho e do armazenamento centralizado, temos também a questão da redundância, que garante que o sistema funcione de forma contínua, sobrevivendo a falhas em componentes diversos.Os componentes básicos de uma SAN são um ou storage racks (as unidades de armazenamento, com os arrays de discos), um switch Fibre Channel, os cabos e o servidor ao qual a SAN é conectada. Apesar disso, é comum o uso de dois switchs e dois servidores, de forma a oferecer um sistema redundante (o segundo servidor fica a postos para assumir o lugar o primeiro em caso de falha). Os componentes são ligados como na figura abaixo, de forma a garantir que o sistema continue funcionando caso qualquer um dos componentes falhe. O próprio array de discos é constituído por componentes redundantes, incluindo o uso de fontes e outros circuitos redundantes e RAID:<img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-af5f2ccb.png.optimized.jpg" alt="index_html_m49a92907" width="461" height="450" />A principal vantagem do uso de uma SAN é que o sistema pode ser expandido conforme necessário, incluindo mais storage racks e mais switchs. Os diferentes arrays podem então ser acessados por diferentes servidores e, dependendo da configuração, até mesmo serem configurados para se comportarem como uma única unidade, com as capacidades somadas. Se dinheiro não for problema, é possível atingir facilmente a marca de 100 terabytes de espaço de armazenamento, com direito a um sistema de redundância completo.</p>
+<p>O grande problema é mesmo a questão do custo, já que um SAN completa pode facilmente superar a marca dos US$ 50.000, em preços do exterior. Isso faz com que elas fiquem restritas a ambientes onde as vantagens compensam o maior custo. Para pequenas redes, servidores com diversos HDs (configurados como um array RAID) acabam sendo a melhor opção, já que podem oferecer um espaço de armazenamento similar ao de uma pequena SAN (embora com um desempenho e confiabilidade inferiores) a uma fração do custo.</p>
+<p><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-8125035b.jpg.optimized.jpg" alt="index_html_1e882a5c" width="500" height="220" /><em><br />
+Storage rack com redundância</em></p>
+<p>Continuando, é possível também que um único array seja dividido em várias unidades lógicas, cada uma com um identificador próprio (chamado de LUN, ou &#8220;Logical Unit Number&#8221;), permitindo que cada unidade possa ser acessada por um servidor diferente. Isso permite centralizar o armazenamento de dados da rede, armazenando todos os dados importantes na SAN, ao invés de utilizar HDs separados em cada servidor. As unidades podem ser inclusive redimensionadas durante o uso, realocando o espaço entre os servidores conforme necessário.</p>
+<p>O Fibre Channel é um padrão de redes desenvolvido especialmente para uso de unidades remotas de armazenamento. Existem diversos padrões de Fibre Channel, que incluem o 1GFC (1.06 gigabits), 2GFC (2.12 gigabits), 4 GFC (4.25 gigabits), 8GFC (8.5 gigabits) e o 10GFC (10.5 gigabits), sendo que atualmente (início de 2008) os padrões mais usados ainda são o 2GFC e o 4GFC.</p>
+<p>Existem três topologias de Fibre Channel: Ponto-a-ponto (dois dispositivos ligados diretamente), Arbitrated loop (onde os dispositivos são ligados uns aos outros, formando um anel) e Switched fabric (onde os dispositivos são ligados a um switch central, de forma similar ao que temos em uma rede de par trançado). Como pode imaginar a topologia Switched fabric é de longe a mais utilizada atualmente.</p>
+<p><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-2345b0f4.jpg.resized.jpg" alt="index_html_7dd09c2f" width="500" height="106" /><em><br />
+Switch Fibre Channel</em></p>
+<p>Embora exista um padrão de Fibre Channel que utiliza fios de cobre, os cabos de fibra óptica são de longe os mais comuns. É possível utilizar cabos de fibra óptica de até 50 km, utilizando cabos monomodo, mas o mais comum é que sejam usados cabos multimodo (mais baratos e suficientes para a maioria das situações), que oferecem um alcance de até 300 metros. Tipicamente, os cabos são curtos, com de 2 a 10 metros, de forma que a questão do alcance raramente é um problema. As controladoras Fibre Channel são chamadas de FC HBA (Fibre Channel Host Bus Adapter).<br />
+<img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-cd6e4049.jpg" alt="index_html_m5501567a" width="440" height="450" /></p>
+<p><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-ca9f3333.jpg.optimized.jpg" alt="index_html_c943325" width="500" height="407" /><em><br />
+Fibre Channel HBA e conectores de um cabo Fibre Channel LC/LC</em></p>
+<p>Outra tecnologia, mais recente é o <strong>iSCSI</strong> (pronuncia-se &#8220;ai-iscâzi&#8221;) que permite que o cliente (chamado de initiator) envie comandos SCSI para um array de armazenamento (chamado de target) via TCP/IP, utilizando uma rede Ethernet tradicional. Isso permite que eles sejam sejam acessados como se fossem unidades de armazenamento local através de cabos de rede. Você pode pensar no iSCSI como um protocolo para encapsular comandos de acesso a disco, juntamente com os dados resultantes, transformando-os em pacotes TCP/IP.</p>
+<p>A função é basicamente a mesma do Fibre Channel, ou seja, interligar os servidores aos arrays de discos que formam a SAN, mas nesse caso a um custo mais baixo, já que dispensa o uso dos caros switchs, controladores e cabos Fibre Channel, substituídos por cabos de rede e switchs Ethernet.</p>
+<p>Abaixo temos uma controladora iSCSI Adaptec 7211C. À primeira vista ela parece uma placa de rede, incluindo o uso do conector RJ45, mas a presença do processador, chipset e chips de memória denunciam sua verdadeira função. As controladoras iSCSI (chamadas de iSCSI HBA) executam muito mais processamento que uma simples placa de rede e por isso incluem um volume muito maior de componentes. Quando instaladas, as controladoras iSCSI são vistas pelo sistema como controladoras de disco e não como interfaces de rede:</p>
+<p><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-bb8f0160.jpg.resized.jpg" alt="index_html_m3840ddcc" width="500" height="361" /></p>
+<p>As funções da controladora SCSI podem ser também executadas via software (o software cliente é chamado de iSCSI initiator), o que permite utilizar uma placa de rede Ethernet regular no lugar da controladora iSCSI. O desempenho é naturalmente mais baixo, mas a redução no custo faz com que esta seja a opção mais usada em pequenas instalações. Com relação ao cabeamento, o ideal é que seja utilizado um segmento dedicado entre o servidor e os arrays de discos, mas o tráfego do iSCSI pode conviver com o tráfego Ethernet da rede, de forma que (embora não seja a solução ideal do ponto de vista do desempenho, nem da segurança) é possível simplesmente ligar os arrays em uma rede já existente, utilizando inclusive links de longa distância, o que permite a criação de sistemas de armazenamento remoto.</p>
+<p>A popularização dos arrays iSCSI tornou as SANs muito mais acessíveis. Montar uma pequena SAN usando Fibre Channel custa, pelo menos, US$ 10.000 (em preços do exterior, sem contar os impostos) apenas em equipamento básico (o array de discos, o switch, as controladoras e os cabos), sem sequer incluir os HDs. Um array de discos iSCSI, por sua vez, pode ser ligado diretamente a uma placa gigabit Ethernet no servidor, o que torna possível montar uma pequena SAN utilizando apenas o array (os mais simples custam a partir de US$ 1500) e os HDs.</p>
+<p>Aqui temos o iX8-RAID, um exemplo de array iSCSI de baixo custo. Ele permite o uso de até 8 HDs SATA, que podem ser usados em modo RAID 0, 10, 5, 50, 6 ou 60 e é conectado ao servidor através de um ou duas interfaces Gigabit Ethernet (a segunda é usada para redundância). Ele inclui um processador de Intel IOP 331 e 512 MB de memória, usada pra cache de disco e é administrado através de uma interface web. Mas, diferente de um NAS, ele não compartilha arquivos diretamente na rede. Depois de ligá-lo ao servidor, você instala o iSCSI initiator, que faz com que ele seja visto pelo servidor como uma unidade local. A partir daí, você pode formatar os discos e usar o espaço como quiser, inclusive criando compartilhamentos de rede:<br />
+<img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-56b91904.jpg.optimized.jpg" alt="index_html_1c70170f" width="267" height="400" /></p>
+<p><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-f18d9957.jpg.optimized.jpg" alt="index_html_m1ec422c9" width="212" height="400" /></p>
+<p>Com 8 HDs, os modos RAID com melhor custo-benefício são os modos 5 e 6. Optando pelo RAID 5, você sacrifica o espaço equivalente a apenas um dos discos e tem segurança contra falha de qualquer um dos HDs. Melhor ainda, o sistema pode continuar funcionando normalmente, mesmo sem um dos HDs, já que a controladora é capaz de reconstruir os dados a partir dos códigos de paridade em tempo real.</p>
+<p>A falha é reportada através do display frontal e através da interface web (opcionalmente, você pode configurar também o envio de avisos por e-mail) e a troca pode ser feita à quente, sem precisar desativar a SAN. Desde que dois HDs não falhem simultaneamente e que você não demore muito para trocar o HD defeituoso, todos os dados ficam protegidos. Existe ainda a opção de usar o modo RAID 6, onde dois dos HDs são sacrificados, dobrando o volume de bits de redundância e permitindo que o array resista à falha de dois dos HDs.</p>
+<p>Hoje em dia é comum também o uso de servidores de armazenamento que oferecem diversas opções de interface de comunicação, já que isso adiciona relativamente pouco (proporcionalmente) ao custo. Eles podem ser tanto usados em uma SAN, conectados via iSCSI ou Fibre Channel quanto trabalharem ligados diretamente na rede, como um NAS. Nas fotos temos um StorMaster SNi-4020ez SAN NAS iSCSI Storage Server, um exemplo de storage rack de maior porte, que oferece as três interfaces e permite o uso de até 40 HDs (com mais dois HDs extra, instalados na parte traseira, usados pelo sistema operacional):<br />
+<img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-47f63250.jpg.optimized.jpg" alt="index_html_m176f9b12" width="400" height="388" /></p>
+<p><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-5206d12d.jpg.optimized.jpg" alt="index_html_m64947fd9" width="400" height="397" /></p>
+<h2 class="cms-sb-changed" style="color: #0093d8;"><a style="color: #003366;" href="http://www.hardware.com.br/tutoriais/das-nas-san/pagina3.html">Armazenamento</a></h2>
+<div class="cms-sb-changed">Quando falamos em HDs para servidores, a primeira sigla que vem à mente é o SCSI, mas o antigo barramento SCSI paralelo está dando lugar a uma versão serial, o <strong>SAS</strong>, da mesma forma que os antigos HDs IDE deram lugar aos HDs com interface SATA.<br />
+O SAS (Serial Attached SCSI), é um barramento serial, muito similar ao SATA utilizado em HDs domésticos em diversos aspectos, mas que adiciona várias possibilidades interessantes voltadas para o uso em servidores. As versões iniciais do SAS suportavam taxas de transferência de 150 e 300 MB/s. Recentemente foi introduzido o padrão de 600 MB/s e passou a ser desenvolvido o padrão seguinte, de 1.2 GB/s. A evolução é similar à do padrão SATA (note que as velocidades são as mesmas), porém o SAS tende a ficar sempre um degrau acima.A maior velocidade é necessária, pois o SAS permite o uso de extensores (expanders), dispositivos que permitem ligar diversos discos SAS a uma única porta. Existem dois tipos de extensores SAS, chamados de &#8220;Edge Expanders&#8221; e &#8220;Fanout Expanders&#8221;. Os Edge Expanders permitem ligar até 128 discos na mesma porta, enquanto os Fanout Expanders permitem conectar até 128 Edge Expanders (cada um com seus 128 discos!), chegando a um limite teórico de até 16.384 discos por porta SAS.Este recurso foi desenvolvido pensando sobretudo nos servidores de armazenamento. Com a popularização dos webmails e outros serviços, o armazenamento de grandes quantidades de dados tornou-se um problema. Não estamos falando aqui de alguns poucos gigabytes, mas sim de vários terabytes ou mesmo petabytes de dados. Imagine o caso do Gmail, por exemplo, onde temos vários milhões de usuários, cada um com mais de 2 GB de espaço disponível.Os extensores SAS normalmente possuem a forma de um gabinete 1U ou 2U, destinados a serem instalados nos mesmos racks usados pelos próprios servidores. Em muitos, os discos são instalados em gavetas removíveis e podem ser trocados com o servidor ligado (hot swap). Isto permite substituir rapidamente HDs defeituosos, sem precisar desligar o servidor:<img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-02c9df4c.jpg.resized.jpg" alt="index_html_m13df3514" width="500" height="165" /><em><br />
+Gabinete 1U com HDs SAS removíveis</em></p>
+<p>Nesses casos, seria utilizado um sistema RAID, onde parte do espaço e armazenamento é destinado a armazenar informações de redundância, que permitem restaurar o conteúdo de um HD defeituoso assim que ele é substituído, sem interrupção ou perda de dados. Ao contrário das controladoras RAID de baixo custo, encontradas nas placas-mãe para desktop, que executam suas funções via software, as controladoras SAS tipicamente executam todas as funções via hardware, facilitando a configuração (já que deixa de ser necessário instalar drivers adicionais) e oferecendo um maior desempenho e flexibilidade.</p>
+<p>As controladoras SAS incluem normalmente 4 ou 8 portas e são instaladas em um slot PCI-X, ou PCI Express. Nada impede também que você instale duas ou até mesmo três controladoras no mesmo servidor caso precise de mais portas:</p>
+<p><img loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-60a7050e.jpg.resized.jpg" alt="index_html_313d9bfb" width="500" height="300" /><br />
+<em>Controladora SAS</em></p>
+<p>Um detalhe interessante é que o padrão SAS oferece compatibilidade retroativa com os HDs SATA, permitindo que você use HDs SATA convencionais como uma forma de cortar custos, sem ter que abrir mão da possibilidade de usar os extensores. É possível também combinar HDs dos dois padrões, usando HDs SATA comuns em tarefas que demandem um nível menor de confiabilidade.</p>
+<p>A maior parte dos HDs de alto desempenho, com rotação de 15.000 RPM, que antes só existiam em versão SCSI, estão sendo lançados também em versão SAS. Nos próximos anos é de se esperar que o SAS substitua gradualmente o SCSI, assim como o SATA já substituiu o IDE quase que completamente nos micros novos.</p>
+<p>Em geral, HDs SAS e SCSI são certificados para operação contínua e são produzidos com componentes de maior durabilidade. Via de regra, existem ganhos do ponto de vista da confiabilidade e os fabricantes oferecem garantias de 5 anos. Isso faz com que eles sejam preferidos em situações onde é exigido um maior nível de confiabilidade, mesmo que o desempenho não seja um fator importante.</p>
+<p>Entretanto, vale lembrar que a confiabilidade pode ser obtida também através do uso de RAID, de forma que muitos preferem utilizar HDs domésticos, reservando mais discos do array RAID para redundância. Se um HD SAS custa o dobro de um HD SATA equivalente, por exemplo, faria mais sentido comprar dois HDs SATA e usá-los em RAID 1, do que usar um único HD SAS.</p>
+<p>Um bom exemplo de uso desta filosofia é o Google, que utiliza servidores de baixo custo, montados com HDs e placas comuns, o que permite que construam seus gigantescos datacenters a preços relativamente baixos. Quase todas as funções de redundância e tolerância a falhas são implementadas via software as transferências executadas usando interfaces de rede.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+<p style="text-align: justify;">Fonte: http://www.hardware.com.br/tutoriais/das-nas-san/</p>
+<div class="cb_p6_patreon_button" style="text-align:center !important;margin-top:15px;margin-bottom:15px;"><div class="cb_p6_message_over_post_button" style="font-size:20px;margin-top:10px;margin-bottom:10px;">Gostou? Tire um minutinho e dê sua contribuição para Drall Dev Community no Patreon!</div><a rel="nofollow" href="https://www.patreon.com/drallconsult?utm_content=post_button&utm_medium=patron_button_and_widgets_plugin&utm_campaign=&utm_term=&utm_source=http://devblog.drall.com.br/tipos-de-armazenamento-de-rede-das-nas-e-san/"><img style="margin-top: 10px;margin-bottom: 10px;max-width:200px;width:100%;height:auto;" src="/wp-content/plugins/patron-button-and-widgets-by-codebard/images/become_a_patron_button.png"></a></div><div class='yarpp-related'>
+<h3>Artigos relacionados:</h3>
+<div class="yarpp-thumbnails-horizontal">
+<a class='yarpp-thumbnail' rel='norewrite' href='/tipos-de-integracao-de-sistemas-auxiliares-geradores-de-energia' title='Tipos de integração de sistemas auxiliares geradores de energia'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Tipos de integração de sistemas auxiliares geradores de energia</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/protocolo-iscsi-e-uma-pequena-comparacao-com-os-mais-utilizados-para-compartilhamento-como-samba-e-nfs' title='Protocolo iSCSI e uma pequena comparação com os mais utilizados para compartilhamento como samba e nfs'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Protocolo iSCSI e uma pequena comparação com os mais utilizados para compartilhamento como samba e nfs</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/os-erros-mais-comuns-do-windows-nao-conseguir-acessar-um-dominio-controlado-pelo-samba' title='Os erros mais comuns para o Windows não conseguir acessar um domínio controlado pelo Samba'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Os erros mais comuns para o Windows não conseguir acessar um domínio controlado pelo Samba</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/configurando-a-rede-no-linux' title='Configurando a rede no Linux'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Configurando a rede no Linux</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/identificando-e-comparando-tipos' title='Identificando e comparando tipos'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Identificando e comparando tipos</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/multiplos-enderecos-ip-em-uma-interface-de-rede-no-debian' title='Múltiplos endereços ip em uma interface de rede no Debian'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Múltiplos endereços ip em uma interface de rede no Debian</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/encontrar-todos-os-computadores-de-uma-rede-utilizando-linux' title='Encontrar todos os computadores de uma rede utilizando Linux'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Encontrar todos os computadores de uma rede utilizando Linux</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/shell-script-obter-ip-de-maquinas-unix-like-em-uma-rede' title='Shell Script &#8211; Obter ip de máquinas Unix-like em uma rede'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Shell Script &#8211; Obter ip de máquinas Unix-like em uma rede</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/navegando-na-internet-utilizando-a-conexao-de-outro-computador-via-ssh' title='Navegando na internet utilizando a conexão de outro computador via SSH'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Navegando na internet utilizando a conexão de outro computador via SSH</span></a>
+</div>
+</div>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="/category/curiosidades" rel="category tag">Curiosidades</a> and tagged <a href="/tag/hardware" rel="tag">hardware</a>, <a href="/tag/redes" rel="tag">redes</a> by <a href="/author/cleriston-santos">Cleriston Santos</a>. Bookmark the <a href="/tipos-de-armazenamento-de-rede-das-nas-e-san" title="Permalink to Tipos de Armazenamento de rede: DAS, NAS e SAN" rel="bookmark">permalink</a>.		
+		
+	</footer><!-- .entry-meta -->
+</article><!-- #post-2060 -->
+
+
+<div id="comments" class="comments-area">
+<div id="respond" class="comment-respond">
+<div class="fb-social-plugin comment-form fb-comments" id="commentform" data-href="http://devblog.drall.com.br/tipos-de-armazenamento-de-rede-das-nas-e-san/" data-width="470" data-order-by="social"></div>
+</div></div>
+
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="/como-extrair-o-audio-de-um-video-no-linux" rel="prev"><span class="meta-nav" aria-hidden="true"><span class="nav-icon">&larr;</span> Previous</span> <span class="screen-reader-text">Previous post:</span> <span class="post-title">Como extrair o áudio de um vídeo no Linux</span></a></div><div class="nav-next"><a href="/estabelecer-relacao-de-confianca-entre-maquinas-via-ssh" rel="next"><span class="meta-nav" aria-hidden="true">Next <span class="nav-icon">&rarr;</span></span> <span class="screen-reader-text">Next post:</span> <span class="post-title">Estabelecer relação de confiança entre máquinas via SSH</span></a></div></div>
+	</nav>
+		</div><!-- #content -->
+        
+		            
+	</div><!-- #primary -->
+    
+	    
+
+
+		<aside id="secondary" class="sidebar widget-area" role="complementary">
+			<h2 class="screen-reader-text">Primary Sidebar Widget Area</h2>
+			<section id="text-2" class="widget widget_text"><h2 class="widget-title">Patrocinado por:</h2>			<div class="textwidget"><div id="drall_ads">
+
+<!-- Popcash -->
+<script>
+        var uid = '26667';
+        var wid = '50456';
+
+  jQuery( document ).ready(function() { 
+    /*Is mobile?*/
+    if( window.matchMedia("only screen and (max-width: 760px)").matches ) {
+      /*Yes*/
+    } else {
+        /*No*/
+        jQuery('<script type="text/javascript" src="//cdn.popcash.net/pop.js">').appendTo(document.head);
+
+    }
+});
+</script>
+<!-- End Popcash Code -->
+
+
+<script data-cfasync="false" type="text/javascript" src="https://www.tradeadexchange.com/a/display.php?r=1600381"></script>
+</div>
+</div>
+		</section><section id="paypal_donations-2" class="widget widget_paypal_donations"><h2 class="widget-title">Faça sua doação via Paypal</h2><p>Colabore com a Drall Dev Community fazendo sua doação via Paypal!</p>
+<!-- Begin PayPal Donations by https://www.tipsandtricks-hq.com/paypal-donations-widgets-plugin -->
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+    <div class="paypal-donations">
+        <input type="hidden" name="cmd" value="_donations" />
+        <input type="hidden" name="bn" value="TipsandTricks_SP" />
+        <input type="hidden" name="business" value="maajdrall@gmail.com" />
+        <input type="hidden" name="return" value="http://devblog.drall.com.br" />
+        <input type="hidden" name="item_name" value="Ajudar-nos a criar conteúdo relevante para os nossos leitores" />
+        <input type="hidden" name="item_number" value="maajdrall@gmail.com" />
+        <input type="hidden" name="rm" value="0" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <input type="image" style="cursor: pointer;" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online." />
+        <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+    </div>
+</form>
+<!-- End PayPal Donations -->
+</section><section id="text-4" class="widget widget_text"><h2 class="widget-title">Anúncios &#8211; Airbnb</h2>			<div class="textwidget"><div class="airbnb-embed-frame" data-city-link-index="0" data-id="10084899" data-view="listing_frame" style="max-width:600px;margin:auto;transition:height .2s;"><a href="https://www.airbnb.com.br/rooms/14083170" target="_blank" rel="noopener noreferrer"><img src="https://a0.muscache.com/im/pictures/5f44875d-f44c-4187-9709-866e75452073.jpg?interpolation=lanczos-none&amp;size=x_large_cover&amp;output-format=jpg&amp;output-quality=70" style="max-width:100%;" alt=""></a><div><a href="https://www.airbnb.com.br/rooms/10084899" target="_blank" rel="noopener noreferrer"><h4>Apartamento próximo à UFMG/Mineirão</h4></a><div>Belo Horizonte, Minas Gerais, Brasil</div><blockquote>Quarto para 2 pessoas, próximo à UFMG e ao Mineirão. Próximo às principais vias de acesso ao centro / zona sul. *** Room for 2 people, next to UFMG and Mineirao stadium. E...</blockquote></div></div></div>
+		</section><section id="popularitypostswidget-2" class="widget popularitypostswidget"><h2 class="widget-title">Posts Mais Vistos</h2><ul> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-solucionar-o-problema-erro-rh01-rpcs-5aec-0-da-google-play-store" title="Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Google Play Store" rel="nofollow">Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Googl...</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/remover-conta-do-android-ou-como-desvincular-uma-conta-google-do-android" title="Remover conta do Android ou como desvincular uma conta Google do Android" rel="nofollow">Remover conta do Android ou como desvincular uma conta Googl...</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-salvar-seus-apps-antes-de-formatar-seu-android" title="Como salvar seus apps antes de formatar seu Android" rel="nofollow">Como salvar seus apps antes de formatar seu Android</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/qual-login-e-password-padrao-modem-roteador-humax-hg100r-l2" title="Qual login e password padrão &#8211; Modem / Roteador Humax HG100R-L2" rel="nofollow">Qual login e password padrão &#8211; Modem / Roteador Humax ...</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-determinar-o-estado-de-origem-de-um-cpf" title="Como determinar o estado de origem de um CPF" rel="nofollow">Como determinar o estado de origem de um CPF</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-assistir-videos-do-youtube-em-velocidade-x2-no-android" title="Como assistir vídeos do Youtube em velocidade x2 no Android" rel="nofollow">Como assistir vídeos do Youtube em velocidade x2 no Android</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-limpar-o-cache-de-seu-android" title="Como limpar o cache de seu Android" rel="nofollow">Como limpar o cache de seu Android</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-solucionar-o-problema-erro-rh01-rpcs-5aec-0-da-google-play-store-segunda-maneira-nova-solucao" title="Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Google Play Store &#8211; Segunda maneira (Nova solução)" rel="nofollow">Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Googl...</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-usar-o-inspecionar-elemento-do-google-chrome" title="Como usar o “Inspecionar elemento” do Google Chrome" rel="nofollow">Como usar o “Inspecionar elemento” do Google Chrome</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/como-solucionar-o-erro-920-da-google-play" title="Como solucionar o erro 920 da Google Play" rel="nofollow">Como solucionar o erro 920 da Google Play</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/javascript-string-para-float-com-2-casas-decimais" title="JavaScript &#8211; String para float com 2 casas decimais" rel="nofollow">JavaScript &#8211; String para float com 2 casas decimais</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="/fazer-upload-de-varios-arquivos-com-um-html-input-typefile-e-sem-uso-de-js-e-flash" title="Fazer upload de vários arquivos com um HTML input type=&#8221;file&#8221; e sem uso de JS e Flash" rel="nofollow">Fazer upload de vários arquivos com um HTML input type=&#822...</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li></ul></section><section id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widget-title">Palavras-chave</h2><div class="tagcloud"><a href="/tag/android" class="tag-cloud-link tag-link-109 tag-link-position-1" style="font-size: 13.557251908397pt;" aria-label="android (35 items)">android</a>
+<a href="/tag/angularjs" class="tag-cloud-link tag-link-99 tag-link-position-2" style="font-size: 10.992366412214pt;" aria-label="angularjs (20 items)">angularjs</a>
+<a href="/tag/apache" class="tag-cloud-link tag-link-119 tag-link-position-3" style="font-size: 8.7480916030534pt;" aria-label="apache (12 items)">apache</a>
+<a href="/tag/api" class="tag-cloud-link tag-link-121 tag-link-position-4" style="font-size: 8pt;" aria-label="api (10 items)">api</a>
+<a href="/tag/banco-de-dados" class="tag-cloud-link tag-link-81 tag-link-position-5" style="font-size: 11.206106870229pt;" aria-label="banco de dados (21 items)">banco de dados</a>
+<a href="/tag/browsers" class="tag-cloud-link tag-link-101 tag-link-position-6" style="font-size: 11.206106870229pt;" aria-label="browsers (21 items)">browsers</a>
+<a href="/tag/chrome" class="tag-cloud-link tag-link-133 tag-link-position-7" style="font-size: 14.198473282443pt;" aria-label="chrome (41 items)">chrome</a>
+<a href="/tag/chromium" class="tag-cloud-link tag-link-152 tag-link-position-8" style="font-size: 12.702290076336pt;" aria-label="chromium (29 items)">chromium</a>
+<a href="/tag/configuracoes" class="tag-cloud-link tag-link-116 tag-link-position-9" style="font-size: 13.343511450382pt;" aria-label="configurações (34 items)">configurações</a>
+<a href="/tag/css" class="tag-cloud-link tag-link-95 tag-link-position-10" style="font-size: 14.625954198473pt;" aria-label="css (45 items)">css</a>
+<a href="/tag/curiosidades" class="tag-cloud-link tag-link-126 tag-link-position-11" style="font-size: 11.954198473282pt;" aria-label="curiosidades (25 items)">curiosidades</a>
+<a href="/tag/debian-2" class="tag-cloud-link tag-link-57 tag-link-position-12" style="font-size: 14.519083969466pt;" aria-label="debian (44 items)">debian</a>
+<a href="/tag/debug" class="tag-cloud-link tag-link-118 tag-link-position-13" style="font-size: 11.63358778626pt;" aria-label="debug (23 items)">debug</a>
+<a href="/tag/depuracao" class="tag-cloud-link tag-link-117 tag-link-position-14" style="font-size: 10.992366412214pt;" aria-label="depuração (20 items)">depuração</a>
+<a href="/tag/dica" class="tag-cloud-link tag-link-210 tag-link-position-15" style="font-size: 12.381679389313pt;" aria-label="dica (27 items)">dica</a>
+<a href="/tag/dns" class="tag-cloud-link tag-link-149 tag-link-position-16" style="font-size: 9.7099236641221pt;" aria-label="dns (15 items)">dns</a>
+<a href="/tag/eletronica" class="tag-cloud-link tag-link-179 tag-link-position-17" style="font-size: 8pt;" aria-label="eletrônica (10 items)">eletrônica</a>
+<a href="/tag/google" class="tag-cloud-link tag-link-106 tag-link-position-18" style="font-size: 17.297709923664pt;" aria-label="google (80 items)">google</a>
+<a href="/tag/google-busca" class="tag-cloud-link tag-link-161 tag-link-position-19" style="font-size: 8.4274809160305pt;" aria-label="google. busca (11 items)">google. busca</a>
+<a href="/tag/google-play-store" class="tag-cloud-link tag-link-111 tag-link-position-20" style="font-size: 10.992366412214pt;" aria-label="google play store (20 items)">google play store</a>
+<a href="/tag/hard-disk" class="tag-cloud-link tag-link-230 tag-link-position-21" style="font-size: 8.4274809160305pt;" aria-label="hard disk (11 items)">hard disk</a>
+<a href="/tag/hardware" class="tag-cloud-link tag-link-167 tag-link-position-22" style="font-size: 11.63358778626pt;" aria-label="hardware (23 items)">hardware</a>
+<a href="/tag/html" class="tag-cloud-link tag-link-94 tag-link-position-23" style="font-size: 13.022900763359pt;" aria-label="html (31 items)">html</a>
+<a href="/tag/humor" class="tag-cloud-link tag-link-140 tag-link-position-24" style="font-size: 12.381679389313pt;" aria-label="humor (27 items)">humor</a>
+<a href="/tag/imagem" class="tag-cloud-link tag-link-304 tag-link-position-25" style="font-size: 8pt;" aria-label="imagem (10 items)">imagem</a>
+<a href="/tag/javascript" class="tag-cloud-link tag-link-100 tag-link-position-26" style="font-size: 15.801526717557pt;" aria-label="javascript (58 items)">javascript</a>
+<a href="/tag/linha-de-comando" class="tag-cloud-link tag-link-258 tag-link-position-27" style="font-size: 10.778625954198pt;" aria-label="linha de comando (19 items)">linha de comando</a>
+<a href="/tag/linux" class="tag-cloud-link tag-link-113 tag-link-position-28" style="font-size: 18.045801526718pt;" aria-label="linux (95 items)">linux</a>
+<a href="/tag/modem" class="tag-cloud-link tag-link-211 tag-link-position-29" style="font-size: 22pt;" aria-label="modem (225 items)">modem</a>
+<a href="/tag/mysql" class="tag-cloud-link tag-link-144 tag-link-position-30" style="font-size: 11.954198473282pt;" aria-label="mysql (25 items)">mysql</a>
+<a href="/tag/pdf" class="tag-cloud-link tag-link-114 tag-link-position-31" style="font-size: 9.175572519084pt;" aria-label="pdf (13 items)">pdf</a>
+<a href="/tag/php" class="tag-cloud-link tag-link-130 tag-link-position-32" style="font-size: 15.801526717557pt;" aria-label="php (58 items)">php</a>
+<a href="/tag/postgresql" class="tag-cloud-link tag-link-163 tag-link-position-33" style="font-size: 11.954198473282pt;" aria-label="postgresql (25 items)">postgresql</a>
+<a href="/tag/programacao" class="tag-cloud-link tag-link-96 tag-link-position-34" style="font-size: 18.36641221374pt;" aria-label="programação (102 items)">programação</a>
+<a href="/tag/raspberry" class="tag-cloud-link tag-link-338 tag-link-position-35" style="font-size: 13.236641221374pt;" aria-label="raspberry (33 items)">raspberry</a>
+<a href="/tag/raspbian" class="tag-cloud-link tag-link-337 tag-link-position-36" style="font-size: 11.63358778626pt;" aria-label="raspbian (23 items)">raspbian</a>
+<a href="/tag/redes" class="tag-cloud-link tag-link-166 tag-link-position-37" style="font-size: 9.4961832061069pt;" aria-label="redes (14 items)">redes</a>
+<a href="/tag/router" class="tag-cloud-link tag-link-353 tag-link-position-38" style="font-size: 22pt;" aria-label="router (224 items)">router</a>
+<a href="/tag/seguranca" class="tag-cloud-link tag-link-137 tag-link-position-39" style="font-size: 9.175572519084pt;" aria-label="segurança (13 items)">segurança</a>
+<a href="/tag/shell" class="tag-cloud-link tag-link-277 tag-link-position-40" style="font-size: 12.702290076336pt;" aria-label="shell (29 items)">shell</a>
+<a href="/tag/shell-script" class="tag-cloud-link tag-link-112 tag-link-position-41" style="font-size: 14.732824427481pt;" aria-label="shell script (46 items)">shell script</a>
+<a href="/tag/ssh" class="tag-cloud-link tag-link-165 tag-link-position-42" style="font-size: 8.4274809160305pt;" aria-label="ssh (11 items)">ssh</a>
+<a href="/tag/ubuntu" class="tag-cloud-link tag-link-76 tag-link-position-43" style="font-size: 10.351145038168pt;" aria-label="Ubuntu (17 items)">Ubuntu</a>
+<a href="/tag/windows" class="tag-cloud-link tag-link-142 tag-link-position-44" style="font-size: 11.847328244275pt;" aria-label="windows (24 items)">windows</a>
+<a href="/tag/wordpress-2" class="tag-cloud-link tag-link-84 tag-link-position-45" style="font-size: 10.778625954198pt;" aria-label="wordpress (19 items)">wordpress</a></div>
+</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categorias</h2>
+			<ul>
+					<li class="cat-item cat-item-25"><a href="/category/administrativo">Administrativo</a> (64)
+</li>
+	<li class="cat-item cat-item-19"><a href="/category/android">Android</a> (42)
+</li>
+	<li class="cat-item cat-item-27"><a href="/category/angularjs" title="Tudo relativo a biblioteca javascript AngularJS">AngularJS</a> (42)
+</li>
+	<li class="cat-item cat-item-21"><a href="/category/apache">Apache</a> (29)
+</li>
+	<li class="cat-item cat-item-446"><a href="/category/artificial-intelligence">Artificial Intelligence</a> (9)
+</li>
+	<li class="cat-item cat-item-529"><a href="/category/automacao">Automação</a> (6)
+</li>
+	<li class="cat-item cat-item-44"><a href="/category/backup">Backup</a> (5)
+</li>
+	<li class="cat-item cat-item-75"><a href="/category/bind">Bind</a> (12)
+</li>
+	<li class="cat-item cat-item-79"><a href="/category/chrome">Chrome</a> (39)
+</li>
+	<li class="cat-item cat-item-386"><a href="/category/criptografia">Criptografia</a> (4)
+</li>
+	<li class="cat-item cat-item-473"><a href="/category/cryptomoedas">Cryptomoedas</a> (8)
+</li>
+	<li class="cat-item cat-item-43"><a href="/category/css">CSS</a> (52)
+</li>
+	<li class="cat-item cat-item-28"><a href="/category/curiosidades">Curiosidades</a> (241)
+</li>
+	<li class="cat-item cat-item-623"><a href="/category/data-mining">Data Mining</a> (3)
+</li>
+	<li class="cat-item cat-item-14"><a href="/category/debian">Debian</a> (84)
+</li>
+	<li class="cat-item cat-item-494"><a href="/category/docker">Docker</a> (2)
+</li>
+	<li class="cat-item cat-item-549"><a href="/category/dres">DRES</a> (5)
+</li>
+	<li class="cat-item cat-item-532"><a href="/category/eletronica">Eletrônica</a> (11)
+</li>
+	<li class="cat-item cat-item-377"><a href="/category/energia">Energia</a> (13)
+</li>
+	<li class="cat-item cat-item-313"><a href="/category/english-required">English Required</a> (7)
+</li>
+	<li class="cat-item cat-item-451"><a href="/category/excel">Excel</a> (4)
+</li>
+	<li class="cat-item cat-item-77"><a href="/category/exim">Exim</a> (13)
+</li>
+	<li class="cat-item cat-item-85"><a href="/category/firefox">Firefox</a> (7)
+</li>
+	<li class="cat-item cat-item-352"><a href="/category/ftp">FTP</a> (7)
+</li>
+	<li class="cat-item cat-item-350"><a href="/category/fuse">FUSE</a> (1)
+</li>
+	<li class="cat-item cat-item-384"><a href="/category/ged">GED</a> (1)
+</li>
+	<li class="cat-item cat-item-624"><a href="/category/gis">GIS</a> (2)
+</li>
+	<li class="cat-item cat-item-45"><a href="/category/git">GIT</a> (23)
+</li>
+	<li class="cat-item cat-item-22"><a href="/category/gnome">Gnome</a> (10)
+</li>
+	<li class="cat-item cat-item-306"><a href="/category/hardware">Hardware</a> (256)
+</li>
+	<li class="cat-item cat-item-42"><a href="/category/html">HTML</a> (34)
+</li>
+	<li class="cat-item cat-item-417"><a href="/category/ios">iOS</a> (1)
+</li>
+	<li class="cat-item cat-item-91"><a href="/category/java">Java</a> (6)
+</li>
+	<li class="cat-item cat-item-16"><a href="/category/javascript">JavaScript</a> (118)
+</li>
+	<li class="cat-item cat-item-26"><a href="/category/juridico">Jurídico</a> (5)
+</li>
+	<li class="cat-item cat-item-37"><a href="/category/linux">Linux</a> (168)
+</li>
+	<li class="cat-item cat-item-388"><a href="/category/marketing">Marketing</a> (1)
+</li>
+	<li class="cat-item cat-item-36"><a href="/category/modelo">Modelo</a> (6)
+</li>
+	<li class="cat-item cat-item-3"><a href="/category/mysql" title="Tudo relativo a banco de dados MySQL">MySQL</a> (45)
+</li>
+	<li class="cat-item cat-item-450"><a href="/category/network">Network</a> (3)
+</li>
+	<li class="cat-item cat-item-78"><a href="/category/nfs">NFS</a> (4)
+</li>
+	<li class="cat-item cat-item-428"><a href="/category/nightwatchjs">NightwatchJS</a> (1)
+</li>
+	<li class="cat-item cat-item-51"><a href="/category/nodejs">NodeJs</a> (13)
+</li>
+	<li class="cat-item cat-item-5"><a href="/category/padronizacao">Padronização</a> (267)
+</li>
+	<li class="cat-item cat-item-508"><a href="/category/perl">Perl</a> (1)
+</li>
+	<li class="cat-item cat-item-364"><a href="/category/phonegap">phoneGap</a> (3)
+</li>
+	<li class="cat-item cat-item-12"><a href="/category/php">PHP</a> (126)
+</li>
+	<li class="cat-item cat-item-2"><a href="/category/postgresql" title="Tudo relativo a banco de dados PostgreSQL">PostgreSQL</a> (69)
+</li>
+	<li class="cat-item cat-item-72"><a href="/category/prs-producao-rapida-de-sistemas">PRS &#8211; Produção Rápida de Sistemas</a> (8)
+</li>
+	<li class="cat-item cat-item-24"><a href="/category/psql">PSQL</a> (10)
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/python">Python</a> (44)
+</li>
+	<li class="cat-item cat-item-92"><a href="/category/rss">RSS</a> (2)
+</li>
+	<li class="cat-item cat-item-15"><a href="/category/ruby">Ruby</a> (6)
+</li>
+	<li class="cat-item cat-item-80"><a href="/category/seguranca">Segurança</a> (6)
+</li>
+	<li class="cat-item cat-item-18"><a href="/category/shell">Shell</a> (174)
+</li>
+	<li class="cat-item cat-item-70"><a href="/category/treinamento/tutoriais-javascript/smarttable-component-para-o-angular" title="Como devemos utilizar este componente.">SmartTable (component para o angular)</a> (2)
+</li>
+	<li class="cat-item cat-item-62"><a href="/category/ssh">SSH</a> (16)
+</li>
+	<li class="cat-item cat-item-41"><a href="/category/svn">SVN</a> (1)
+</li>
+	<li class="cat-item cat-item-470"><a href="/category/thunderbird">Thunderbird</a> (1)
+</li>
+	<li class="cat-item cat-item-17"><a href="/category/treinamento">Treinamento</a> (5)
+</li>
+	<li class="cat-item cat-item-49"><a href="/category/tutorial-2" title="Categoria destinada a tutoriais">Tutorial</a> (46)
+</li>
+	<li class="cat-item cat-item-52"><a href="/category/twitter-bootstrap">Twitter Bootstrap</a> (3)
+</li>
+	<li class="cat-item cat-item-86"><a href="/category/ubuntu">Ubuntu</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/category/uncategorized">Uncategorized</a> (11)
+</li>
+	<li class="cat-item cat-item-423"><a href="/category/upnp">UPNP</a> (1)
+</li>
+	<li class="cat-item cat-item-273"><a href="/category/vba">VBA</a> (2)
+</li>
+	<li class="cat-item cat-item-48"><a href="/category/tutorial" title="Categoria destinada a video tutoriais">Video Tutorial</a> (2)
+</li>
+	<li class="cat-item cat-item-608"><a href="/category/virtualbox">VirtualBox</a> (1)
+</li>
+	<li class="cat-item cat-item-296"><a href="/category/vuejs">VueJS</a> (15)
+</li>
+	<li class="cat-item cat-item-265"><a href="/category/windows">Windows</a> (27)
+</li>
+	<li class="cat-item cat-item-23"><a href="/category/wordpress">WordPress</a> (33)
+</li>
+	<li class="cat-item cat-item-20"><a href="/category/xen">Xen</a> (5)
+</li>
+			</ul>
+
+			</section>		</aside><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	
+	<footer id="colophon" role="contentinfo">
+		
+        <div id="site-generator" class="clearfix">
+
+            
+			<nav class="social-profile" role="navigation" aria-label="Footer Social Links Menu">
+ 		 		<ul>
+				</ul>
+			</nav><!-- .social-profile --><div class="copyright">Copyright &copy; 2020 <a href="/" title="Drall Dev Community" ><span>Drall Dev Community</span></a>. All Rights Reserved. </div><div class="powered"><span class="theme-name">Theme: Catch Box by </span><span class="theme-author"><a href="https://catchthemes.com/" title="Catch Themes">Catch Themes</a></span></div>
+        </div> <!-- #site-generator -->
+
+	</footer><!-- #colophon -->
+
+</div><!-- #page -->
+
+<a href="#branding" id="scrollup"><span class="screen-reader-text">Scroll Up</span></a>
+<link rel='stylesheet' id='yarppRelatedCss-css'  href='/wp-content/plugins/yet-another-related-posts-plugin/style/related.css' type='text/css' media='all' />
+<link rel='stylesheet' id='popularity-posts-widget-css'  href='/wp-content/plugins/popularity-posts-widget/style/ppw.css' type='text/css' media='all' />
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/devblog.drall.com.br\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/plugins/contact-form-7/includes/js/scripts.js' id='contact-form-7-js'></script>
+<script type='text/javascript' src='/wp-content/themes/catch-box/js/skip-link-focus-fix.js' id='catchbox-skip-link-focus-fix-js'></script>
+<script type='text/javascript' src='/wp-content/themes/catch-box/js/catchbox-scrollup.min.js' id='catchbox-scrollup-js'></script>
+<script type='text/javascript' id='facebook-jssdk-js-extra'>
+/* <![CDATA[ */
+var FB_WP=FB_WP||{};FB_WP.queue={_methods:[],flushed:false,add:function(fn){FB_WP.queue.flushed?fn():FB_WP.queue._methods.push(fn)},flush:function(){for(var fn;fn=FB_WP.queue._methods.shift();){fn()}FB_WP.queue.flushed=true}};window.fbAsyncInit=function(){FB.init({"xfbml":true,"appId":"807028999313203"});if(FB_WP && FB_WP.queue && FB_WP.queue.flush){FB_WP.queue.flush()}}
+/* ]]> */
+</script>
+<script type="text/javascript">(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="http:\/\/connect.facebook.net\/en_US\/all.js";fjs.parentNode.insertBefore(js,fjs)}(document,"script","facebook-jssdk"));</script>
+<script type='text/javascript' src='/wp-content/plugins/youtube-embed-plus/scripts/fitvids.min.js' id='__ytprefsfitvids__-js'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/ui/core.min.js' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/ui/datepicker.min.js' id='jquery-ui-datepicker-js'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>
+<div id="fb-root"></div>		<script type="text/javascript">
+			var bwpRecaptchaCallback = function() {
+				// render all collected recaptcha instances
+			};
+		</script>
+
+		<script src="https://www.google.com/recaptcha/api.js?onload=bwpRecaptchaCallback&#038;render=explicit" async defer></script>
+
+</body>
+</html>
+<script></script>
