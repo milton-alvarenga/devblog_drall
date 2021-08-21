@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!--[if IE 6]>
 <html id="ie6" lang="en-US">
 <![endif]-->
@@ -12,22 +13,18 @@
 <html lang="en-US">
 <!--<![endif]-->
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-
-<title>Configurando a rede no Linux &#8211; Drall Dev Community</title>
-<link rel="dns-prefetch" href="//connect.facebook.net">
-<link rel='dns-prefetch' href='//connect.facebook.net' />
-<link rel='dns-prefetch' href='//s.w.org' />
-
-
-
-		<script type="text/javascript">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="http://gmpg.org/xfn/11" rel="profile"/>
+<title>Configurando a rede no Linux – Drall Dev Community</title>
+<link href="//connect.facebook.net" rel="dns-prefetch"/>
+<link href="//connect.facebook.net" rel="dns-prefetch">
+<link href="//s.w.org" rel="dns-prefetch"/>
+<script type="text/javascript">
 			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/devblog.drall.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"}};
 			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
 		</script>
-		<style type="text/css">
+<style type="text/css">
 img.wp-smiley,
 img.emoji {
 	display: inline !important;
@@ -41,38 +38,38 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-		<style type="text/css">
+<style type="text/css">
 	.wp-pagenavi{margin-left:auto !important; margin-right:auto; !important}
 	</style>
-  <link rel='stylesheet' id='yarppWidgetCss-css'  href='/wp-content/plugins/yet-another-related-posts-plugin/style/widget.css' type='text/css' media='all' />
-<link rel='stylesheet' id='cp_frontend_css-css'  href='/wp-content/plugins/collabpress/includes/css/front.css' type='text/css' media='all' />
-<link rel='stylesheet' id='wp-block-library-css'  href='/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
-<link rel='stylesheet' id='wp-block-library-theme-css'  href='/wp-includes/css/dist/block-library/theme.min.css' type='text/css' media='all' />
-<link rel='stylesheet' id='cptch_stylesheet-css'  href='/wp-content/plugins/captcha/css/front_end_style.css' type='text/css' media='all' />
-<link rel='stylesheet' id='dashicons-css'  href='/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
-<link rel='stylesheet' id='cptch_desktop_style-css'  href='/wp-content/plugins/captcha/css/desktop_style.css' type='text/css' media='all' />
-<link rel='stylesheet' id='contact-form-7-css'  href='/wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all' />
-<link rel='stylesheet' id='pdfprnt_frontend-css'  href='/wp-content/plugins/pdf-print/css/frontend.css' type='text/css' media='all' />
-<link rel='stylesheet' id='ce_responsive-css'  href='/wp-content/plugins/simple-embed-code/css/video-container.min.css' type='text/css' media='all' />
-<link rel='stylesheet' id='parent-style-css'  href='/wp-content/themes/catch-box/style.css' type='text/css' media='all' />
-<link rel='stylesheet' id='genericons-css'  href='/wp-content/themes/catch-box/genericons/genericons.css' type='text/css' media='all' />
-<link rel='stylesheet' id='catchbox-style-css'  href='/wp-content/themes/catch-box-child/style.css' type='text/css' media='all' />
-<link rel='stylesheet' id='catchbox-block-style-css'  href='/wp-content/themes/catch-box/css/blocks.css' type='text/css' media='all' />
-<link rel='stylesheet' id='blue-css'  href='/wp-content/themes/catch-box/colors/blue.css' type='text/css' media='all' />
-<link rel='stylesheet' id='yarpp-thumbnails-yarpp-thumbnail-css'  href='/wp-content/plugins/yet-another-related-posts-plugin/includes/styles_thumbnails.css' type='text/css' media='all' />
-<link rel='stylesheet' id='cb_p6-css-main-css'  href='/wp-content/plugins/patron-button-and-widgets-by-codebard/plugin/templates/default/style.css' type='text/css' media='all' />
-<link rel='stylesheet' id='addtoany-css'  href='/wp-content/plugins/add-to-any/addtoany.min.css' type='text/css' media='all' />
-<link rel='stylesheet' id='__EPYT__style-css'  href='/wp-content/plugins/youtube-embed-plus/styles/ytprefs.min.css' type='text/css' media='all' />
-<style id='__EPYT__style-inline-css' type='text/css'>
+<link href="/wp-content/plugins/yet-another-related-posts-plugin/style/widget.css" id="yarppWidgetCss-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/collabpress/includes/css/front.css" id="cp_frontend_css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-includes/css/dist/block-library/style.min.css" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-includes/css/dist/block-library/theme.min.css" id="wp-block-library-theme-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/captcha/css/front_end_style.css" id="cptch_stylesheet-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-includes/css/dashicons.min.css" id="dashicons-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/captcha/css/desktop_style.css" id="cptch_desktop_style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/contact-form-7/includes/css/styles.css" id="contact-form-7-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/pdf-print/css/frontend.css" id="pdfprnt_frontend-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/simple-embed-code/css/video-container.min.css" id="ce_responsive-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/themes/catch-box/style.css" id="parent-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/themes/catch-box/genericons/genericons.css" id="genericons-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/themes/catch-box-child/style.css" id="catchbox-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/themes/catch-box/css/blocks.css" id="catchbox-block-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/themes/catch-box/colors/blue.css" id="blue-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/yet-another-related-posts-plugin/includes/styles_thumbnails.css" id="yarpp-thumbnails-yarpp-thumbnail-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/patron-button-and-widgets-by-codebard/plugin/templates/default/style.css" id="cb_p6-css-main-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/add-to-any/addtoany.min.css" id="addtoany-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/youtube-embed-plus/styles/ytprefs.min.css" id="__EPYT__style-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="__EPYT__style-inline-css" type="text/css">
 
                 .epyt-gallery-thumb {
                         width: 33.333%;
                 }
                 
 </style>
-<link rel='stylesheet' id='cp_jquery-ui-css'  href='/wp-content/plugins/collabpress/includes/css/jquery-ui/jquery-ui-1.8.16.custom.css' type='text/css' media='all' />
-<link rel='stylesheet' id='wp-pagenavi-style-css'  href='/wp-content/plugins/wp-pagenavi-style/css/default.css' type='text/css' media='all' />
-	<script language="JavaScript">
+<link href="/wp-content/plugins/collabpress/includes/css/jquery-ui/jquery-ui-1.8.16.custom.css" id="cp_jquery-ui-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/wp-pagenavi-style/css/default.css" id="wp-pagenavi-style-css" media="all" rel="stylesheet" type="text/css"/>
+<script language="JavaScript">
 
 	function checkAll(field)
 	{
@@ -86,57 +83,49 @@ img.emoji {
 		field[i].checked = false ;
 	}
 	</script>
-<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js' id='jquery-core-js'></script>
-<script type='text/javascript' src='/wp-content/plugins/collabpress/includes/js/frontend.js' id='cp_frontend_js-js'></script>
-<script type='text/javascript' src='/wp-content/plugins/add-to-any/addtoany.min.js' id='addtoany-js'></script>
-<script type='text/javascript' src='/wp-content/plugins/pdf-print/js/html2canvas.js' id='html2canvas.js-js'></script>
-<script type='text/javascript' src='/wp-content/plugins/pdf-print/js/jspdf.js' id='jspdf.js-js'></script>
-<script type='text/javascript' id='pdfprnt_front_script-js-extra'>
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.js" type="text/javascript"></script>
+<script id="cp_frontend_js-js" src="/wp-content/plugins/collabpress/includes/js/frontend.js" type="text/javascript"></script>
+<script id="addtoany-js" src="/wp-content/plugins/add-to-any/addtoany.min.js" type="text/javascript"></script>
+<script id="html2canvas.js-js" src="/wp-content/plugins/pdf-print/js/html2canvas.js" type="text/javascript"></script>
+<script id="jspdf.js-js" src="/wp-content/plugins/pdf-print/js/jspdf.js" type="text/javascript"></script>
+<script id="pdfprnt_front_script-js-extra" type="text/javascript">
 /* <![CDATA[ */
 var pdfprnt_file_settings = {"margin_left":"15","margin_right":"15","margin_top":"16","margin_bottom":"16","page_size":"A4","file_action":"open","file_name":"Configurando a rede no Linux"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/plugins/pdf-print/js/front-script.js' id='pdfprnt_front_script-js'></script>
-<script type='text/javascript' id='catchbox-menu-js-extra'>
+<script id="pdfprnt_front_script-js" src="/wp-content/plugins/pdf-print/js/front-script.js" type="text/javascript"></script>
+<script id="catchbox-menu-js-extra" type="text/javascript">
 /* <![CDATA[ */
 var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/themes/catch-box/js/menu.min.js' id='catchbox-menu-js'></script>
-<script type='text/javascript' src='/wp-content/themes/catch-box/js/html5.min.js' id='catchbox-html5-js'></script>
-<script type='text/javascript' id='__ytprefs__-js-extra'>
+<script id="catchbox-menu-js" src="/wp-content/themes/catch-box/js/menu.min.js" type="text/javascript"></script>
+<script id="catchbox-html5-js" src="/wp-content/themes/catch-box/js/html5.min.js" type="text/javascript"></script>
+<script id="__ytprefs__-js-extra" type="text/javascript">
 /* <![CDATA[ */
 var _EPYT_ = {"ajaxurl":"http:\/\/devblog.drall.com.br\/wp-admin\/admin-ajax.php","security":"ee032b5dbc","gallery_scrolloffset":"20","eppathtoscripts":"http:\/\/devblog.drall.com.br\/wp-content\/plugins\/youtube-embed-plus\/scripts\/","eppath":"http:\/\/devblog.drall.com.br\/wp-content\/plugins\/youtube-embed-plus\/","epresponsiveselector":"[\"iframe.__youtube_prefs_widget__\"]","epdovol":"1","version":"13.4.1.1","evselector":"iframe.__youtube_prefs__[src], iframe[src*=\"youtube.com\/embed\/\"], iframe[src*=\"youtube-nocookie.com\/embed\/\"]","ajax_compat":"","ytapi_load":"light","pause_others":"","stopMobileBuffer":"1","vi_active":"","vi_js_posttypes":[]};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/plugins/youtube-embed-plus/scripts/ytprefs.min.js' id='__ytprefs__-js'></script>
-<script type='text/javascript' src='/wp-content/plugins/collabpress/includes/js/frontend.js' id='cp_frontend-js'></script>
-
- 
-<link rel='prev' title='PHP &#8211; Comentário sobre $_FILES do PHP' href='/php-comentario-sobre-_files-do-php' />
-<link rel='next' title='null e array são objetos no javascript' href='/null-e-array-sao-objetos-no-javascript' />
-
-
-
-
-
-
+<script id="__ytprefs__-js" src="/wp-content/plugins/youtube-embed-plus/scripts/ytprefs.min.js" type="text/javascript"></script>
+<script id="cp_frontend-js" src="/wp-content/plugins/collabpress/includes/js/frontend.js" type="text/javascript"></script>
+<link href="/php-comentario-sobre-_files-do-php" rel="prev" title="PHP – Comentário sobre $_FILES do PHP"/>
+<link href="/null-e-array-sao-objetos-no-javascript" rel="next" title="null e array são objetos no javascript"/>
 <script data-cfasync="false">
 window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
 (function(d,s,a,b){a=d.createElement(s);b=d.getElementsByTagName(s)[0];a.async=1;a.src="https://static.addtoany.com/menu/page.js";b.parentNode.insertBefore(a,b);})(document,"script");
 </script>
 <script language="JavaScript" src="/wp-content/plugins/contact-form-captcha/cfc.js" type="text/javascript"></script>
-<link type="text/css" rel="stylesheet" href="/wp-content/plugins/contact-form-captcha/contact.css" />
+<link href="/wp-content/plugins/contact-form-captcha/contact.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">
 	window._se_plugin_version = '8.1.9';
 </script>
-	<style type="text/css">
+<style type="text/css">
 	 .wp-pagenavi
 	{
 		font-size:12px !important;
 	}
 	</style>
-	<script type="text/javascript" src="/wp-content/plugins/si-captcha-for-wordpress/captcha/si_captcha.js"></script>
+<script src="/wp-content/plugins/si-captcha-for-wordpress/captcha/si_captcha.js" type="text/javascript"></script>
 <!-- begin SI CAPTCHA Anti-Spam - login/register form style -->
 <style type="text/css">
 .si_captcha_small { width:175px; height:45px; padding-top:10px; padding-bottom:10px; }
@@ -156,7 +145,7 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
 .si-captcha-jetpack-error { color:#DC3232; }
 </style>
 <!-- end SI CAPTCHA Anti-Spam - login/register form style -->
-	<style type="text/css">
+<style type="text/css">
 			#site-title,
 		#site-description {
 			position: absolute !important;
@@ -164,163 +153,136 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
 			clip: rect(1px, 1px, 1px, 1px);
 		}
 		</style>
-	<meta property="og:site_name" content="Drall Dev Community">
-<meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="fb:app_id" content="807028999313203">
-<meta property="og:url" content="http://devblog.drall.com.br/configurando-a-rede-no-linux/">
-<meta property="og:title" content="Configurando a rede no Linux">
-<meta property="og:description" content="Configurando a rede manualmente Existem diversas ferramentas gráficas de configuração da rede, que você pode usar de acordo com a distribuição. Mesmo assim, nenhuma ferramenta é à prova de falhas. Erros diversos podem ocorrer, lhe obrigando a corrigir o problema&hellip;">
-<meta property="article:published_time" content="2014-03-04T11:00:02+00:00">
-<meta property="article:modified_time" content="2014-02-27T19:46:48+00:00">
-<meta property="article:author" content="http://devblog.drall.com.br/author/admin/">
-<meta property="article:section" content="Debian">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Tutorial">
-		<style type="text/css" id="wp-custom-css">
+<meta content="Drall Dev Community" property="og:site_name"/>
+<meta content="article" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="807028999313203" property="fb:app_id"/>
+<meta content="http://devblog.drall.com.br/configurando-a-rede-no-linux/" property="og:url"/>
+<meta content="Configurando a rede no Linux" property="og:title"/>
+<meta content="Configurando a rede manualmente Existem diversas ferramentas gráficas de configuração da rede, que você pode usar de acordo com a distribuição. Mesmo assim, nenhuma ferramenta é à prova de falhas. Erros diversos podem ocorrer, lhe obrigando a corrigir o problema…" property="og:description"/>
+<meta content="2014-03-04T11:00:02+00:00" property="article:published_time"/>
+<meta content="2014-02-27T19:46:48+00:00" property="article:modified_time"/>
+<meta content="http://devblog.drall.com.br/author/admin/" property="article:author"/>
+<meta content="Debian" property="article:section"/>
+<meta content="Linux" property="article:tag"/>
+<meta content="Tutorial" property="article:tag"/>
+<style id="wp-custom-css" type="text/css">
 			@import url("../catch-box/style.css");		</style>
-		<style type="text/css">
+<style type="text/css">
 .paypal-donations { text-align: center !important }
 </style>
-</head>
-
+</link></head>
 <body class="post-template-default single single-post postid-1765 single-format-standard wp-custom-logo wp-embed-responsive right-sidebar one-menu header-image-top">
-
-
-
-<div id="page" class="hfeed site">
-
-	<a href="#main" class="skip-link screen-reader-text">Skip to content</a>
-	<header id="branding" role="banner">
-
-    	
-    	<div id="header-content" class="clearfix">
-
-			<div class="logo-wrap clearfix"><div id="site-logo"><a href="/" class="custom-logo-link" rel="home"><img width="495" height="112" src="/wp-content/uploads/2017/04/cropped-Logo_oficial-495x112-1.png" class="custom-logo" alt="Drall Dev Community" /></a></div><!-- #site-logo -->	<div id="hgroup" class="site-details">
-					<p id="site-title"><a href="/" rel="home">Drall Dev Community</a></p>
-					<p id="site-description">Blog de compartilhamento de informações de desenvolvimento de sistemas</p>
-			
-   	</div><!-- #hgroup -->
-</div><!-- .logo-wrap -->	<form role="search" method="get" class="searchform" action="http://devblog.drall.com.br/">
-		<label>
-			<span class="screen-reader-text">Search for:</span>
-			<input type="search" class="search-field" placeholder="Search" value="" name="s" title="Search for:" />
-		</label>
-		<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
-	</form>
-
-		</div><!-- #header-content -->
-
-    	    <div class="menu-access-wrap mobile-header-menu clearfix">
-        <div id="mobile-header-left-menu" class="mobile-menu-anchor primary-menu">
-            <a href="#mobile-header-left-nav" id="menu-toggle-primary" class="genericon genericon-menu">
-                <span class="mobile-menu-text">Menu</span>
-            </a>
-        </div><!-- #mobile-header-left-menu -->
-            
-        
-        <div id="site-header-menu-primary" class="site-header-menu">
-            <nav id="access" class="main-navigation menu-focus" role="navigation" aria-label="Primary Menu">
-            
-                <h3 class="screen-reader-text">Primary menu</h3>
-                <div class="menu-header-container"><ul class="menu"><li id="menu-item-1905" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1905"><a href="/">Home</a></li>
-<li id="menu-item-1907" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1907"><a href="/sample-page">Sobre</a></li>
-<li id="menu-item-1906" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1906"><a href="/contato">Contato</a></li>
-<li id="menu-item-2034" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2034"><a href="http://blog.drall.com.br">Últimas Novidades</a></li>
-</ul></div>            </nav><!-- #access -->
-        </div><!-- .site-header-menu -->
-
-            </div><!-- .menu-access-wrap -->
-    
-	</header><!-- #branding -->
-
-	
-	
-	<div id="main" class="clearfix">
-
-		
-		<div id="primary" class="content-area">
-
-			
-			<div id="content" role="main">
-				
-				
-<article id="post-1765" class="post-1765 post type-post status-publish format-standard hentry category-debian category-linux category-tutorial-2">
-	<header class="entry-header">
-		<h1 class="entry-title">Configurando a rede no Linux</h1>
-
-		            <div class="entry-meta">
-                <span class="sep">Posted on </span><a href="/configurando-a-rede-no-linux" title="08:00" rel="bookmark"><time class="entry-date updated" datetime="2014-03-04T08:00:02-03:00" pubdate>March 4, 2014</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin" title="View all posts by Administrador" rel="author">Administrador</a></span></span>                                    <span class="sep sep-comment"> &mdash; </span>
-                    <span class="comments-link">
-                        <a href="/configurando-a-rede-no-linux"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/configurando-a-rede-no-linux"></fb:comments-count> Comments</a>                    </span>
-                            </div><!-- .entry-meta -->
-			</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/configurando-a-rede-no-linux/" data-a2a-title="Configurando a rede no Linux"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><div class="pdfprnt-buttons pdfprnt-buttons-post pdfprnt-top-right"><a href="/configurando-a-rede-no-linux" class="pdfprnt-button pdfprnt-button-pdf" target="_blank"><img src="/wp-content/plugins/pdf-print/images/pdf.png" alt="image_pdf" title="View PDF" /></a><a href="/configurando-a-rede-no-linux" class="pdfprnt-button pdfprnt-button-print" target="_blank"><img src="/wp-content/plugins/pdf-print/images/print.png" alt="image_print" title="Print Content" /></a></div><h6 style="text-align: justify;"><strong>Configurando a rede manualmente</strong></h6>
+<div class="hfeed site" id="page">
+<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+<header id="branding" role="banner">
+<div class="clearfix" id="header-content">
+<div class="logo-wrap clearfix"><div id="site-logo"><a class="custom-logo-link" href="/" rel="home"><img alt="Drall Dev Community" class="custom-logo" height="112" src="/wp-content/uploads/2017/04/cropped-Logo_oficial-495x112-1.png" width="495"/></a></div><!-- #site-logo --> <div class="site-details" id="hgroup">
+<p id="site-title"><a href="/" rel="home">Drall Dev Community</a></p>
+<p id="site-description">Blog de compartilhamento de informações de desenvolvimento de sistemas</p>
+</div><!-- #hgroup -->
+</div><!-- .logo-wrap --> <form action="http://devblog.drall.com.br/" class="searchform" method="get" role="search">
+<label>
+<span class="screen-reader-text">Search for:</span>
+<input class="search-field" name="s" placeholder="Search" title="Search for:" type="search" value=""/>
+</label>
+<button class="search-submit" type="submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</div><!-- #header-content -->
+<div class="menu-access-wrap mobile-header-menu clearfix">
+<div class="mobile-menu-anchor primary-menu" id="mobile-header-left-menu">
+<a class="genericon genericon-menu" href="#mobile-header-left-nav" id="menu-toggle-primary">
+<span class="mobile-menu-text">Menu</span>
+</a>
+</div><!-- #mobile-header-left-menu -->
+<div class="site-header-menu" id="site-header-menu-primary">
+<nav aria-label="Primary Menu" class="main-navigation menu-focus" id="access" role="navigation">
+<h3 class="screen-reader-text">Primary menu</h3>
+<div class="menu-header-container"><ul class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1905" id="menu-item-1905"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1907" id="menu-item-1907"><a href="/sample-page">Sobre</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1906" id="menu-item-1906"><a href="/contato">Contato</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2034" id="menu-item-2034"><a href="http://blog.drall.com.br">Últimas Novidades</a></li>
+</ul></div> </nav><!-- #access -->
+</div><!-- .site-header-menu -->
+</div><!-- .menu-access-wrap -->
+</header><!-- #branding -->
+<div class="clearfix" id="main">
+<div class="content-area" id="primary">
+<div id="content" role="main">
+<article class="post-1765 post type-post status-publish format-standard hentry category-debian category-linux category-tutorial-2" id="post-1765">
+<header class="entry-header">
+<h1 class="entry-title">Configurando a rede no Linux</h1>
+<div class="entry-meta">
+<span class="sep">Posted on </span><a href="/configurando-a-rede-no-linux" rel="bookmark" title="08:00"><time class="entry-date updated" datetime="2014-03-04T08:00:02-03:00" pubdate="">March 4, 2014</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin" rel="author" title="View all posts by Administrador">Administrador</a></span></span> <span class="sep sep-comment"> — </span>
+<span class="comments-link">
+<a href="/configurando-a-rede-no-linux"><fb:comments-count href="/configurando-a-rede-no-linux" xmlns="http://ogp.me/ns/fb#"></fb:comments-count> Comments</a> </span>
+</div><!-- .entry-meta -->
+</header><!-- .entry-header -->
+<div class="entry-content">
+<div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-title="Configurando a rede no Linux" data-a2a-url="http://devblog.drall.com.br/configurando-a-rede-no-linux/"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" rel="nofollow noopener" target="_blank" title="Facebook"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" rel="nofollow noopener" target="_blank" title="WhatsApp"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" rel="nofollow noopener" target="_blank" title="Twitter"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" rel="nofollow noopener" target="_blank" title="LinkedIn"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" rel="nofollow noopener" target="_blank" title="Reddit"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" rel="nofollow noopener" target="_blank" title="Pinterest"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fconfigurando-a-rede-no-linux%2F&amp;linkname=Configurando%20a%20rede%20no%20Linux" rel="nofollow noopener" target="_blank" title="Gmail"></a></div></div><div class="pdfprnt-buttons pdfprnt-buttons-post pdfprnt-top-right"><a class="pdfprnt-button pdfprnt-button-pdf" href="/configurando-a-rede-no-linux" target="_blank"><img alt="image_pdf" src="/wp-content/plugins/pdf-print/images/pdf.png" title="View PDF"/></a><a class="pdfprnt-button pdfprnt-button-print" href="/configurando-a-rede-no-linux" target="_blank"><img alt="image_print" src="/wp-content/plugins/pdf-print/images/print.png" title="Print Content"/></a></div><h6 style="text-align: justify;"><strong>Configurando a rede manualmente</strong></h6>
 <p style="text-align: justify;">Existem diversas ferramentas gráficas de configuração da rede, que você pode usar de acordo com a distribuição. Mesmo assim, nenhuma ferramenta é à prova de falhas. Erros diversos podem ocorrer, lhe obrigando a corrigir o problema manualmente.</p>
 <p style="text-align: justify;">Além de ser um trunfo na hora de solucionar problemas, entender a configuração manual do sistema lhe dá uma flexibilidade muito maior na hora de criar configurações personalizadas ou pouco comuns, ou ainda na hora de configurar servidores dedicados, sem ambiente gráfico.</p>
 <p style="text-align: justify;">O utilitário básico para configurar a rede é o ifconfig. Ele suporta um grande número de opções, mas o comando básico para ativar a rede é:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""> # ifconfig eth0 192.168.1.2 netmask 255.255.255.0 up </pre>
 </div>
-<p style="text-align: justify;">Este comando configura o endereço IP e a máscara de sub-rede para a interface especificada (a &#8220;eth0&#8221; no exemplo) e o &#8220;up&#8221; serve para ativar a interface, caso ela esteja inativa.</p>
-<p style="text-align: justify;">No Linux, as placas Ethernet cabeadas recebem nomes como &#8220;eth0&#8221; (primeira placa), &#8220;eth1&#8221; (segunda placa), &#8220;eth2&#8221; (terceira placa) e assim por diante. No caso das placas wireless, o nome muda de acordo com o modelo e com o driver usado. Placas configuradas através do ndiswrapper são identificadas como &#8220;wlan0&#8221;, placas com chipset Ralink como &#8220;ra0&#8221; e placas com chipset Intel como &#8220;eth1&#8221;, da mesma forma que uma placa cabeada. Em caso de dúvida, você pode verificar como as placas de rede foram detectadas pelo sistema usando os comandos:</p>
+<p style="text-align: justify;">Este comando configura o endereço IP e a máscara de sub-rede para a interface especificada (a “eth0” no exemplo) e o “up” serve para ativar a interface, caso ela esteja inativa.</p>
+<p style="text-align: justify;">No Linux, as placas Ethernet cabeadas recebem nomes como “eth0” (primeira placa), “eth1” (segunda placa), “eth2” (terceira placa) e assim por diante. No caso das placas wireless, o nome muda de acordo com o modelo e com o driver usado. Placas configuradas através do ndiswrapper são identificadas como “wlan0”, placas com chipset Ralink como “ra0” e placas com chipset Intel como “eth1”, da mesma forma que uma placa cabeada. Em caso de dúvida, você pode verificar como as placas de rede foram detectadas pelo sistema usando os comandos:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""> # cat /proc/net/dev </pre>
 </div>
-<p style="text-align: justify;"><strong><br />
+<p style="text-align: justify;"><strong><br/>
 </strong>(mostra todas as interfaces)</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""> # cat /proc/net/wireless </pre>
 </div>
-<p style="text-align: justify;"><strong><br />
+<p style="text-align: justify;"><strong><br/>
 </strong>(mostra apenas as placas wireless)</p>
-<p style="text-align: justify;">Além das interfaces de rede, o comando &#8220;cat /proc/net/dev&#8221; mostra também interfaces virtuais, como a <strong>lo</strong> (a interface de loopback) e a <strong>sit0</strong>, que é uma interface virtual, usada pelo protocolo IPV6 para encapsular pacotes IPV4 quando necessário. Se você usa o VMware, a lista incluirá também a interface <strong>vmnet8</strong>, que é usada para permitir que as máquinas virtuais acessem a rede. Veja um exemplo da saída dos dois comandos:</p>
-<p style="text-align: justify;"><img loading="lazy" alt="index_html_5d7b017c" src="http://e.cdn-hardware.com.br/static/00000000/img-8c187ea1.jpg.resized.jpg" width="500" height="107" /></p>
-<p style="text-align: justify;"><img loading="lazy" alt="index_html_dac0079" src="http://e.cdn-hardware.com.br/static/00000000/img-471e19bc.jpg.resized.jpg" width="500" height="90" /></p>
-<p style="text-align: justify;">Através do &#8220;cat /proc/net/dev&#8221;, posso ver que o PC usado nos screenshots possui três interfaces de rede (eth0, eth1 e a ppp0) e, através do &#8220;cat /proc/net/wireless&#8221; vejo que a interface eth1 é uma placa wireless. Não seria difícil deduzir então que a placa eth0 é a placa cabeada, a eth1 é a placa wireless e a ppp0 é um modem discado, ou uma conexão via celular.</p>
-<p style="text-align: justify;">Depois de identificadas as interfaces, o passo seguinte é definir a rota padrão, ou seja, o gateway da rede e a interface que será usada para contatá-lo. Por segurança, rodamos primeiro o comando &#8220;route del default&#8221;, que desativa qualquer configuração anterior:</p>
+<p style="text-align: justify;">Além das interfaces de rede, o comando “cat /proc/net/dev” mostra também interfaces virtuais, como a <strong>lo</strong> (a interface de loopback) e a <strong>sit0</strong>, que é uma interface virtual, usada pelo protocolo IPV6 para encapsular pacotes IPV4 quando necessário. Se você usa o VMware, a lista incluirá também a interface <strong>vmnet8</strong>, que é usada para permitir que as máquinas virtuais acessem a rede. Veja um exemplo da saída dos dois comandos:</p>
+<p style="text-align: justify;"><img alt="index_html_5d7b017c" height="107" loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-8c187ea1.jpg.resized.jpg" width="500"/></p>
+<p style="text-align: justify;"><img alt="index_html_dac0079" height="90" loading="lazy" src="http://e.cdn-hardware.com.br/static/00000000/img-471e19bc.jpg.resized.jpg" width="500"/></p>
+<p style="text-align: justify;">Através do “cat /proc/net/dev”, posso ver que o PC usado nos screenshots possui três interfaces de rede (eth0, eth1 e a ppp0) e, através do “cat /proc/net/wireless” vejo que a interface eth1 é uma placa wireless. Não seria difícil deduzir então que a placa eth0 é a placa cabeada, a eth1 é a placa wireless e a ppp0 é um modem discado, ou uma conexão via celular.</p>
+<p style="text-align: justify;">Depois de identificadas as interfaces, o passo seguinte é definir a rota padrão, ou seja, o gateway da rede e a interface que será usada para contatá-lo. Por segurança, rodamos primeiro o comando “route del default”, que desativa qualquer configuração anterior:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># route del default
 # route add default gw 192.168.1.1 dev eth0 </pre>
 </div>
-<p style="text-align: justify;">&#8230; onde o &#8220;192.168.0.1&#8221; é o gateway da rede e a &#8220;eth0&#8221; é a placa conectada a ele. Estes mesmos dois comandos resolvem casos em que o micro tem duas placas de rede (ou uma placa de rede e um modem) e o sistema tenta acessar a Internet usando a interface errada.</p>
-<p style="text-align: justify;">Em caso de redes com mais de um gateway (caso você tenha uma conexão via ADSL e também uma conexão via cabo, por exemplo), estes mesmos comandos podem ser usados para mudar a conexão que está sendo usada. Se o segundo gateway da rede é o &#8220;192.168.1.254&#8221;, por exemplo, você poderia mudar a configuração para que ele seja utilizado no lugar no &#8220;192.168.1.1&#8221; usando os comandos:</p>
+<p style="text-align: justify;">… onde o “192.168.0.1” é o gateway da rede e a “eth0” é a placa conectada a ele. Estes mesmos dois comandos resolvem casos em que o micro tem duas placas de rede (ou uma placa de rede e um modem) e o sistema tenta acessar a Internet usando a interface errada.</p>
+<p style="text-align: justify;">Em caso de redes com mais de um gateway (caso você tenha uma conexão via ADSL e também uma conexão via cabo, por exemplo), estes mesmos comandos podem ser usados para mudar a conexão que está sendo usada. Se o segundo gateway da rede é o “192.168.1.254”, por exemplo, você poderia mudar a configuração para que ele seja utilizado no lugar no “192.168.1.1” usando os comandos:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># route del default
 # route add default gw 192.168.1.254 dev eth0 </pre>
 </div>
-<p style="text-align: justify;">É possível também fazer com que o segundo roteador seja usado apenas para um endereço específico, o que é útil na hora de fazer grandes downloads. Você pode usar a segunda conexão para baixar o arquivo, deixando a conexão principal livre. Para isso, copie o endereço do arquivo e selecione apenas o endereço ou domínio do servidor, como em &#8220;linorg.usp.br&#8221;, ignorando a estrutura de pastas até o arquivo.</p>
-<p style="text-align: justify;">Use em seguida o comando &#8220;route add host&#8221;, especificando o servidor, o gateway e a interface de rede que serão usadas para acessá-lo, como em:</p>
+<p style="text-align: justify;">É possível também fazer com que o segundo roteador seja usado apenas para um endereço específico, o que é útil na hora de fazer grandes downloads. Você pode usar a segunda conexão para baixar o arquivo, deixando a conexão principal livre. Para isso, copie o endereço do arquivo e selecione apenas o endereço ou domínio do servidor, como em “linorg.usp.br”, ignorando a estrutura de pastas até o arquivo.</p>
+<p style="text-align: justify;">Use em seguida o comando “route add host”, especificando o servidor, o gateway e a interface de rede que serão usadas para acessá-lo, como em:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># route add -host linorg.usp.br gw 192.168.1.1 dev eth0</pre>
 </div>
-<p style="text-align: justify;">Com isso, os downloads feitos a partir do servidor especificado serão feitos usando o gateway &#8220;192.168.1.1&#8221; e todos os demais acessos continuarão sendo feitos através do &#8220;192.168.1.254&#8221;. Com o preço dos planos de acesso caindo como estão, pode valer à pena ter uma segunda conexão para baixar arquivos e usar como backup.</p>
-<p style="text-align: justify;">Para checar as rotas definidas, use o comando &#8220;<strong>netstat -rn</strong>&#8221; e, para remover uma rota definida manualmente (de forma que o servidor volte a ser acessado usando a rota padrão), use o comando &#8220;route del -host&#8221;, seguido pelo endereço, como em:</p>
+<p style="text-align: justify;">Com isso, os downloads feitos a partir do servidor especificado serão feitos usando o gateway “192.168.1.1” e todos os demais acessos continuarão sendo feitos através do “192.168.1.254”. Com o preço dos planos de acesso caindo como estão, pode valer à pena ter uma segunda conexão para baixar arquivos e usar como backup.</p>
+<p style="text-align: justify;">Para checar as rotas definidas, use o comando “<strong>netstat -rn</strong>” e, para remover uma rota definida manualmente (de forma que o servidor volte a ser acessado usando a rota padrão), use o comando “route del -host”, seguido pelo endereço, como em:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># route del -host linorg.usp.br</pre>
 </div>
-<p style="text-align: justify;">Depois de definir o IP, máscara e o gateway, falta também indicar os servidores de DNS, o que é feito no arquivo &#8220;<strong>/etc/resolv.conf</strong>&#8220;. Nele você indica os servidores DNS que serão usados, um por linha, como em:</p>
+<p style="text-align: justify;">Depois de definir o IP, máscara e o gateway, falta também indicar os servidores de DNS, o que é feito no arquivo “<strong>/etc/resolv.conf</strong>“. Nele você indica os servidores DNS que serão usados, um por linha, como em:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title="">nameserver 208.67.222.222
 nameserver 208.67.220.220</pre>
 </div>
-<p style="text-align: justify;">A falta dos endereços no &#8220;/etc/resolv.conf&#8221; é, provavelmente, a causa mais comum de problemas com a navegação. Na dúvida, você pode utilizar qualquer servidor de DNS público, como os endereços do opendns.com que usei no exemplo anterior.</p>
+<p style="text-align: justify;">A falta dos endereços no “/etc/resolv.conf” é, provavelmente, a causa mais comum de problemas com a navegação. Na dúvida, você pode utilizar qualquer servidor de DNS público, como os endereços do opendns.com que usei no exemplo anterior.</p>
 <p style="text-align: justify;">Para checar a configuração rapidamente em caso de problemas e assim verificar o que está errado, você pode usar os comandos:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># ifconfig
 # route
 # cat /etc/resolv.conf</pre>
 </div>
-<p style="text-align: justify;">Outro arquivo que vale à pena citar é o &#8220;<strong>/etc/hosts</strong>&#8220;, onde você pode definir apelidos para hosts que deseja acessar. Os apelidos podem ser usados para agilizar o acesso a micros que você acessa com frequência, ou serem usados para atribuir nomes aos micros da rede local, sem para isso precisar configurar um servidor DNS.</p>
-<p style="text-align: justify;">Originalmente ele contém uma declaração para a interface de loopback, que relaciona o endereço &#8220;127.0.0.1&#8221; com os nomes &#8220;localhost&#8221; e com o nome da máquina:</p>
+<p style="text-align: justify;">Outro arquivo que vale à pena citar é o “<strong>/etc/hosts</strong>“, onde você pode definir apelidos para hosts que deseja acessar. Os apelidos podem ser usados para agilizar o acesso a micros que você acessa com frequência, ou serem usados para atribuir nomes aos micros da rede local, sem para isso precisar configurar um servidor DNS.</p>
+<p style="text-align: justify;">Originalmente ele contém uma declaração para a interface de loopback, que relaciona o endereço “127.0.0.1” com os nomes “localhost” e com o nome da máquina:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title="">127.0.0.1 lenny localhost</pre>
 </div>
-<p style="text-align: justify;">Imagine, por exemplo, que você administra o &#8220;servidor.minhaempresa.com&#8221;. Sempre que precisa acessá-lo você precisa digitar &#8220;ssh servidor.minhaempresa.com&#8221;, o que é tedioso. Você poderia simplificar as coisas adicionando uma entrada como esta no /etc/hosts:</p>
+<p style="text-align: justify;">Imagine, por exemplo, que você administra o “servidor.minhaempresa.com”. Sempre que precisa acessá-lo você precisa digitar “ssh servidor.minhaempresa.com”, o que é tedioso. Você poderia simplificar as coisas adicionando uma entrada como esta no /etc/hosts:</p>
 <pre class="brush: bash; title: ; notranslate" title="">servidor.minhaempresa.com servidor</pre>
-<p style="text-align: justify;">A partir daí, você poderia acessá-lo apenas digitando &#8220;ssh servidor&#8221;. Também funciona ao especificar o endereço IP diretamente, como em:</p>
+<p style="text-align: justify;">A partir daí, você poderia acessá-lo apenas digitando “ssh servidor”. Também funciona ao especificar o endereço IP diretamente, como em:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title="">200.234.32.21 servidor</pre>
 </div>
@@ -332,14 +294,14 @@ nameserver 208.67.220.220</pre>
 192.168.1.30 woody</pre>
 </div>
 <p style="text-align: justify;">O grande problema em usar o /etc/hosts para dar nomes aos micros da rede local, no lugar de um servidor DNS, é que você precisa replicar a lista (e mantê-la atualizada) em todos os micros. Funciona em redes pequenas, com 3 ou 5 micros, mas para redes maiores um servidor DNS local acaba sendo uma opção muito mais saudável.</p>
-<p style="text-align: justify;">Além de ser declarado no arquivo /etc/hosts, o nome da máquina é configurado no arquivo &#8220;<strong>/etc/hostname</strong>&#8220;. Este arquivo contém uma única linha, contendo o nome da máquina, como em:</p>
+<p style="text-align: justify;">Além de ser declarado no arquivo /etc/hosts, o nome da máquina é configurado no arquivo “<strong>/etc/hostname</strong>“. Este arquivo contém uma única linha, contendo o nome da máquina, como em:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title="">lenny</pre>
 </div>
-<p style="text-align: justify;">Este arquivo é lido durante o boot pelo script &#8220;/etc/init.d/hostname.sh&#8221;, que se encarrega de atribuir o nome especificado no arquivo.</p>
+<p style="text-align: justify;">Este arquivo é lido durante o boot pelo script “/etc/init.d/hostname.sh”, que se encarrega de atribuir o nome especificado no arquivo.</p>
 <h3 style="text-align: justify;">Configurando via DHCP</h3>
 <p style="text-align: justify;">Configurar a rede via DHCP é bastante simples. Desde que exista um servidor DHCP na rede, a estação recebe os endereços automaticamente e você não precisa esquentar a cabeça.</p>
-<p style="text-align: justify;">No Linux, existem dois clientes dhcp. O mais usado é o &#8220;<strong>dhclient</strong>&#8220;, disponível na maioria das distribuições. O comando para configurar uma placa via DHCP manualmente através dele é:</p>
+<p style="text-align: justify;">No Linux, existem dois clientes dhcp. O mais usado é o “<strong>dhclient</strong>“, disponível na maioria das distribuições. O comando para configurar uma placa via DHCP manualmente através dele é:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># dhclient eth0</pre>
 </div>
@@ -356,7 +318,7 @@ DHCPREQUEST on eth0 to 255.255.255.255 port 67
 DHCPACK from 10.67.3.2
 bound to &lt;strong&gt;201.56.188.45&lt;/strong&gt; -- renewal in 5585 seconds.</pre>
 </div>
-<p style="text-align: justify;">Existe ainda o &#8220;<strong>pump</strong>&#8220;, um cliente mais simples, que ainda pode ser encontrado em algumas instalações. Para configurar a rede através dele, use o comando:</p>
+<p style="text-align: justify;">Existe ainda o “<strong>pump</strong>“, um cliente mais simples, que ainda pode ser encontrado em algumas instalações. Para configurar a rede através dele, use o comando:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># pump -i eth0</pre>
 </div>
@@ -367,24 +329,24 @@ bound to &lt;strong&gt;201.56.188.45&lt;/strong&gt; -- renewal in 5585 seconds
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># ifconfig eth0 down</pre>
 </div>
-<p style="text-align: justify;">Use em seguida os parâmetros &#8220;hw ether&#8221;, seguidos pelo endereço MAC desejado, para trocar o endereço físico da placa:</p>
+<p style="text-align: justify;">Use em seguida os parâmetros “hw ether”, seguidos pelo endereço MAC desejado, para trocar o endereço físico da placa:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># ifconfig eth0 hw ether 00:0F:B2:52:45:E3</pre>
 </div>
-<p style="text-align: justify;">Execute novamente o &#8220;dhclient eth0&#8221; e você verá que o micro volta a receber a resposta do servidor DHCP, mesmo com a placa diferente :). Esta dica pode ser usada também em casos onde você quer acessar acessar (em horários alternados) a partir de dois micros, desde que não ao mesmo tempo.</p>
+<p style="text-align: justify;">Execute novamente o “dhclient eth0” e você verá que o micro volta a receber a resposta do servidor DHCP, mesmo com a placa diferente :). Esta dica pode ser usada também em casos onde você quer acessar acessar (em horários alternados) a partir de dois micros, desde que não ao mesmo tempo.</p>
 <p style="text-align: justify;">Outra peculiaridade do acesso via cabo é que você não consegue obter uma nova resposta do servidor DHCP até que a primeira conexão seja encerrada (o timeout varia de 90 a 180 minutos, de acordo com a operadora). Isto causa problemas quando você tem Linux e Windows em dual-boot, pois é preciso esperar até três horas ao trocar de sistema, até que vença o leasing do endereço no servidor DHCP e você possa obter outro IP.</p>
-<p style="text-align: justify;">A solução neste caso é liberar o IP antes de reiniciar, usando o parâmetro &#8220;-r&#8221; disponível tanto no dhclient, quanto no pump. Ele avisa ao servidor DHCP que a conexão está sendo encerrada, permitindo que você consiga configurar a rede novamente depois de reiniciar no Windows. Para isso use:</p>
+<p style="text-align: justify;">A solução neste caso é liberar o IP antes de reiniciar, usando o parâmetro “-r” disponível tanto no dhclient, quanto no pump. Ele avisa ao servidor DHCP que a conexão está sendo encerrada, permitindo que você consiga configurar a rede novamente depois de reiniciar no Windows. Para isso use:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># dhclient -r eth0</pre>
 </div>
-<p style="text-align: justify;"><strong><br />
+<p style="text-align: justify;"><strong><br/>
 </strong>ou:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># pump -r</pre>
 </div>
 <p style="text-align: justify;">(nesse caso sem especificar a interface)</p>
 <h3 style="text-align: justify;">Arquivos de configuração</h3>
-<p style="text-align: justify;">Uma forma simples de salvar a configuração da rede seria criar um mini-script com os comandos usados e adicioná-lo no arquivo &#8220;<strong>/etc/rc.local</strong>&#8221; ou outro arquivo de configuração, como em:</p>
+<p style="text-align: justify;">Uma forma simples de salvar a configuração da rede seria criar um mini-script com os comandos usados e adicioná-lo no arquivo “<strong>/etc/rc.local</strong>” ou outro arquivo de configuração, como em:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title="">ifconfig eth0 192.168.1.2 netmask 255.255.255.0 up
 route del default
@@ -392,9 +354,9 @@ route add default gw 192.168.1.1 dev eth0
 echo 'nameserver 208.67.222.222
 nameserver 208.67.220.220' &gt; /etc/resolv.conf</pre>
 </div>
-<p style="text-align: justify;">Como o arquivo &#8220;/etc/rc.local&#8221; é processado no final do boot, depois dos serviços que carregam a configuração da rede, sua configuração seria usada mesmo que a rede tivesse sido configurada usando outro utilitário. Mas, naturalmente, esta não seria a forma mais elegante de salvar a configuração da rede.</p>
+<p style="text-align: justify;">Como o arquivo “/etc/rc.local” é processado no final do boot, depois dos serviços que carregam a configuração da rede, sua configuração seria usada mesmo que a rede tivesse sido configurada usando outro utilitário. Mas, naturalmente, esta não seria a forma mais elegante de salvar a configuração da rede.</p>
 <p style="text-align: justify;">Assim como outras configurações do sistema, a configuração da rede é salva em arquivos de configuração, que são lidos pelos serviços responsáveis por ativar a rede. A maioria dos utilitários de configuração nada mais são do que interfaces para a edição desses arquivos.</p>
-<p style="text-align: justify;">Nas distribuições derivadas do Debian, incluindo o Ubuntu e o Kubuntu, a configuração da rede é salva no arquivo &#8220;<strong>/etc/network/interfaces</strong>&#8220;. Um exemplo de arquivo configurado é:</p>
+<p style="text-align: justify;">Nas distribuições derivadas do Debian, incluindo o Ubuntu e o Kubuntu, a configuração da rede é salva no arquivo “<strong>/etc/network/interfaces</strong>“. Um exemplo de arquivo configurado é:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title="">
 # /etc/network/interfaces
@@ -407,10 +369,10 @@ network 192.168.1.0
 broadcast 192.168.1.255
 gateway 192.168.1.1&lt;/div&gt;
 </pre>
-<p style="text-align: justify;">O arquivo é dividido em duas partes. A linha &#8220;auto &#8230;&#8221; lista as interfaces que devem ser ativadas automaticamente e as demais contém a configuração de cada uma. Para configurar uma nova placa de rede, você adicionaria a configuração relacionada a ela no final do arquivo e a adicionaria na linha &#8220;auto&#8221;, como em &#8220;auto lo eth0 eth1&#8221;. Se, por outro lado, você quiser desativar uma interface, precisa apenas removê-la da linha auto, não é preciso remover as demais linhas.</p>
-<p style="text-align: justify;">A interface &#8220;lo&#8221; é a interface de loopback, usada para a comunicação local entre diversos aplicativos e componentes do sistema, por isso nunca deve ser desativada. Embora o uso da interface de loopback pareça ser uma exclusividade do Linux, ela é usada também no Windows; a única diferença é que no Windows ela não aparece na configuração.</p>
-<p style="text-align: justify;">Em seguida temos a configuração de cada interface, que vai em uma seção separada. No caso da interface lo é usada uma única linha, &#8220;iface lo inet loopback&#8221;, usada em qualquer instalação, seguida pelas demais interfaces.</p>
-<p style="text-align: justify;">Como você pode ver, as últimas 5 linhas na configuração da placa eth0 especificam o IP utilizado pelo PC e o restante da configuração da rede, com exceção dos endereços dos servidores DNS, que vão no arquivo &#8220;/etc/resolv.conf&#8221;.</p>
+<p style="text-align: justify;">O arquivo é dividido em duas partes. A linha “auto …” lista as interfaces que devem ser ativadas automaticamente e as demais contém a configuração de cada uma. Para configurar uma nova placa de rede, você adicionaria a configuração relacionada a ela no final do arquivo e a adicionaria na linha “auto”, como em “auto lo eth0 eth1”. Se, por outro lado, você quiser desativar uma interface, precisa apenas removê-la da linha auto, não é preciso remover as demais linhas.</p>
+<p style="text-align: justify;">A interface “lo” é a interface de loopback, usada para a comunicação local entre diversos aplicativos e componentes do sistema, por isso nunca deve ser desativada. Embora o uso da interface de loopback pareça ser uma exclusividade do Linux, ela é usada também no Windows; a única diferença é que no Windows ela não aparece na configuração.</p>
+<p style="text-align: justify;">Em seguida temos a configuração de cada interface, que vai em uma seção separada. No caso da interface lo é usada uma única linha, “iface lo inet loopback”, usada em qualquer instalação, seguida pelas demais interfaces.</p>
+<p style="text-align: justify;">Como você pode ver, as últimas 5 linhas na configuração da placa eth0 especificam o IP utilizado pelo PC e o restante da configuração da rede, com exceção dos endereços dos servidores DNS, que vão no arquivo “/etc/resolv.conf”.</p>
 <p style="text-align: justify;">Se você quisesse que a interface fosse configurada via DHCP, poderia substituir as 6 linhas referentes a ela por:</p>
 <pre class="brush: bash; title: ; notranslate" title="">iface eth0 inet dhcp</pre>
 <p style="text-align: justify;">Ao configurar um servidor com duas placas de rede, onde a eth0 está ligada à rede local e a eth1 ao cable modem (obtendo o endereço via DHCP), por exemplo, o arquivo ficaria:</p>
@@ -433,11 +395,11 @@ iface eth1 inet dhcp&lt;/div&gt;
 <pre class="brush: bash; title: ; notranslate" title=""># /etc/init.d/networking restart</pre>
 </div>
 <p style="text-align: justify;">Um problema comum que afeta versões do Debian, Ubuntu e distribuições baseadas neles é as interfaces mudarem de endereço a cada reset em micros com duas ou mais interfaces de rede. A placa eth0 passa então a ser a ath1 e assim por diante, o pode ser uma grande dor de cabeça ao configurar um servidor para compartilhar a conexão, já que se as duas interfaces mudam de posição, nada funciona.</p>
-<p style="text-align: justify;">A solução para o problema é um pequeno utilitário chamado &#8220;ifrename&#8221;, que permite fixar os devices utilizados para as placas. Utilizá-lo é bem simples. Comece instalando o pacote via apt-get:</p>
+<p style="text-align: justify;">A solução para o problema é um pequeno utilitário chamado “ifrename”, que permite fixar os devices utilizados para as placas. Utilizá-lo é bem simples. Comece instalando o pacote via apt-get:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># apt-get install ifrename</pre>
 </div>
-<p style="text-align: justify;">Crie o arquivo &#8220;<strong>/etc/iftab</strong>&#8221; e, dentro dele, relacione o device de cada interface com o endereço MAC correspondente, seguindo o modelo abaixo:</p>
+<p style="text-align: justify;">Crie o arquivo “<strong>/etc/iftab</strong>” e, dentro dele, relacione o device de cada interface com o endereço MAC correspondente, seguindo o modelo abaixo:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title="">
 #/etc/iftab
@@ -445,8 +407,8 @@ eth0 mac 00:11:D8:76:59:2E
 eth1 mac 00:E0:7D:9B:F8:01&lt;/div&gt;
 </pre>
 </div>
-<p style="text-align: justify;">Em caso de dúvida, use o comando &#8220;<strong>ifconfig -a</strong>&#8221; para ver a configuração atual das placas e o endereço MAC de cada uma. Uma vez criado, o arquivo é verificado a cada boot e a configuração se torna persistente, resolvendo o problema. Este bug das interfaces itinerantes afeta apenas algumas distribuições, por isso você não precisa se preocupar com ele até que perceba que está usando uma das afetadas.</p>
-<p style="text-align: justify;">No <strong>Fedora</strong> e outras distribuições derivadas do Red Hat, a configuração de rede é dividida em uma série de arquivos, localizados na pasta &#8220;<strong>/etc/sysconfig/network/network-scripts/</strong>&#8220;. Dentro da pasta, você encontrará um arquivo separado para a configuração de cada interface disponível. A configuração da placa eth0 é armazenada no arquivo &#8220;<strong>ifcfg-eth0</strong>&#8220;, o da eth1 no &#8220;<strong>ifcfg-eth1</strong>&#8221; e assim por diante.</p>
+<p style="text-align: justify;">Em caso de dúvida, use o comando “<strong>ifconfig -a</strong>” para ver a configuração atual das placas e o endereço MAC de cada uma. Uma vez criado, o arquivo é verificado a cada boot e a configuração se torna persistente, resolvendo o problema. Este bug das interfaces itinerantes afeta apenas algumas distribuições, por isso você não precisa se preocupar com ele até que perceba que está usando uma das afetadas.</p>
+<p style="text-align: justify;">No <strong>Fedora</strong> e outras distribuições derivadas do Red Hat, a configuração de rede é dividida em uma série de arquivos, localizados na pasta “<strong>/etc/sysconfig/network/network-scripts/</strong>“. Dentro da pasta, você encontrará um arquivo separado para a configuração de cada interface disponível. A configuração da placa eth0 é armazenada no arquivo “<strong>ifcfg-eth0</strong>“, o da eth1 no “<strong>ifcfg-eth1</strong>” e assim por diante.</p>
 <p style="text-align: justify;">Um exemplo de configuração para uso de IP fixo é:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title="">&lt;/div&gt;
@@ -459,7 +421,7 @@ BOOTPROTO=static
 ONBOOT=yes&lt;/div&gt;
 </pre>
 </div>
-<p style="text-align: justify;">A opção &#8220;ONBOOT&#8221; indica se a placa deve ser ativada automaticamente durante o boot. Ao desativar essa opção, a interface fica desativada por padrão, até ser carregada manualmente. Continuando, aqui vai um exemplo de configuração para DHCP:</p>
+<p style="text-align: justify;">A opção “ONBOOT” indica se a placa deve ser ativada automaticamente durante o boot. Ao desativar essa opção, a interface fica desativada por padrão, até ser carregada manualmente. Continuando, aqui vai um exemplo de configuração para DHCP:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title="">&lt;/div&gt;
 #/etc/sysconfig/network/network-scripts/ifcfg-eth0
@@ -468,12 +430,12 @@ BOOTPROTO=dhcp
 ONBOOT=yes&lt;/div&gt;
 </pre>
 </div>
-<p style="text-align: justify;">Lembre-se que cada arquivo armazena a configuração de uma interface específica (a configuração da interface de loopback, por exemplo, vai no arquivo ifcfg-lo), diferente do Debian, onde é usado um único arquivo com uma seção separada para cada interface. Temos também o arquivo &#8220;<strong>/etc/sysconfig/network</strong>&#8220;, que armazena o nome da máquina.</p>
+<p style="text-align: justify;">Lembre-se que cada arquivo armazena a configuração de uma interface específica (a configuração da interface de loopback, por exemplo, vai no arquivo ifcfg-lo), diferente do Debian, onde é usado um único arquivo com uma seção separada para cada interface. Temos também o arquivo “<strong>/etc/sysconfig/network</strong>“, que armazena o nome da máquina.</p>
 <p style="text-align: justify;">Para que as alterações entrem em vigor, é necessário reiniciar o serviço responsável pela configuração da rede, o que no Fedora é feito usando o comando:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># /etc/rc.d/init.d/network restart</pre>
 </div>
-<p style="text-align: justify;">Concluindo, tanto no Fedora quanto no Debian, Ubuntu e outros, você pode desativar temporariamente uma interface configurada usando o comando &#8220;ifdown&#8221;, como em:</p>
+<p style="text-align: justify;">Concluindo, tanto no Fedora quanto no Debian, Ubuntu e outros, você pode desativar temporariamente uma interface configurada usando o comando “ifdown”, como em:</p>
 <div style="text-align: justify;">
 <pre class="brush: bash; title: ; notranslate" title=""># ifdown eth0</pre>
 </div>
@@ -482,437 +444,370 @@ ONBOOT=yes&lt;/div&gt;
 <pre class="brush: bash; title: ; notranslate" title=""># ifup eth0</pre>
 </div>
 <p style="text-align: justify;">Assim como no caso das alterações feitas através do ifconfig, desativar a interface usando o ifdown não é permanente: a interface volta a ser ativada ao reiniciar o micro. Se você quiser desativar a interface de forma definitiva, precisa fazer a alteração diretamente no arquivo de configuração.</p>
-<p style="text-align: justify;">Fonte: <a title="HARDWARE.COM.BR" href="http://www.hardware.com.br/tutoriais/configurando-rede-linux/pagina6.html" target="_blank">HARDWARE.COM.BR</a></p>
+<p style="text-align: justify;">Fonte: <a href="http://www.hardware.com.br/tutoriais/configurando-rede-linux/pagina6.html" target="_blank" title="HARDWARE.COM.BR">HARDWARE.COM.BR</a></p>
 </div>
-<div class="cb_p6_patreon_button" style="text-align:center !important;margin-top:15px;margin-bottom:15px;"><div class="cb_p6_message_over_post_button" style="font-size:20px;margin-top:10px;margin-bottom:10px;">Gostou? Tire um minutinho e dê sua contribuição para Drall Dev Community no Patreon!</div><a rel="nofollow" href="https://www.patreon.com/drallconsult?utm_content=post_button&utm_medium=patron_button_and_widgets_plugin&utm_campaign=&utm_term=&utm_source=http://devblog.drall.com.br/configurando-a-rede-no-linux/"><img style="margin-top: 10px;margin-bottom: 10px;max-width:200px;width:100%;height:auto;" src="/wp-content/plugins/patron-button-and-widgets-by-codebard/images/become_a_patron_button.png"></a></div><div class='yarpp-related'>
+<div class="cb_p6_patreon_button" style="text-align:center !important;margin-top:15px;margin-bottom:15px;"><div class="cb_p6_message_over_post_button" style="font-size:20px;margin-top:10px;margin-bottom:10px;">Gostou? Tire um minutinho e dê sua contribuição para Drall Dev Community no Patreon!</div><a href="https://www.patreon.com/drallconsult?utm_content=post_button&amp;utm_medium=patron_button_and_widgets_plugin&amp;utm_campaign=&amp;utm_term=&amp;utm_source=http://devblog.drall.com.br/configurando-a-rede-no-linux/" rel="nofollow"><img src="/wp-content/plugins/patron-button-and-widgets-by-codebard/images/become_a_patron_button.png" style="margin-top: 10px;margin-bottom: 10px;max-width:200px;width:100%;height:auto;"/></a></div><div class="yarpp-related">
 <h3>Artigos relacionados:</h3>
 <div class="yarpp-thumbnails-horizontal">
-<a class='yarpp-thumbnail' rel='norewrite' href='/shell-script-obter-ip-de-maquinas-unix-like-em-uma-rede' title='Shell Script &#8211; Obter ip de máquinas Unix-like em uma rede'>
-<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Shell Script &#8211; Obter ip de máquinas Unix-like em uma rede</span></a>
-<a class='yarpp-thumbnail' rel='norewrite' href='/ethernet-bonding-link-aggregation-agregacao-de-interfaces-de-rede' title='Ethernet bonding / Link aggregation / Agregação de interfaces de rede'>
-<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Ethernet bonding / Link aggregation / Agregação de interfaces de rede</span></a>
-<a class='yarpp-thumbnail' rel='norewrite' href='/configurando-wake-on-lan-wol-no-linux-debian' title='Configurando Wake on Lan (WOL) no linux Debian'>
-<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Configurando Wake on Lan (WOL) no linux Debian</span></a>
-<a class='yarpp-thumbnail' rel='norewrite' href='/fazendo-a-linha-dns-nameservers-do-etcnetworkinterfaces-funcionar-no-debian-ubuntu' title='Fazendo a linha dns-nameservers do /etc/network/interfaces funcionar no Debian / Ubuntu'>
-<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Fazendo a linha dns-nameservers do /etc/network/interfaces funcionar no Debian / Ubuntu</span></a>
-<a class='yarpp-thumbnail' rel='norewrite' href='/como-saber-o-gateway-da-rede-usando-o-console-no-linux' title='Como saber o Gateway da rede usando o console no Linux'>
-<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Como saber o Gateway da rede usando o console no Linux</span></a>
-<a class='yarpp-thumbnail' rel='norewrite' href='/encontrar-todos-os-computadores-de-uma-rede-utilizando-linux' title='Encontrar todos os computadores de uma rede utilizando Linux'>
-<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Encontrar todos os computadores de uma rede utilizando Linux</span></a>
-<a class='yarpp-thumbnail' rel='norewrite' href='/configurando-o-teclado-abnt2-no-debian-8' title='Configurando o teclado ABNT2 no Debian 8'>
-<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Configurando o teclado ABNT2 no Debian 8</span></a>
-<a class='yarpp-thumbnail' rel='norewrite' href='/configurando-o-e-mail-do-hostinger-no-outlook' title='Configurando o e-mail do hostinger no Outlook'>
-<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Configurando o e-mail do hostinger no Outlook</span></a>
-<a class='yarpp-thumbnail' rel='norewrite' href='/configurando-o-teclado-abnt2-no-gnome-do-debian-8-jessie' title='Configurando o teclado ABNT2 no Gnome do Debian 8 &#8211; Jessie'>
-<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Configurando o teclado ABNT2 no Gnome do Debian 8 &#8211; Jessie</span></a>
+<a class="yarpp-thumbnail" href="/shell-script-obter-ip-de-maquinas-unix-like-em-uma-rede" rel="norewrite" title="Shell Script – Obter ip de máquinas Unix-like em uma rede">
+<span class="yarpp-thumbnail-default"><img alt="Default Thumbnail" data-pin-nopin="true" src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png"/></span><span class="yarpp-thumbnail-title">Shell Script – Obter ip de máquinas Unix-like em uma rede</span></a>
+<a class="yarpp-thumbnail" href="/ethernet-bonding-link-aggregation-agregacao-de-interfaces-de-rede" rel="norewrite" title="Ethernet bonding / Link aggregation / Agregação de interfaces de rede">
+<span class="yarpp-thumbnail-default"><img alt="Default Thumbnail" data-pin-nopin="true" src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png"/></span><span class="yarpp-thumbnail-title">Ethernet bonding / Link aggregation / Agregação de interfaces de rede</span></a>
+<a class="yarpp-thumbnail" href="/configurando-wake-on-lan-wol-no-linux-debian" rel="norewrite" title="Configurando Wake on Lan (WOL) no linux Debian">
+<span class="yarpp-thumbnail-default"><img alt="Default Thumbnail" data-pin-nopin="true" src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png"/></span><span class="yarpp-thumbnail-title">Configurando Wake on Lan (WOL) no linux Debian</span></a>
+<a class="yarpp-thumbnail" href="/fazendo-a-linha-dns-nameservers-do-etcnetworkinterfaces-funcionar-no-debian-ubuntu" rel="norewrite" title="Fazendo a linha dns-nameservers do /etc/network/interfaces funcionar no Debian / Ubuntu">
+<span class="yarpp-thumbnail-default"><img alt="Default Thumbnail" data-pin-nopin="true" src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png"/></span><span class="yarpp-thumbnail-title">Fazendo a linha dns-nameservers do /etc/network/interfaces funcionar no Debian / Ubuntu</span></a>
+<a class="yarpp-thumbnail" href="/como-saber-o-gateway-da-rede-usando-o-console-no-linux" rel="norewrite" title="Como saber o Gateway da rede usando o console no Linux">
+<span class="yarpp-thumbnail-default"><img alt="Default Thumbnail" data-pin-nopin="true" src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png"/></span><span class="yarpp-thumbnail-title">Como saber o Gateway da rede usando o console no Linux</span></a>
+<a class="yarpp-thumbnail" href="/encontrar-todos-os-computadores-de-uma-rede-utilizando-linux" rel="norewrite" title="Encontrar todos os computadores de uma rede utilizando Linux">
+<span class="yarpp-thumbnail-default"><img alt="Default Thumbnail" data-pin-nopin="true" src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png"/></span><span class="yarpp-thumbnail-title">Encontrar todos os computadores de uma rede utilizando Linux</span></a>
+<a class="yarpp-thumbnail" href="/configurando-o-teclado-abnt2-no-debian-8" rel="norewrite" title="Configurando o teclado ABNT2 no Debian 8">
+<span class="yarpp-thumbnail-default"><img alt="Default Thumbnail" data-pin-nopin="true" src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png"/></span><span class="yarpp-thumbnail-title">Configurando o teclado ABNT2 no Debian 8</span></a>
+<a class="yarpp-thumbnail" href="/configurando-o-e-mail-do-hostinger-no-outlook" rel="norewrite" title="Configurando o e-mail do hostinger no Outlook">
+<span class="yarpp-thumbnail-default"><img alt="Default Thumbnail" data-pin-nopin="true" src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png"/></span><span class="yarpp-thumbnail-title">Configurando o e-mail do hostinger no Outlook</span></a>
+<a class="yarpp-thumbnail" href="/configurando-o-teclado-abnt2-no-gnome-do-debian-8-jessie" rel="norewrite" title="Configurando o teclado ABNT2 no Gnome do Debian 8 – Jessie">
+<span class="yarpp-thumbnail-default"><img alt="Default Thumbnail" data-pin-nopin="true" src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png"/></span><span class="yarpp-thumbnail-title">Configurando o teclado ABNT2 no Gnome do Debian 8 – Jessie</span></a>
 </div>
 </div>
-			</div><!-- .entry-content -->
-
-	<footer class="entry-meta">
-		This entry was posted in <a href="/category/debian" rel="category tag">Debian</a>, <a href="/category/linux" rel="category tag">Linux</a>, <a href="/category/tutorial-2" rel="category tag">Tutorial</a> by <a href="/author/admin">Administrador</a>. Bookmark the <a href="/configurando-a-rede-no-linux" title="Permalink to Configurando a rede no Linux" rel="bookmark">permalink</a>.		
+</div><!-- .entry-content -->
+<footer class="entry-meta">
+		This entry was posted in <a href="/category/debian" rel="category tag">Debian</a>, <a href="/category/linux" rel="category tag">Linux</a>, <a href="/category/tutorial-2" rel="category tag">Tutorial</a> by <a href="/author/admin">Administrador</a>. Bookmark the <a href="/configurando-a-rede-no-linux" rel="bookmark" title="Permalink to Configurando a rede no Linux">permalink</a>.		
 		
 	</footer><!-- .entry-meta -->
 </article><!-- #post-1765 -->
-
-
-<div id="comments" class="comments-area">
-<div id="respond" class="comment-respond">
-<div class="fb-social-plugin comment-form fb-comments" id="commentform" data-href="http://devblog.drall.com.br/configurando-a-rede-no-linux/" data-width="470" data-order-by="social"></div>
+<div class="comments-area" id="comments">
+<div class="comment-respond" id="respond">
+<div class="fb-social-plugin comment-form fb-comments" data-href="http://devblog.drall.com.br/configurando-a-rede-no-linux/" data-order-by="social" data-width="470" id="commentform"></div>
 </div></div>
-
-	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
-		<h2 class="screen-reader-text">Post navigation</h2>
-		<div class="nav-links"><div class="nav-previous"><a href="/php-comentario-sobre-_files-do-php" rel="prev"><span class="meta-nav" aria-hidden="true"><span class="nav-icon">&larr;</span> Previous</span> <span class="screen-reader-text">Previous post:</span> <span class="post-title">PHP &#8211; Comentário sobre $_FILES do PHP</span></a></div><div class="nav-next"><a href="/null-e-array-sao-objetos-no-javascript" rel="next"><span class="meta-nav" aria-hidden="true">Next <span class="nav-icon">&rarr;</span></span> <span class="screen-reader-text">Next post:</span> <span class="post-title">null e array são objetos no javascript</span></a></div></div>
-	</nav>
-		</div><!-- #content -->
-        
-		            
-	</div><!-- #primary -->
-    
-	    
-
-
-		<aside id="secondary" class="sidebar widget-area" role="complementary">
-			<h2 class="screen-reader-text">Primary Sidebar Widget Area</h2>
-			<section id="text-2" class="widget widget_text"><h2 class="widget-title">Patrocinado por:</h2>			<div class="textwidget"><div id="drall_ads">
-
-<!-- Popcash -->
-<script>
-        var uid = '26667';
-        var wid = '50456';
-
-  jQuery( document ).ready(function() { 
-    /*Is mobile?*/
-    if( window.matchMedia("only screen and (max-width: 760px)").matches ) {
-      /*Yes*/
-    } else {
-        /*No*/
-        jQuery('<script type="text/javascript" src="//cdn.popcash.net/pop.js">').appendTo(document.head);
-
-    }
-});
-</script>
-<!-- End Popcash Code -->
-
-
-<script data-cfasync="false" type="text/javascript" src="https://www.tradeadexchange.com/a/display.php?r=1600381"></script>
+<nav aria-label="Posts" class="navigation post-navigation" role="navigation">
+<h2 class="screen-reader-text">Post navigation</h2>
+<div class="nav-links"><div class="nav-previous"><a href="/php-comentario-sobre-_files-do-php" rel="prev"><span aria-hidden="true" class="meta-nav"><span class="nav-icon">←</span> Previous</span> <span class="screen-reader-text">Previous post:</span> <span class="post-title">PHP – Comentário sobre $_FILES do PHP</span></a></div><div class="nav-next"><a href="/null-e-array-sao-objetos-no-javascript" rel="next"><span aria-hidden="true" class="meta-nav">Next <span class="nav-icon">→</span></span> <span class="screen-reader-text">Next post:</span> <span class="post-title">null e array são objetos no javascript</span></a></div></div>
+</nav>
+</div><!-- #content -->
+</div><!-- #primary -->
+<aside class="sidebar widget-area" id="secondary" role="complementary">
+<h2 class="screen-reader-text">Primary Sidebar Widget Area</h2>
+<section class="widget widget_text" id="text-2"><h2 class="widget-title">Patrocinado por:</h2> <div class="textwidget"><div id="drall_ads"></div>
 </div>
-</div>
-		</section><section id="paypal_donations-2" class="widget widget_paypal_donations"><h2 class="widget-title">Faça sua doação via Paypal</h2><p>Colabore com a Drall Dev Community fazendo sua doação via Paypal!</p>
+</section><section class="widget widget_paypal_donations" id="paypal_donations-2"><h2 class="widget-title">Faça sua doação via Paypal</h2><p>Colabore com a Drall Dev Community fazendo sua doação via Paypal!</p>
 <!-- Begin PayPal Donations by https://www.tipsandtricks-hq.com/paypal-donations-widgets-plugin -->
-
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-    <div class="paypal-donations">
-        <input type="hidden" name="cmd" value="_donations" />
-        <input type="hidden" name="bn" value="TipsandTricks_SP" />
-        <input type="hidden" name="business" value="maajdrall@gmail.com" />
-        <input type="hidden" name="return" value="http://devblog.drall.com.br" />
-        <input type="hidden" name="item_name" value="Ajudar-nos a criar conteúdo relevante para os nossos leitores" />
-        <input type="hidden" name="item_number" value="maajdrall@gmail.com" />
-        <input type="hidden" name="rm" value="0" />
-        <input type="hidden" name="currency_code" value="USD" />
-        <input type="image" style="cursor: pointer;" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online." />
-        <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-    </div>
+<div class="paypal-donations">
+<input name="cmd" type="hidden" value="_donations"/>
+<input name="bn" type="hidden" value="TipsandTricks_SP"/>
+<input name="business" type="hidden" value="maajdrall@gmail.com"/>
+<input name="return" type="hidden" value="http://devblog.drall.com.br"/>
+<input name="item_name" type="hidden" value="Ajudar-nos a criar conteúdo relevante para os nossos leitores"/>
+<input name="item_number" type="hidden" value="maajdrall@gmail.com"/>
+<input name="rm" type="hidden" value="0"/>
+<input name="currency_code" type="hidden" value="USD"/>
+<input alt="PayPal - The safer, easier way to pay online." name="submit" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" style="cursor: pointer;" type="image"/>
+<img alt="" height="1" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1"/>
+</div>
 </form>
 <!-- End PayPal Donations -->
-</section><section id="text-4" class="widget widget_text"><h2 class="widget-title">Anúncios &#8211; Airbnb</h2>			<div class="textwidget"><div class="airbnb-embed-frame" data-city-link-index="0" data-id="10084899" data-view="listing_frame" style="max-width:600px;margin:auto;transition:height .2s;"><a href="https://www.airbnb.com.br/rooms/14083170" target="_blank" rel="noopener noreferrer"><img src="https://a0.muscache.com/im/pictures/5f44875d-f44c-4187-9709-866e75452073.jpg?interpolation=lanczos-none&amp;size=x_large_cover&amp;output-format=jpg&amp;output-quality=70" style="max-width:100%;" alt=""></a><div><a href="https://www.airbnb.com.br/rooms/10084899" target="_blank" rel="noopener noreferrer"><h4>Apartamento próximo à UFMG/Mineirão</h4></a><div>Belo Horizonte, Minas Gerais, Brasil</div><blockquote>Quarto para 2 pessoas, próximo à UFMG e ao Mineirão. Próximo às principais vias de acesso ao centro / zona sul. *** Room for 2 people, next to UFMG and Mineirao stadium. E...</blockquote></div></div></div>
-		</section><section id="popularitypostswidget-2" class="widget popularitypostswidget"><h2 class="widget-title">Posts Mais Vistos</h2><ul> 
- 	<li>
-			<span class="ppw-post-title"><a href="/como-solucionar-o-problema-erro-rh01-rpcs-5aec-0-da-google-play-store" title="Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Google Play Store" rel="nofollow">Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Googl...</a></span>
-			<span class="post-stats">
-			
-			<br>
-			
-			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
-			<span class="ppw-date"></span>
-			</span>
-				</li> 
- 	<li>
-			<span class="ppw-post-title"><a href="/remover-conta-do-android-ou-como-desvincular-uma-conta-google-do-android" title="Remover conta do Android ou como desvincular uma conta Google do Android" rel="nofollow">Remover conta do Android ou como desvincular uma conta Googl...</a></span>
-			<span class="post-stats">
-			
-			<br>
-			
-			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
-			<span class="ppw-date"></span>
-			</span>
-				</li> 
- 	<li>
-			<span class="ppw-post-title"><a href="/como-salvar-seus-apps-antes-de-formatar-seu-android" title="Como salvar seus apps antes de formatar seu Android" rel="nofollow">Como salvar seus apps antes de formatar seu Android</a></span>
-			<span class="post-stats">
-			
-			<br>
-			
-			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
-			<span class="ppw-date"></span>
-			</span>
-				</li> 
- 	<li>
-			<span class="ppw-post-title"><a href="/qual-login-e-password-padrao-modem-roteador-humax-hg100r-l2" title="Qual login e password padrão &#8211; Modem / Roteador Humax HG100R-L2" rel="nofollow">Qual login e password padrão &#8211; Modem / Roteador Humax ...</a></span>
-			<span class="post-stats">
-			
-			<br>
-			
-			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
-			<span class="ppw-date"></span>
-			</span>
-				</li> 
- 	<li>
-			<span class="ppw-post-title"><a href="/como-determinar-o-estado-de-origem-de-um-cpf" title="Como determinar o estado de origem de um CPF" rel="nofollow">Como determinar o estado de origem de um CPF</a></span>
-			<span class="post-stats">
-			
-			<br>
-			
-			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
-			<span class="ppw-date"></span>
-			</span>
-				</li> 
- 	<li>
-			<span class="ppw-post-title"><a href="/como-assistir-videos-do-youtube-em-velocidade-x2-no-android" title="Como assistir vídeos do Youtube em velocidade x2 no Android" rel="nofollow">Como assistir vídeos do Youtube em velocidade x2 no Android</a></span>
-			<span class="post-stats">
-			
-			<br>
-			
-			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
-			<span class="ppw-date"></span>
-			</span>
-				</li> 
- 	<li>
-			<span class="ppw-post-title"><a href="/como-limpar-o-cache-de-seu-android" title="Como limpar o cache de seu Android" rel="nofollow">Como limpar o cache de seu Android</a></span>
-			<span class="post-stats">
-			
-			<br>
-			
-			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
-			<span class="ppw-date"></span>
-			</span>
-				</li> 
- 	<li>
-			<span class="ppw-post-title"><a href="/como-solucionar-o-problema-erro-rh01-rpcs-5aec-0-da-google-play-store-segunda-maneira-nova-solucao" title="Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Google Play Store &#8211; Segunda maneira (Nova solução)" rel="nofollow">Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Googl...</a></span>
-			<span class="post-stats">
-			
-			<br>
-			
-			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
-			<span class="ppw-date"></span>
-			</span>
-				</li> 
- 	<li>
-			<span class="ppw-post-title"><a href="/como-usar-o-inspecionar-elemento-do-google-chrome" title="Como usar o “Inspecionar elemento” do Google Chrome" rel="nofollow">Como usar o “Inspecionar elemento” do Google Chrome</a></span>
-			<span class="post-stats">
-			
-			<br>
-			
-			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
-			<span class="ppw-date"></span>
-			</span>
-				</li> 
- 	<li>
-			<span class="ppw-post-title"><a href="/como-solucionar-o-erro-920-da-google-play" title="Como solucionar o erro 920 da Google Play" rel="nofollow">Como solucionar o erro 920 da Google Play</a></span>
-			<span class="post-stats">
-			
-			<br>
-			
-			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
-			<span class="ppw-date"></span>
-			</span>
-				</li> 
- 	<li>
-			<span class="ppw-post-title"><a href="/javascript-string-para-float-com-2-casas-decimais" title="JavaScript &#8211; String para float com 2 casas decimais" rel="nofollow">JavaScript &#8211; String para float com 2 casas decimais</a></span>
-			<span class="post-stats">
-			
-			<br>
-			
-			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
-			<span class="ppw-date"></span>
-			</span>
-				</li> 
- 	<li>
-			<span class="ppw-post-title"><a href="/fazer-upload-de-varios-arquivos-com-um-html-input-typefile-e-sem-uso-de-js-e-flash" title="Fazer upload de vários arquivos com um HTML input type=&#8221;file&#8221; e sem uso de JS e Flash" rel="nofollow">Fazer upload de vários arquivos com um HTML input type=&#822...</a></span>
-			<span class="post-stats">
-			
-			<br>
-			
-			<span class="ppw-views"></span>			<span class="ppw-comments"></span> 
-			<span class="ppw-date"></span>
-			</span>
-				</li></ul></section><section id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widget-title">Palavras-chave</h2><div class="tagcloud"><a href="/tag/android" class="tag-cloud-link tag-link-109 tag-link-position-1" style="font-size: 13.557251908397pt;" aria-label="android (35 items)">android</a>
-<a href="/tag/angularjs" class="tag-cloud-link tag-link-99 tag-link-position-2" style="font-size: 10.992366412214pt;" aria-label="angularjs (20 items)">angularjs</a>
-<a href="/tag/apache" class="tag-cloud-link tag-link-119 tag-link-position-3" style="font-size: 8.7480916030534pt;" aria-label="apache (12 items)">apache</a>
-<a href="/tag/api" class="tag-cloud-link tag-link-121 tag-link-position-4" style="font-size: 8pt;" aria-label="api (10 items)">api</a>
-<a href="/tag/banco-de-dados" class="tag-cloud-link tag-link-81 tag-link-position-5" style="font-size: 11.206106870229pt;" aria-label="banco de dados (21 items)">banco de dados</a>
-<a href="/tag/browsers" class="tag-cloud-link tag-link-101 tag-link-position-6" style="font-size: 11.206106870229pt;" aria-label="browsers (21 items)">browsers</a>
-<a href="/tag/chrome" class="tag-cloud-link tag-link-133 tag-link-position-7" style="font-size: 14.198473282443pt;" aria-label="chrome (41 items)">chrome</a>
-<a href="/tag/chromium" class="tag-cloud-link tag-link-152 tag-link-position-8" style="font-size: 12.702290076336pt;" aria-label="chromium (29 items)">chromium</a>
-<a href="/tag/configuracoes" class="tag-cloud-link tag-link-116 tag-link-position-9" style="font-size: 13.343511450382pt;" aria-label="configurações (34 items)">configurações</a>
-<a href="/tag/css" class="tag-cloud-link tag-link-95 tag-link-position-10" style="font-size: 14.625954198473pt;" aria-label="css (45 items)">css</a>
-<a href="/tag/curiosidades" class="tag-cloud-link tag-link-126 tag-link-position-11" style="font-size: 11.954198473282pt;" aria-label="curiosidades (25 items)">curiosidades</a>
-<a href="/tag/debian-2" class="tag-cloud-link tag-link-57 tag-link-position-12" style="font-size: 14.519083969466pt;" aria-label="debian (44 items)">debian</a>
-<a href="/tag/debug" class="tag-cloud-link tag-link-118 tag-link-position-13" style="font-size: 11.63358778626pt;" aria-label="debug (23 items)">debug</a>
-<a href="/tag/depuracao" class="tag-cloud-link tag-link-117 tag-link-position-14" style="font-size: 10.992366412214pt;" aria-label="depuração (20 items)">depuração</a>
-<a href="/tag/dica" class="tag-cloud-link tag-link-210 tag-link-position-15" style="font-size: 12.381679389313pt;" aria-label="dica (27 items)">dica</a>
-<a href="/tag/dns" class="tag-cloud-link tag-link-149 tag-link-position-16" style="font-size: 9.7099236641221pt;" aria-label="dns (15 items)">dns</a>
-<a href="/tag/eletronica" class="tag-cloud-link tag-link-179 tag-link-position-17" style="font-size: 8pt;" aria-label="eletrônica (10 items)">eletrônica</a>
-<a href="/tag/google" class="tag-cloud-link tag-link-106 tag-link-position-18" style="font-size: 17.297709923664pt;" aria-label="google (80 items)">google</a>
-<a href="/tag/google-busca" class="tag-cloud-link tag-link-161 tag-link-position-19" style="font-size: 8.4274809160305pt;" aria-label="google. busca (11 items)">google. busca</a>
-<a href="/tag/google-play-store" class="tag-cloud-link tag-link-111 tag-link-position-20" style="font-size: 10.992366412214pt;" aria-label="google play store (20 items)">google play store</a>
-<a href="/tag/hard-disk" class="tag-cloud-link tag-link-230 tag-link-position-21" style="font-size: 8.4274809160305pt;" aria-label="hard disk (11 items)">hard disk</a>
-<a href="/tag/hardware" class="tag-cloud-link tag-link-167 tag-link-position-22" style="font-size: 11.63358778626pt;" aria-label="hardware (23 items)">hardware</a>
-<a href="/tag/html" class="tag-cloud-link tag-link-94 tag-link-position-23" style="font-size: 13.022900763359pt;" aria-label="html (31 items)">html</a>
-<a href="/tag/humor" class="tag-cloud-link tag-link-140 tag-link-position-24" style="font-size: 12.381679389313pt;" aria-label="humor (27 items)">humor</a>
-<a href="/tag/imagem" class="tag-cloud-link tag-link-304 tag-link-position-25" style="font-size: 8pt;" aria-label="imagem (10 items)">imagem</a>
-<a href="/tag/javascript" class="tag-cloud-link tag-link-100 tag-link-position-26" style="font-size: 15.801526717557pt;" aria-label="javascript (58 items)">javascript</a>
-<a href="/tag/linha-de-comando" class="tag-cloud-link tag-link-258 tag-link-position-27" style="font-size: 10.778625954198pt;" aria-label="linha de comando (19 items)">linha de comando</a>
-<a href="/tag/linux" class="tag-cloud-link tag-link-113 tag-link-position-28" style="font-size: 18.045801526718pt;" aria-label="linux (95 items)">linux</a>
-<a href="/tag/modem" class="tag-cloud-link tag-link-211 tag-link-position-29" style="font-size: 22pt;" aria-label="modem (225 items)">modem</a>
-<a href="/tag/mysql" class="tag-cloud-link tag-link-144 tag-link-position-30" style="font-size: 11.954198473282pt;" aria-label="mysql (25 items)">mysql</a>
-<a href="/tag/pdf" class="tag-cloud-link tag-link-114 tag-link-position-31" style="font-size: 9.175572519084pt;" aria-label="pdf (13 items)">pdf</a>
-<a href="/tag/php" class="tag-cloud-link tag-link-130 tag-link-position-32" style="font-size: 15.801526717557pt;" aria-label="php (58 items)">php</a>
-<a href="/tag/postgresql" class="tag-cloud-link tag-link-163 tag-link-position-33" style="font-size: 11.954198473282pt;" aria-label="postgresql (25 items)">postgresql</a>
-<a href="/tag/programacao" class="tag-cloud-link tag-link-96 tag-link-position-34" style="font-size: 18.36641221374pt;" aria-label="programação (102 items)">programação</a>
-<a href="/tag/raspberry" class="tag-cloud-link tag-link-338 tag-link-position-35" style="font-size: 13.236641221374pt;" aria-label="raspberry (33 items)">raspberry</a>
-<a href="/tag/raspbian" class="tag-cloud-link tag-link-337 tag-link-position-36" style="font-size: 11.63358778626pt;" aria-label="raspbian (23 items)">raspbian</a>
-<a href="/tag/redes" class="tag-cloud-link tag-link-166 tag-link-position-37" style="font-size: 9.4961832061069pt;" aria-label="redes (14 items)">redes</a>
-<a href="/tag/router" class="tag-cloud-link tag-link-353 tag-link-position-38" style="font-size: 22pt;" aria-label="router (224 items)">router</a>
-<a href="/tag/seguranca" class="tag-cloud-link tag-link-137 tag-link-position-39" style="font-size: 9.175572519084pt;" aria-label="segurança (13 items)">segurança</a>
-<a href="/tag/shell" class="tag-cloud-link tag-link-277 tag-link-position-40" style="font-size: 12.702290076336pt;" aria-label="shell (29 items)">shell</a>
-<a href="/tag/shell-script" class="tag-cloud-link tag-link-112 tag-link-position-41" style="font-size: 14.732824427481pt;" aria-label="shell script (46 items)">shell script</a>
-<a href="/tag/ssh" class="tag-cloud-link tag-link-165 tag-link-position-42" style="font-size: 8.4274809160305pt;" aria-label="ssh (11 items)">ssh</a>
-<a href="/tag/ubuntu" class="tag-cloud-link tag-link-76 tag-link-position-43" style="font-size: 10.351145038168pt;" aria-label="Ubuntu (17 items)">Ubuntu</a>
-<a href="/tag/windows" class="tag-cloud-link tag-link-142 tag-link-position-44" style="font-size: 11.847328244275pt;" aria-label="windows (24 items)">windows</a>
-<a href="/tag/wordpress-2" class="tag-cloud-link tag-link-84 tag-link-position-45" style="font-size: 10.778625954198pt;" aria-label="wordpress (19 items)">wordpress</a></div>
-</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categorias</h2>
-			<ul>
-					<li class="cat-item cat-item-25"><a href="/category/administrativo">Administrativo</a> (64)
+</section><section class="widget widget_text" id="text-4"><h2 class="widget-title">Anúncios – Airbnb</h2> <div class="textwidget"><div class="airbnb-embed-frame" data-city-link-index="0" data-id="10084899" data-view="listing_frame" style="max-width:600px;margin:auto;transition:height .2s;"><a href="https://www.airbnb.com.br/rooms/14083170" rel="noopener noreferrer" target="_blank"><img alt="" src="https://a0.muscache.com/im/pictures/5f44875d-f44c-4187-9709-866e75452073.jpg?interpolation=lanczos-none&amp;size=x_large_cover&amp;output-format=jpg&amp;output-quality=70" style="max-width:100%;"/></a><div><a href="https://www.airbnb.com.br/rooms/10084899" rel="noopener noreferrer" target="_blank"><h4>Apartamento próximo à UFMG/Mineirão</h4></a><div>Belo Horizonte, Minas Gerais, Brasil</div><blockquote>Quarto para 2 pessoas, próximo à UFMG e ao Mineirão. Próximo às principais vias de acesso ao centro / zona sul. *** Room for 2 people, next to UFMG and Mineirao stadium. E...</blockquote></div></div></div>
+</section><section class="widget popularitypostswidget" id="popularitypostswidget-2"><h2 class="widget-title">Posts Mais Vistos</h2><ul>
+<li>
+<span class="ppw-post-title"><a href="/como-solucionar-o-problema-erro-rh01-rpcs-5aec-0-da-google-play-store" rel="nofollow" title="Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Google Play Store">Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Googl...</a></span>
+<span class="post-stats">
+<br/>
+<span class="ppw-views"></span> <span class="ppw-comments"></span>
+<span class="ppw-date"></span>
+</span>
+</li>
+<li>
+<span class="ppw-post-title"><a href="/remover-conta-do-android-ou-como-desvincular-uma-conta-google-do-android" rel="nofollow" title="Remover conta do Android ou como desvincular uma conta Google do Android">Remover conta do Android ou como desvincular uma conta Googl...</a></span>
+<span class="post-stats">
+<br/>
+<span class="ppw-views"></span> <span class="ppw-comments"></span>
+<span class="ppw-date"></span>
+</span>
+</li>
+<li>
+<span class="ppw-post-title"><a href="/como-salvar-seus-apps-antes-de-formatar-seu-android" rel="nofollow" title="Como salvar seus apps antes de formatar seu Android">Como salvar seus apps antes de formatar seu Android</a></span>
+<span class="post-stats">
+<br/>
+<span class="ppw-views"></span> <span class="ppw-comments"></span>
+<span class="ppw-date"></span>
+</span>
+</li>
+<li>
+<span class="ppw-post-title"><a href="/qual-login-e-password-padrao-modem-roteador-humax-hg100r-l2" rel="nofollow" title="Qual login e password padrão – Modem / Roteador Humax HG100R-L2">Qual login e password padrão – Modem / Roteador Humax ...</a></span>
+<span class="post-stats">
+<br/>
+<span class="ppw-views"></span> <span class="ppw-comments"></span>
+<span class="ppw-date"></span>
+</span>
+</li>
+<li>
+<span class="ppw-post-title"><a href="/como-determinar-o-estado-de-origem-de-um-cpf" rel="nofollow" title="Como determinar o estado de origem de um CPF">Como determinar o estado de origem de um CPF</a></span>
+<span class="post-stats">
+<br/>
+<span class="ppw-views"></span> <span class="ppw-comments"></span>
+<span class="ppw-date"></span>
+</span>
+</li>
+<li>
+<span class="ppw-post-title"><a href="/como-assistir-videos-do-youtube-em-velocidade-x2-no-android" rel="nofollow" title="Como assistir vídeos do Youtube em velocidade x2 no Android">Como assistir vídeos do Youtube em velocidade x2 no Android</a></span>
+<span class="post-stats">
+<br/>
+<span class="ppw-views"></span> <span class="ppw-comments"></span>
+<span class="ppw-date"></span>
+</span>
+</li>
+<li>
+<span class="ppw-post-title"><a href="/como-limpar-o-cache-de-seu-android" rel="nofollow" title="Como limpar o cache de seu Android">Como limpar o cache de seu Android</a></span>
+<span class="post-stats">
+<br/>
+<span class="ppw-views"></span> <span class="ppw-comments"></span>
+<span class="ppw-date"></span>
+</span>
+</li>
+<li>
+<span class="ppw-post-title"><a href="/como-solucionar-o-problema-erro-rh01-rpcs-5aec-0-da-google-play-store-segunda-maneira-nova-solucao" rel="nofollow" title="Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Google Play Store – Segunda maneira (Nova solução)">Como solucionar o problema Erro rh01/ rpc:s-5:aec-0 da Googl...</a></span>
+<span class="post-stats">
+<br/>
+<span class="ppw-views"></span> <span class="ppw-comments"></span>
+<span class="ppw-date"></span>
+</span>
+</li>
+<li>
+<span class="ppw-post-title"><a href="/como-usar-o-inspecionar-elemento-do-google-chrome" rel="nofollow" title="Como usar o “Inspecionar elemento” do Google Chrome">Como usar o “Inspecionar elemento” do Google Chrome</a></span>
+<span class="post-stats">
+<br/>
+<span class="ppw-views"></span> <span class="ppw-comments"></span>
+<span class="ppw-date"></span>
+</span>
+</li>
+<li>
+<span class="ppw-post-title"><a href="/como-solucionar-o-erro-920-da-google-play" rel="nofollow" title="Como solucionar o erro 920 da Google Play">Como solucionar o erro 920 da Google Play</a></span>
+<span class="post-stats">
+<br/>
+<span class="ppw-views"></span> <span class="ppw-comments"></span>
+<span class="ppw-date"></span>
+</span>
+</li>
+<li>
+<span class="ppw-post-title"><a href="/javascript-string-para-float-com-2-casas-decimais" rel="nofollow" title="JavaScript – String para float com 2 casas decimais">JavaScript – String para float com 2 casas decimais</a></span>
+<span class="post-stats">
+<br/>
+<span class="ppw-views"></span> <span class="ppw-comments"></span>
+<span class="ppw-date"></span>
+</span>
+</li>
+<li>
+<span class="ppw-post-title"><a href="/fazer-upload-de-varios-arquivos-com-um-html-input-typefile-e-sem-uso-de-js-e-flash" rel="nofollow" title="Fazer upload de vários arquivos com um HTML input type=”file” e sem uso de JS e Flash">Fazer upload de vários arquivos com um HTML input type=̶...</a></span>
+<span class="post-stats">
+<br/>
+<span class="ppw-views"></span> <span class="ppw-comments"></span>
+<span class="ppw-date"></span>
+</span>
+</li></ul></section><section class="widget widget_tag_cloud" id="tag_cloud-3"><h2 class="widget-title">Palavras-chave</h2><div class="tagcloud"><a aria-label="android (35 items)" class="tag-cloud-link tag-link-109 tag-link-position-1" href="/tag/android" style="font-size: 13.557251908397pt;">android</a>
+<a aria-label="angularjs (20 items)" class="tag-cloud-link tag-link-99 tag-link-position-2" href="/tag/angularjs" style="font-size: 10.992366412214pt;">angularjs</a>
+<a aria-label="apache (12 items)" class="tag-cloud-link tag-link-119 tag-link-position-3" href="/tag/apache" style="font-size: 8.7480916030534pt;">apache</a>
+<a aria-label="api (10 items)" class="tag-cloud-link tag-link-121 tag-link-position-4" href="/tag/api" style="font-size: 8pt;">api</a>
+<a aria-label="banco de dados (21 items)" class="tag-cloud-link tag-link-81 tag-link-position-5" href="/tag/banco-de-dados" style="font-size: 11.206106870229pt;">banco de dados</a>
+<a aria-label="browsers (21 items)" class="tag-cloud-link tag-link-101 tag-link-position-6" href="/tag/browsers" style="font-size: 11.206106870229pt;">browsers</a>
+<a aria-label="chrome (41 items)" class="tag-cloud-link tag-link-133 tag-link-position-7" href="/tag/chrome" style="font-size: 14.198473282443pt;">chrome</a>
+<a aria-label="chromium (29 items)" class="tag-cloud-link tag-link-152 tag-link-position-8" href="/tag/chromium" style="font-size: 12.702290076336pt;">chromium</a>
+<a aria-label="configurações (34 items)" class="tag-cloud-link tag-link-116 tag-link-position-9" href="/tag/configuracoes" style="font-size: 13.343511450382pt;">configurações</a>
+<a aria-label="css (45 items)" class="tag-cloud-link tag-link-95 tag-link-position-10" href="/tag/css" style="font-size: 14.625954198473pt;">css</a>
+<a aria-label="curiosidades (25 items)" class="tag-cloud-link tag-link-126 tag-link-position-11" href="/tag/curiosidades" style="font-size: 11.954198473282pt;">curiosidades</a>
+<a aria-label="debian (44 items)" class="tag-cloud-link tag-link-57 tag-link-position-12" href="/tag/debian-2" style="font-size: 14.519083969466pt;">debian</a>
+<a aria-label="debug (23 items)" class="tag-cloud-link tag-link-118 tag-link-position-13" href="/tag/debug" style="font-size: 11.63358778626pt;">debug</a>
+<a aria-label="depuração (20 items)" class="tag-cloud-link tag-link-117 tag-link-position-14" href="/tag/depuracao" style="font-size: 10.992366412214pt;">depuração</a>
+<a aria-label="dica (27 items)" class="tag-cloud-link tag-link-210 tag-link-position-15" href="/tag/dica" style="font-size: 12.381679389313pt;">dica</a>
+<a aria-label="dns (15 items)" class="tag-cloud-link tag-link-149 tag-link-position-16" href="/tag/dns" style="font-size: 9.7099236641221pt;">dns</a>
+<a aria-label="eletrônica (10 items)" class="tag-cloud-link tag-link-179 tag-link-position-17" href="/tag/eletronica" style="font-size: 8pt;">eletrônica</a>
+<a aria-label="google (80 items)" class="tag-cloud-link tag-link-106 tag-link-position-18" href="/tag/google" style="font-size: 17.297709923664pt;">google</a>
+<a aria-label="google. busca (11 items)" class="tag-cloud-link tag-link-161 tag-link-position-19" href="/tag/google-busca" style="font-size: 8.4274809160305pt;">google. busca</a>
+<a aria-label="google play store (20 items)" class="tag-cloud-link tag-link-111 tag-link-position-20" href="/tag/google-play-store" style="font-size: 10.992366412214pt;">google play store</a>
+<a aria-label="hard disk (11 items)" class="tag-cloud-link tag-link-230 tag-link-position-21" href="/tag/hard-disk" style="font-size: 8.4274809160305pt;">hard disk</a>
+<a aria-label="hardware (23 items)" class="tag-cloud-link tag-link-167 tag-link-position-22" href="/tag/hardware" style="font-size: 11.63358778626pt;">hardware</a>
+<a aria-label="html (31 items)" class="tag-cloud-link tag-link-94 tag-link-position-23" href="/tag/html" style="font-size: 13.022900763359pt;">html</a>
+<a aria-label="humor (27 items)" class="tag-cloud-link tag-link-140 tag-link-position-24" href="/tag/humor" style="font-size: 12.381679389313pt;">humor</a>
+<a aria-label="imagem (10 items)" class="tag-cloud-link tag-link-304 tag-link-position-25" href="/tag/imagem" style="font-size: 8pt;">imagem</a>
+<a aria-label="javascript (58 items)" class="tag-cloud-link tag-link-100 tag-link-position-26" href="/tag/javascript" style="font-size: 15.801526717557pt;">javascript</a>
+<a aria-label="linha de comando (19 items)" class="tag-cloud-link tag-link-258 tag-link-position-27" href="/tag/linha-de-comando" style="font-size: 10.778625954198pt;">linha de comando</a>
+<a aria-label="linux (95 items)" class="tag-cloud-link tag-link-113 tag-link-position-28" href="/tag/linux" style="font-size: 18.045801526718pt;">linux</a>
+<a aria-label="modem (225 items)" class="tag-cloud-link tag-link-211 tag-link-position-29" href="/tag/modem" style="font-size: 22pt;">modem</a>
+<a aria-label="mysql (25 items)" class="tag-cloud-link tag-link-144 tag-link-position-30" href="/tag/mysql" style="font-size: 11.954198473282pt;">mysql</a>
+<a aria-label="pdf (13 items)" class="tag-cloud-link tag-link-114 tag-link-position-31" href="/tag/pdf" style="font-size: 9.175572519084pt;">pdf</a>
+<a aria-label="php (58 items)" class="tag-cloud-link tag-link-130 tag-link-position-32" href="/tag/php" style="font-size: 15.801526717557pt;">php</a>
+<a aria-label="postgresql (25 items)" class="tag-cloud-link tag-link-163 tag-link-position-33" href="/tag/postgresql" style="font-size: 11.954198473282pt;">postgresql</a>
+<a aria-label="programação (102 items)" class="tag-cloud-link tag-link-96 tag-link-position-34" href="/tag/programacao" style="font-size: 18.36641221374pt;">programação</a>
+<a aria-label="raspberry (33 items)" class="tag-cloud-link tag-link-338 tag-link-position-35" href="/tag/raspberry" style="font-size: 13.236641221374pt;">raspberry</a>
+<a aria-label="raspbian (23 items)" class="tag-cloud-link tag-link-337 tag-link-position-36" href="/tag/raspbian" style="font-size: 11.63358778626pt;">raspbian</a>
+<a aria-label="redes (14 items)" class="tag-cloud-link tag-link-166 tag-link-position-37" href="/tag/redes" style="font-size: 9.4961832061069pt;">redes</a>
+<a aria-label="router (224 items)" class="tag-cloud-link tag-link-353 tag-link-position-38" href="/tag/router" style="font-size: 22pt;">router</a>
+<a aria-label="segurança (13 items)" class="tag-cloud-link tag-link-137 tag-link-position-39" href="/tag/seguranca" style="font-size: 9.175572519084pt;">segurança</a>
+<a aria-label="shell (29 items)" class="tag-cloud-link tag-link-277 tag-link-position-40" href="/tag/shell" style="font-size: 12.702290076336pt;">shell</a>
+<a aria-label="shell script (46 items)" class="tag-cloud-link tag-link-112 tag-link-position-41" href="/tag/shell-script" style="font-size: 14.732824427481pt;">shell script</a>
+<a aria-label="ssh (11 items)" class="tag-cloud-link tag-link-165 tag-link-position-42" href="/tag/ssh" style="font-size: 8.4274809160305pt;">ssh</a>
+<a aria-label="Ubuntu (17 items)" class="tag-cloud-link tag-link-76 tag-link-position-43" href="/tag/ubuntu" style="font-size: 10.351145038168pt;">Ubuntu</a>
+<a aria-label="windows (24 items)" class="tag-cloud-link tag-link-142 tag-link-position-44" href="/tag/windows" style="font-size: 11.847328244275pt;">windows</a>
+<a aria-label="wordpress (19 items)" class="tag-cloud-link tag-link-84 tag-link-position-45" href="/tag/wordpress-2" style="font-size: 10.778625954198pt;">wordpress</a></div>
+</section><section class="widget widget_categories" id="categories-2"><h2 class="widget-title">Categorias</h2>
+<ul>
+<li class="cat-item cat-item-25"><a href="/category/administrativo">Administrativo</a> (64)
 </li>
-	<li class="cat-item cat-item-19"><a href="/category/android">Android</a> (42)
+<li class="cat-item cat-item-19"><a href="/category/android">Android</a> (42)
 </li>
-	<li class="cat-item cat-item-27"><a href="/category/angularjs" title="Tudo relativo a biblioteca javascript AngularJS">AngularJS</a> (42)
+<li class="cat-item cat-item-27"><a href="/category/angularjs" title="Tudo relativo a biblioteca javascript AngularJS">AngularJS</a> (42)
 </li>
-	<li class="cat-item cat-item-21"><a href="/category/apache">Apache</a> (29)
+<li class="cat-item cat-item-21"><a href="/category/apache">Apache</a> (29)
 </li>
-	<li class="cat-item cat-item-446"><a href="/category/artificial-intelligence">Artificial Intelligence</a> (9)
+<li class="cat-item cat-item-446"><a href="/category/artificial-intelligence">Artificial Intelligence</a> (9)
 </li>
-	<li class="cat-item cat-item-529"><a href="/category/automacao">Automação</a> (6)
+<li class="cat-item cat-item-529"><a href="/category/automacao">Automação</a> (6)
 </li>
-	<li class="cat-item cat-item-44"><a href="/category/backup">Backup</a> (5)
+<li class="cat-item cat-item-44"><a href="/category/backup">Backup</a> (5)
 </li>
-	<li class="cat-item cat-item-75"><a href="/category/bind">Bind</a> (12)
+<li class="cat-item cat-item-75"><a href="/category/bind">Bind</a> (12)
 </li>
-	<li class="cat-item cat-item-79"><a href="/category/chrome">Chrome</a> (39)
+<li class="cat-item cat-item-79"><a href="/category/chrome">Chrome</a> (39)
 </li>
-	<li class="cat-item cat-item-386"><a href="/category/criptografia">Criptografia</a> (4)
+<li class="cat-item cat-item-386"><a href="/category/criptografia">Criptografia</a> (4)
 </li>
-	<li class="cat-item cat-item-473"><a href="/category/cryptomoedas">Cryptomoedas</a> (8)
+<li class="cat-item cat-item-473"><a href="/category/cryptomoedas">Cryptomoedas</a> (8)
 </li>
-	<li class="cat-item cat-item-43"><a href="/category/css">CSS</a> (52)
+<li class="cat-item cat-item-43"><a href="/category/css">CSS</a> (52)
 </li>
-	<li class="cat-item cat-item-28"><a href="/category/curiosidades">Curiosidades</a> (241)
+<li class="cat-item cat-item-28"><a href="/category/curiosidades">Curiosidades</a> (241)
 </li>
-	<li class="cat-item cat-item-623"><a href="/category/data-mining">Data Mining</a> (3)
+<li class="cat-item cat-item-623"><a href="/category/data-mining">Data Mining</a> (3)
 </li>
-	<li class="cat-item cat-item-14"><a href="/category/debian">Debian</a> (84)
+<li class="cat-item cat-item-14"><a href="/category/debian">Debian</a> (84)
 </li>
-	<li class="cat-item cat-item-494"><a href="/category/docker">Docker</a> (2)
+<li class="cat-item cat-item-494"><a href="/category/docker">Docker</a> (2)
 </li>
-	<li class="cat-item cat-item-549"><a href="/category/dres">DRES</a> (5)
+<li class="cat-item cat-item-549"><a href="/category/dres">DRES</a> (5)
 </li>
-	<li class="cat-item cat-item-532"><a href="/category/eletronica">Eletrônica</a> (11)
+<li class="cat-item cat-item-532"><a href="/category/eletronica">Eletrônica</a> (11)
 </li>
-	<li class="cat-item cat-item-377"><a href="/category/energia">Energia</a> (13)
+<li class="cat-item cat-item-377"><a href="/category/energia">Energia</a> (13)
 </li>
-	<li class="cat-item cat-item-313"><a href="/category/english-required">English Required</a> (7)
+<li class="cat-item cat-item-313"><a href="/category/english-required">English Required</a> (7)
 </li>
-	<li class="cat-item cat-item-451"><a href="/category/excel">Excel</a> (4)
+<li class="cat-item cat-item-451"><a href="/category/excel">Excel</a> (4)
 </li>
-	<li class="cat-item cat-item-77"><a href="/category/exim">Exim</a> (13)
+<li class="cat-item cat-item-77"><a href="/category/exim">Exim</a> (13)
 </li>
-	<li class="cat-item cat-item-85"><a href="/category/firefox">Firefox</a> (7)
+<li class="cat-item cat-item-85"><a href="/category/firefox">Firefox</a> (7)
 </li>
-	<li class="cat-item cat-item-352"><a href="/category/ftp">FTP</a> (7)
+<li class="cat-item cat-item-352"><a href="/category/ftp">FTP</a> (7)
 </li>
-	<li class="cat-item cat-item-350"><a href="/category/fuse">FUSE</a> (1)
+<li class="cat-item cat-item-350"><a href="/category/fuse">FUSE</a> (1)
 </li>
-	<li class="cat-item cat-item-384"><a href="/category/ged">GED</a> (1)
+<li class="cat-item cat-item-384"><a href="/category/ged">GED</a> (1)
 </li>
-	<li class="cat-item cat-item-624"><a href="/category/gis">GIS</a> (2)
+<li class="cat-item cat-item-624"><a href="/category/gis">GIS</a> (2)
 </li>
-	<li class="cat-item cat-item-45"><a href="/category/git">GIT</a> (23)
+<li class="cat-item cat-item-45"><a href="/category/git">GIT</a> (23)
 </li>
-	<li class="cat-item cat-item-22"><a href="/category/gnome">Gnome</a> (10)
+<li class="cat-item cat-item-22"><a href="/category/gnome">Gnome</a> (10)
 </li>
-	<li class="cat-item cat-item-306"><a href="/category/hardware">Hardware</a> (256)
+<li class="cat-item cat-item-306"><a href="/category/hardware">Hardware</a> (256)
 </li>
-	<li class="cat-item cat-item-42"><a href="/category/html">HTML</a> (34)
+<li class="cat-item cat-item-42"><a href="/category/html">HTML</a> (34)
 </li>
-	<li class="cat-item cat-item-417"><a href="/category/ios">iOS</a> (1)
+<li class="cat-item cat-item-417"><a href="/category/ios">iOS</a> (1)
 </li>
-	<li class="cat-item cat-item-91"><a href="/category/java">Java</a> (6)
+<li class="cat-item cat-item-91"><a href="/category/java">Java</a> (6)
 </li>
-	<li class="cat-item cat-item-16"><a href="/category/javascript">JavaScript</a> (118)
+<li class="cat-item cat-item-16"><a href="/category/javascript">JavaScript</a> (118)
 </li>
-	<li class="cat-item cat-item-26"><a href="/category/juridico">Jurídico</a> (5)
+<li class="cat-item cat-item-26"><a href="/category/juridico">Jurídico</a> (5)
 </li>
-	<li class="cat-item cat-item-37"><a href="/category/linux">Linux</a> (168)
+<li class="cat-item cat-item-37"><a href="/category/linux">Linux</a> (168)
 </li>
-	<li class="cat-item cat-item-388"><a href="/category/marketing">Marketing</a> (1)
+<li class="cat-item cat-item-388"><a href="/category/marketing">Marketing</a> (1)
 </li>
-	<li class="cat-item cat-item-36"><a href="/category/modelo">Modelo</a> (6)
+<li class="cat-item cat-item-36"><a href="/category/modelo">Modelo</a> (6)
 </li>
-	<li class="cat-item cat-item-3"><a href="/category/mysql" title="Tudo relativo a banco de dados MySQL">MySQL</a> (45)
+<li class="cat-item cat-item-3"><a href="/category/mysql" title="Tudo relativo a banco de dados MySQL">MySQL</a> (45)
 </li>
-	<li class="cat-item cat-item-450"><a href="/category/network">Network</a> (3)
+<li class="cat-item cat-item-450"><a href="/category/network">Network</a> (3)
 </li>
-	<li class="cat-item cat-item-78"><a href="/category/nfs">NFS</a> (4)
+<li class="cat-item cat-item-78"><a href="/category/nfs">NFS</a> (4)
 </li>
-	<li class="cat-item cat-item-428"><a href="/category/nightwatchjs">NightwatchJS</a> (1)
+<li class="cat-item cat-item-428"><a href="/category/nightwatchjs">NightwatchJS</a> (1)
 </li>
-	<li class="cat-item cat-item-51"><a href="/category/nodejs">NodeJs</a> (13)
+<li class="cat-item cat-item-51"><a href="/category/nodejs">NodeJs</a> (13)
 </li>
-	<li class="cat-item cat-item-5"><a href="/category/padronizacao">Padronização</a> (267)
+<li class="cat-item cat-item-5"><a href="/category/padronizacao">Padronização</a> (267)
 </li>
-	<li class="cat-item cat-item-508"><a href="/category/perl">Perl</a> (1)
+<li class="cat-item cat-item-508"><a href="/category/perl">Perl</a> (1)
 </li>
-	<li class="cat-item cat-item-364"><a href="/category/phonegap">phoneGap</a> (3)
+<li class="cat-item cat-item-364"><a href="/category/phonegap">phoneGap</a> (3)
 </li>
-	<li class="cat-item cat-item-12"><a href="/category/php">PHP</a> (126)
+<li class="cat-item cat-item-12"><a href="/category/php">PHP</a> (126)
 </li>
-	<li class="cat-item cat-item-2"><a href="/category/postgresql" title="Tudo relativo a banco de dados PostgreSQL">PostgreSQL</a> (69)
+<li class="cat-item cat-item-2"><a href="/category/postgresql" title="Tudo relativo a banco de dados PostgreSQL">PostgreSQL</a> (69)
 </li>
-	<li class="cat-item cat-item-72"><a href="/category/prs-producao-rapida-de-sistemas">PRS &#8211; Produção Rápida de Sistemas</a> (8)
+<li class="cat-item cat-item-72"><a href="/category/prs-producao-rapida-de-sistemas">PRS – Produção Rápida de Sistemas</a> (8)
 </li>
-	<li class="cat-item cat-item-24"><a href="/category/psql">PSQL</a> (10)
+<li class="cat-item cat-item-24"><a href="/category/psql">PSQL</a> (10)
 </li>
-	<li class="cat-item cat-item-13"><a href="/category/python">Python</a> (44)
+<li class="cat-item cat-item-13"><a href="/category/python">Python</a> (44)
 </li>
-	<li class="cat-item cat-item-92"><a href="/category/rss">RSS</a> (2)
+<li class="cat-item cat-item-92"><a href="/category/rss">RSS</a> (2)
 </li>
-	<li class="cat-item cat-item-15"><a href="/category/ruby">Ruby</a> (6)
+<li class="cat-item cat-item-15"><a href="/category/ruby">Ruby</a> (6)
 </li>
-	<li class="cat-item cat-item-80"><a href="/category/seguranca">Segurança</a> (6)
+<li class="cat-item cat-item-80"><a href="/category/seguranca">Segurança</a> (6)
 </li>
-	<li class="cat-item cat-item-18"><a href="/category/shell">Shell</a> (174)
+<li class="cat-item cat-item-18"><a href="/category/shell">Shell</a> (174)
 </li>
-	<li class="cat-item cat-item-70"><a href="/category/treinamento/tutoriais-javascript/smarttable-component-para-o-angular" title="Como devemos utilizar este componente.">SmartTable (component para o angular)</a> (2)
+<li class="cat-item cat-item-70"><a href="/category/treinamento/tutoriais-javascript/smarttable-component-para-o-angular" title="Como devemos utilizar este componente.">SmartTable (component para o angular)</a> (2)
 </li>
-	<li class="cat-item cat-item-62"><a href="/category/ssh">SSH</a> (16)
+<li class="cat-item cat-item-62"><a href="/category/ssh">SSH</a> (16)
 </li>
-	<li class="cat-item cat-item-41"><a href="/category/svn">SVN</a> (1)
+<li class="cat-item cat-item-41"><a href="/category/svn">SVN</a> (1)
 </li>
-	<li class="cat-item cat-item-470"><a href="/category/thunderbird">Thunderbird</a> (1)
+<li class="cat-item cat-item-470"><a href="/category/thunderbird">Thunderbird</a> (1)
 </li>
-	<li class="cat-item cat-item-17"><a href="/category/treinamento">Treinamento</a> (5)
+<li class="cat-item cat-item-17"><a href="/category/treinamento">Treinamento</a> (5)
 </li>
-	<li class="cat-item cat-item-49"><a href="/category/tutorial-2" title="Categoria destinada a tutoriais">Tutorial</a> (46)
+<li class="cat-item cat-item-49"><a href="/category/tutorial-2" title="Categoria destinada a tutoriais">Tutorial</a> (46)
 </li>
-	<li class="cat-item cat-item-52"><a href="/category/twitter-bootstrap">Twitter Bootstrap</a> (3)
+<li class="cat-item cat-item-52"><a href="/category/twitter-bootstrap">Twitter Bootstrap</a> (3)
 </li>
-	<li class="cat-item cat-item-86"><a href="/category/ubuntu">Ubuntu</a> (8)
+<li class="cat-item cat-item-86"><a href="/category/ubuntu">Ubuntu</a> (8)
 </li>
-	<li class="cat-item cat-item-1"><a href="/category/uncategorized">Uncategorized</a> (11)
+<li class="cat-item cat-item-1"><a href="/category/uncategorized">Uncategorized</a> (11)
 </li>
-	<li class="cat-item cat-item-423"><a href="/category/upnp">UPNP</a> (1)
+<li class="cat-item cat-item-423"><a href="/category/upnp">UPNP</a> (1)
 </li>
-	<li class="cat-item cat-item-273"><a href="/category/vba">VBA</a> (2)
+<li class="cat-item cat-item-273"><a href="/category/vba">VBA</a> (2)
 </li>
-	<li class="cat-item cat-item-48"><a href="/category/tutorial" title="Categoria destinada a video tutoriais">Video Tutorial</a> (2)
+<li class="cat-item cat-item-48"><a href="/category/tutorial" title="Categoria destinada a video tutoriais">Video Tutorial</a> (2)
 </li>
-	<li class="cat-item cat-item-608"><a href="/category/virtualbox">VirtualBox</a> (1)
+<li class="cat-item cat-item-608"><a href="/category/virtualbox">VirtualBox</a> (1)
 </li>
-	<li class="cat-item cat-item-296"><a href="/category/vuejs">VueJS</a> (15)
+<li class="cat-item cat-item-296"><a href="/category/vuejs">VueJS</a> (15)
 </li>
-	<li class="cat-item cat-item-265"><a href="/category/windows">Windows</a> (27)
+<li class="cat-item cat-item-265"><a href="/category/windows">Windows</a> (27)
 </li>
-	<li class="cat-item cat-item-23"><a href="/category/wordpress">WordPress</a> (33)
+<li class="cat-item cat-item-23"><a href="/category/wordpress">WordPress</a> (33)
 </li>
-	<li class="cat-item cat-item-20"><a href="/category/xen">Xen</a> (5)
+<li class="cat-item cat-item-20"><a href="/category/xen">Xen</a> (5)
 </li>
-			</ul>
-
-			</section>		</aside><!-- #secondary .widget-area -->
-
-	</div><!-- #main -->
-
-	
-	<footer id="colophon" role="contentinfo">
-		
-        <div id="site-generator" class="clearfix">
-
-            
-			<nav class="social-profile" role="navigation" aria-label="Footer Social Links Menu">
- 		 		<ul>
-				</ul>
-			</nav><!-- .social-profile --><div class="copyright">Copyright &copy; 2020 <a href="/" title="Drall Dev Community" ><span>Drall Dev Community</span></a>. All Rights Reserved. </div><div class="powered"><span class="theme-name">Theme: Catch Box by </span><span class="theme-author"><a href="https://catchthemes.com/" title="Catch Themes">Catch Themes</a></span></div>
-        </div> <!-- #site-generator -->
-
-	</footer><!-- #colophon -->
-
+</ul>
+</section> </aside><!-- #secondary .widget-area -->
+</div><!-- #main -->
+<footer id="colophon" role="contentinfo">
+<div class="clearfix" id="site-generator">
+<nav aria-label="Footer Social Links Menu" class="social-profile" role="navigation">
+<ul>
+</ul>
+</nav><!-- .social-profile --><div class="copyright">Copyright © 2020 <a href="/" title="Drall Dev Community"><span>Drall Dev Community</span></a>. All Rights Reserved. </div><div class="powered"><span class="theme-name">Theme: Catch Box by </span><span class="theme-author"><a href="https://catchthemes.com/" title="Catch Themes">Catch Themes</a></span></div>
+</div> <!-- #site-generator -->
+</footer><!-- #colophon -->
 </div><!-- #page -->
-
 <a href="#branding" id="scrollup"><span class="screen-reader-text">Scroll Up</span></a>
-	<script language="JavaScript">
+<script language="JavaScript">
 
 	function checkAll(field)
 	{
@@ -926,9 +821,9 @@ ONBOOT=yes&lt;/div&gt;
 		field[i].checked = false ;
 	}
 	</script>
-<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js' id='syntaxhighlighter-core-js'></script>
-<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash.js' id='syntaxhighlighter-brush-bash-js'></script>
-<script type='text/javascript'>
+<script id="syntaxhighlighter-core-js" src="/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js" type="text/javascript"></script>
+<script id="syntaxhighlighter-brush-bash-js" src="/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash.js" type="text/javascript"></script>
+<script type="text/javascript">
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
@@ -970,34 +865,32 @@ ONBOOT=yes&lt;/div&gt;
 		} );
 	}
 </script>
-<link rel='stylesheet' id='yarppRelatedCss-css'  href='/wp-content/plugins/yet-another-related-posts-plugin/style/related.css' type='text/css' media='all' />
-<link rel='stylesheet' id='popularity-posts-widget-css'  href='/wp-content/plugins/popularity-posts-widget/style/ppw.css' type='text/css' media='all' />
-<script type='text/javascript' id='contact-form-7-js-extra'>
+<link href="/wp-content/plugins/yet-another-related-posts-plugin/style/related.css" id="yarppRelatedCss-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/wp-content/plugins/popularity-posts-widget/style/ppw.css" id="popularity-posts-widget-css" media="all" rel="stylesheet" type="text/css"/>
+<script id="contact-form-7-js-extra" type="text/javascript">
 /* <![CDATA[ */
 var wpcf7 = {"apiSettings":{"root":"http:\/\/devblog.drall.com.br\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/wp-content/plugins/contact-form-7/includes/js/scripts.js' id='contact-form-7-js'></script>
-<script type='text/javascript' src='/wp-content/themes/catch-box/js/skip-link-focus-fix.js' id='catchbox-skip-link-focus-fix-js'></script>
-<script type='text/javascript' src='/wp-content/themes/catch-box/js/catchbox-scrollup.min.js' id='catchbox-scrollup-js'></script>
-<script type='text/javascript' id='facebook-jssdk-js-extra'>
+<script id="contact-form-7-js" src="/wp-content/plugins/contact-form-7/includes/js/scripts.js" type="text/javascript"></script>
+<script id="catchbox-skip-link-focus-fix-js" src="/wp-content/themes/catch-box/js/skip-link-focus-fix.js" type="text/javascript"></script>
+<script id="catchbox-scrollup-js" src="/wp-content/themes/catch-box/js/catchbox-scrollup.min.js" type="text/javascript"></script>
+<script id="facebook-jssdk-js-extra" type="text/javascript">
 /* <![CDATA[ */
 var FB_WP=FB_WP||{};FB_WP.queue={_methods:[],flushed:false,add:function(fn){FB_WP.queue.flushed?fn():FB_WP.queue._methods.push(fn)},flush:function(){for(var fn;fn=FB_WP.queue._methods.shift();){fn()}FB_WP.queue.flushed=true}};window.fbAsyncInit=function(){FB.init({"xfbml":true,"appId":"807028999313203"});if(FB_WP && FB_WP.queue && FB_WP.queue.flush){FB_WP.queue.flush()}}
 /* ]]> */
 </script>
 <script type="text/javascript">(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="http:\/\/connect.facebook.net\/en_US\/all.js";fjs.parentNode.insertBefore(js,fjs)}(document,"script","facebook-jssdk"));</script>
-<script type='text/javascript' src='/wp-content/plugins/youtube-embed-plus/scripts/fitvids.min.js' id='__ytprefsfitvids__-js'></script>
-<script type='text/javascript' src='/wp-includes/js/jquery/ui/core.min.js' id='jquery-ui-core-js'></script>
-<script type='text/javascript' src='/wp-includes/js/jquery/ui/datepicker.min.js' id='jquery-ui-datepicker-js'></script>
-<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>
-<div id="fb-root"></div>		<script type="text/javascript">
+<script id="__ytprefsfitvids__-js" src="/wp-content/plugins/youtube-embed-plus/scripts/fitvids.min.js" type="text/javascript"></script>
+<script id="jquery-ui-core-js" src="/wp-includes/js/jquery/ui/core.min.js" type="text/javascript"></script>
+<script id="jquery-ui-datepicker-js" src="/wp-includes/js/jquery/ui/datepicker.min.js" type="text/javascript"></script>
+<script id="wp-embed-js" src="/wp-includes/js/wp-embed.min.js" type="text/javascript"></script>
+<div id="fb-root"></div> <script type="text/javascript">
 			var bwpRecaptchaCallback = function() {
 				// render all collected recaptcha instances
 			};
 		</script>
-
-		<script src="https://www.google.com/recaptcha/api.js?onload=bwpRecaptchaCallback&#038;render=explicit" async defer></script>
-
+<script async="" defer="" src="https://www.google.com/recaptcha/api.js?onload=bwpRecaptchaCallback&amp;render=explicit"></script>
 </body>
 </html>
 <script></script>
