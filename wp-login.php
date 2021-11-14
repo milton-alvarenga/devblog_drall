@@ -3,7 +3,8 @@
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Log In &lsaquo; Drall Dev Community &#8212; WordPress</title>
-	<link rel='dns-prefetch' href='//www.google.com' />
+	<meta name='robots' content='max-image-preview:large, noindex, noarchive' />
+<link rel='dns-prefetch' href='//www.google.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
 	<script language="JavaScript">
 
@@ -19,10 +20,10 @@
 		field[i].checked = false ;
 	}
 	</script>
-<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?ver=5.5.1' id='no_captcha_login-js'></script>
-<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?ver=5.8.2' id='no_captcha_login-js'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
 <script type='text/javascript' src='/wp-content/plugins/collabpress/includes/js/frontend.js' id='cp_frontend-js'></script>
-<link rel='stylesheet' id='yarppWidgetCss-css'  href='/wp-content/plugins/yet-another-related-posts-plugin/style/widget.css' type='text/css' media='all' />
 <link rel='stylesheet' id='dashicons-css'  href='/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
 <link rel='stylesheet' id='buttons-css'  href='/wp-includes/css/buttons.min.css' type='text/css' media='all' />
 <link rel='stylesheet' id='forms-css'  href='/wp-admin/css/forms.min.css' type='text/css' media='all' />
@@ -51,7 +52,6 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
 .si-captcha-jetpack-error { color:#DC3232; }
 </style>
 <!-- end SI CAPTCHA Anti-Spam - login/register form style -->
-	<meta name='robots' content='noindex,noarchive' />
 	<meta name='referrer' content='strict-origin-when-cross-origin' />
 		<meta name="viewport" content="width=device-width" />
 		</head>
@@ -78,12 +78,12 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
 				</div>
 			</div>
 			<p class="cptch_block"><span class="cptch_wrap cptch_math_actions">
-				<label class="cptch_label" for="cptch_input_18"><span class="cptch_span">th&#114;ee</span>
-					<span class="cptch_span">&nbsp;&times;&nbsp;</span>
-					<span class="cptch_span"><input id="cptch_input_18" class="cptch_input cptch_wp_login" type="text" autocomplete="off" name="cptch_number" value="" maxlength="2" size="2" aria-required="true" required="required" style="margin-bottom:0;display:inline;font-size: 12px;width: 40px;" /></span>
+				<label class="cptch_label" for="cptch_input_80"><span class="cptch_span">2</span>
+					<span class="cptch_span">&nbsp;&#43;&nbsp;</span>
+					<span class="cptch_span">&#101;&#105;gh&#116;</span>
 					<span class="cptch_span">&nbsp;=&nbsp;</span>
-					<span class="cptch_span">si&#120;</span>
-					<input type="hidden" name="cptch_result" value="Mbs=" /><input type="hidden" name="cptch_time" value="1602107711" />
+					<span class="cptch_span"><input id="cptch_input_80" class="cptch_input cptch_wp_login" type="text" autocomplete="off" name="cptch_number" value="" maxlength="2" size="2" aria-required="true" required="required" style="margin-bottom:0;display:inline;font-size: 12px;width: 40px;" /></span>
+					<input type="hidden" name="cptch_result" value="rC9g" /><input type="hidden" name="cptch_time" value="1636895855" />
 					<input type="hidden" name="cptch_form" value="wp_login" />
 				</label><span class="cptch_reload_button_wrap hide-if-no-js">
 					<noscript>
@@ -109,8 +109,8 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
 			function wp_attempt_focus() {setTimeout( function() {try {d = document.getElementById( "user_login" );d.focus(); d.select();} catch( er ) {}}, 200);}
 wp_attempt_focus();
 if ( typeof wpOnload === 'function' ) { wpOnload() }		</script>
-				<p id="backtoblog"><a href="/">
-		&larr; Back to Drall Dev Community		</a></p>
+				<p id="backtoblog">
+			<a href="/">&larr; Go to Drall Dev Community</a>		</p>
 			</div>
 	<script type='text/javascript' src='/wp-includes/js/jquery/ui/core.min.js' id='jquery-ui-core-js'></script>
 <script type='text/javascript' src='/wp-includes/js/jquery/ui/datepicker.min.js' id='jquery-ui-datepicker-js'></script>
@@ -120,11 +120,13 @@ var _zxcvbnSettings = {"src":"http:\/\/devblog.drall.com.br\/wp-includes\/js\/zx
 /* ]]> */
 </script>
 <script type='text/javascript' src='/wp-includes/js/zxcvbn-async.min.js' id='zxcvbn-async-js'></script>
+<script type='text/javascript' src='/wp-includes/js/dist/vendor/regenerator-runtime.min.js' id='regenerator-runtime-js'></script>
 <script type='text/javascript' src='/wp-includes/js/dist/vendor/wp-polyfill.min.js' id='wp-polyfill-js'></script>
-<script type='text/javascript' id='wp-polyfill-js-after'>
-( 'fetch' in window ) || document.write( '<script src="http://devblog.drall.com.br/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="http://devblog.drall.com.br/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.DOMRect ) || document.write( '<script src="http://devblog.drall.com.br/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="http://devblog.drall.com.br/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="http://devblog.drall.com.br/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="http://devblog.drall.com.br/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>' );
-</script>
+<script type='text/javascript' src='/wp-includes/js/dist/hooks.min.js' id='wp-hooks-js'></script>
 <script type='text/javascript' src='/wp-includes/js/dist/i18n.min.js' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
 <script type='text/javascript' id='password-strength-meter-js-extra'>
 /* <![CDATA[ */
 var pwsL10n = {"unknown":"Password strength unknown","short":"Very weak","bad":"Weak","good":"Medium","strong":"Strong","mismatch":"Mismatch"};
@@ -145,6 +147,11 @@ var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
 /* ]]> */
 </script>
 <script type='text/javascript' src='/wp-includes/js/wp-util.min.js' id='wp-util-js'></script>
+<script type='text/javascript' id='user-profile-js-extra'>
+/* <![CDATA[ */
+var userProfileL10n = {"user_id":"0","nonce":"dbbd0b0114"};
+/* ]]> */
+</script>
 <script type='text/javascript' id='user-profile-js-translations'>
 ( function( domain, translations ) {
 	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
@@ -155,7 +162,7 @@ var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
 <script type='text/javascript' src='/wp-admin/js/user-profile.min.js' id='user-profile-js'></script>
 <script type='text/javascript' id='cptch_front_end_script-js-extra'>
 /* <![CDATA[ */
-var cptch_vars = {"nonce":"c3dfbca2a5","ajaxurl":"http:\/\/devblog.drall.com.br\/wp-admin\/admin-ajax.php","enlarge":""};
+var cptch_vars = {"nonce":"5921d48731","ajaxurl":"http:\/\/devblog.drall.com.br\/wp-admin\/admin-ajax.php","enlarge":""};
 /* ]]> */
 </script>
 <script type='text/javascript' src='/wp-content/plugins/captcha/js/front_end_script.js' id='cptch_front_end_script-js'></script>
