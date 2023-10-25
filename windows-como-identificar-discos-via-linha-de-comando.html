@@ -16,11 +16,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-<title>Drall Dev Community &#8211; Page 2 &#8211; Blog de compartilhamento de informações de desenvolvimento de sistemas</title>
+<title>Windows &#8211; Como identificar discos via linha de comando &#8211; Drall Dev Community</title>
 <meta name='robots' content='max-image-preview:large' />
 <link rel="dns-prefetch" href="//connect.facebook.net">
 <link rel='dns-prefetch' href='//static.addtoany.com' />
 <link rel='dns-prefetch' href='//connect.facebook.net' />
+
 
 
 <script type="text/javascript">
@@ -68,6 +69,10 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <link rel='stylesheet' id='catchbox-style-css' href='/wp-content/themes/catch-box-child/style.css' type='text/css' media='all' />
 <link rel='stylesheet' id='catchbox-block-style-css' href='/wp-content/themes/catch-box/css/blocks.css' type='text/css' media='all' />
 <link rel='stylesheet' id='blue-css' href='/wp-content/themes/catch-box/colors/blue.css' type='text/css' media='all' />
+<link rel='stylesheet' id='yarpp-thumbnails-css' href='/wp-content/plugins/yet-another-related-posts-plugin/style/styles_thumbnails.css' type='text/css' media='all' />
+<style id='yarpp-thumbnails-inline-css' type='text/css'>
+.yarpp-thumbnails-horizontal .yarpp-thumbnail {width: 130px;height: 170px;margin: 5px;margin-left: 0px;}.yarpp-thumbnail > img, .yarpp-thumbnail-default {width: 120px;height: 120px;margin: 5px;}.yarpp-thumbnails-horizontal .yarpp-thumbnail-title {margin: 7px;margin-top: 0px;width: 120px;}.yarpp-thumbnail-default > img {min-height: 120px;min-width: 120px;}
+</style>
 <link rel='stylesheet' id='cb_p6-css-main-css' href='/wp-content/plugins/patron-button-and-widgets-by-codebard/plugin/templates/default/style.css' type='text/css' media='all' />
 <link rel='stylesheet' id='addtoany-css' href='/wp-content/plugins/add-to-any/addtoany.min.css' type='text/css' media='all' />
 <link rel='stylesheet' id='__EPYT__style-css' href='/wp-content/plugins/youtube-embed-plus/styles/ytprefs.min.css' type='text/css' media='all' />
@@ -111,11 +116,15 @@ var screenReaderText = {"expand":"expand child menu","collapse":"collapse child 
 <script type='text/javascript' src='/wp-content/themes/catch-box/js/html5.min.js' id='catchbox-html5-js'></script>
 <script type='text/javascript' id='__ytprefs__-js-extra'>
 /* <![CDATA[ */
-var _EPYT_ = {"ajaxurl":"http:\/\/devblog.drall.com.br\/wp-admin\/admin-ajax.php","security":"e037392722","gallery_scrolloffset":"20","eppathtoscripts":"http:\/\/devblog.drall.com.br\/wp-content\/plugins\/youtube-embed-plus\/scripts\/","eppath":"http:\/\/devblog.drall.com.br\/wp-content\/plugins\/youtube-embed-plus\/","epresponsiveselector":"[\"iframe.__youtube_prefs_widget__\"]","epdovol":"1","version":"14.2","evselector":"iframe.__youtube_prefs__[src], iframe[src*=\"youtube.com\/embed\/\"], iframe[src*=\"youtube-nocookie.com\/embed\/\"]","ajax_compat":"","maxres_facade":"eager","ytapi_load":"light","pause_others":"","stopMobileBuffer":"1","facade_mode":"","not_live_on_channel":"","vi_active":"","vi_js_posttypes":[]};
+var _EPYT_ = {"ajaxurl":"http:\/\/devblog.drall.com.br\/wp-admin\/admin-ajax.php","security":"e037392722","gallery_scrolloffset":"20","eppathtoscripts":"http:\/\/devblog.drall.com.br\/wp-content\/plugins\/youtube-embed-plus\/scripts\/","eppath":"http:\/\/devblog.drall.com.br\/wp-content\/plugins\/youtube-embed-plus\/","epresponsiveselector":"[\"iframe.__youtube_prefs_widget__\"]","epdovol":"1","version":"14.1.6.2","evselector":"iframe.__youtube_prefs__[src], iframe[src*=\"youtube.com\/embed\/\"], iframe[src*=\"youtube-nocookie.com\/embed\/\"]","ajax_compat":"","maxres_facade":"eager","ytapi_load":"light","pause_others":"","stopMobileBuffer":"1","facade_mode":"","not_live_on_channel":"","vi_active":"","vi_js_posttypes":[]};
 /* ]]> */
 </script>
 <script type='text/javascript' src='/wp-content/plugins/youtube-embed-plus/scripts/ytprefs.min.js' id='__ytprefs__-js'></script>
 <script type='text/javascript' src='/wp-content/plugins/collabpress/includes/js/frontend.js' id='cp_frontend-js'></script>
+
+
+
+
 
 
 
@@ -159,17 +168,18 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
 		}
 		</style>
 	<meta property="og:site_name" content="Drall Dev Community">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="fb:app_id" content="807028999313203">
-<meta property="og:title" content="Drall Dev Community">
-<meta property="og:description" content="Blog de compartilhamento de informações de desenvolvimento de sistemas">
-<meta property="og:url" content="http://devblog.drall.com.br">
-
-<!--Plugin WP Missed Schedule Active - Secured with Genuine Authenticity KeyTag-->
-
-<!-- This site is patched against a big problem not solved since WordPress 2.5 -->
-
+<meta property="og:url" content="http://devblog.drall.com.br/windows-como-identificar-discos-via-linha-de-comando/">
+<meta property="og:title" content="Windows &#8211; Como identificar discos via linha de comando">
+<meta property="og:description" content="Abra o powershell Execute o comando: wmic diskdrive list brief Os caminhos dos discos estão disponíveis nas colunas &#039;DeviceID&#039;. Geralmente no formato .\PHYSICALDRIVE*. Um exemplo de resultado: Caption DeviceID Model Partitions Size KINGSTON SA400S37240G \\.\PHYSICALDRIVE1 KINGSTON SA400S37240G 1 240054796800 GC128&hellip;">
+<meta property="article:published_time" content="2022-02-15T17:33:00+00:00">
+<meta property="article:modified_time" content="2022-05-15T17:39:11+00:00">
+<meta property="article:author" content="http://devblog.drall.com.br/author/alvarenga-milton/">
+<meta property="article:section" content="Windows">
+<meta property="article:tag" content="linha de comando">
+<meta property="article:tag" content="powershell">
 		<style type="text/css" id="wp-custom-css">
 			@import url("../catch-box/style.css");		</style>
 		<style type="text/css">
@@ -177,7 +187,7 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
 </style>
 </head>
 
-<body class="home blog paged wp-custom-logo wp-embed-responsive paged-2 right-sidebar one-menu header-image-top">
+<body class="post-template-default single single-post postid-10028 single-format-standard wp-custom-logo wp-embed-responsive right-sidebar one-menu header-image-top">
 
 <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0 0.49803921568627" /><fefuncg type="table" tablevalues="0 0.49803921568627" /><fefuncb type="table" tablevalues="0 0.49803921568627" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0 1" /><fefuncg type="table" tablevalues="0 1" /><fefuncb type="table" tablevalues="0 1" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765" /><fefuncg type="table" tablevalues="0 1" /><fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0 1" /><fefuncg type="table" tablevalues="0 0.27843137254902" /><fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0 0" /><fefuncg type="table" tablevalues="0 0.64705882352941" /><fefuncb type="table" tablevalues="0 1" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0.78039215686275 1" /><fefuncg type="table" tablevalues="0 0.94901960784314" /><fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745" /><fefuncg type="table" tablevalues="0 1" /><fefuncb type="table" tablevalues="0.44705882352941 0.4" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0.098039215686275 1" /><fefuncg type="table" tablevalues="0 0.66274509803922" /><fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg>
 
@@ -190,7 +200,7 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
     	<div id="header-content" class="clearfix">
 
 			<div class="logo-wrap clearfix"><div id="site-logo"><a href="/" class="custom-logo-link" rel="home"><img width="495" height="112" src="/wp-content/uploads/2017/04/cropped-Logo_oficial-495x112-1.png" class="custom-logo" alt="Drall Dev Community" decoding="async" /></a></div><!-- #site-logo -->	<div id="hgroup" class="site-details">
-					<h1 id="site-title"><a href="/" rel="home">Drall Dev Community</a></h1>
+					<p id="site-title"><a href="/" rel="home">Drall Dev Community</a></p>
 					<p id="site-description">Blog de compartilhamento de informações de desenvolvimento de sistemas</p>
 			
    	</div><!-- #hgroup -->
@@ -216,7 +226,7 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
             <nav id="access" class="main-navigation menu-focus" role="navigation" aria-label="Primary Menu">
             
                 <h3 class="screen-reader-text">Primary menu</h3>
-                <div class="menu-header-container"><ul class="menu"><li id="menu-item-1905" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-home menu-item-1905"><a href="/">Home</a></li>
+                <div class="menu-header-container"><ul class="menu"><li id="menu-item-1905" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1905"><a href="/">Home</a></li>
 <li id="menu-item-1907" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1907"><a href="/sample-page/">Sobre</a></li>
 <li id="menu-item-1906" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1906"><a href="/contato/">Contato</a></li>
 <li id="menu-item-2034" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2034"><a href="http://blog.drall.com.br">Últimas Novidades</a></li>
@@ -236,305 +246,90 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
 
 			
 			<div id="content" role="main">
-				<!-- refreshing cache -->            	
-
-			
-								
-					
-	<article id="post-10017" class="post-10017 post type-post status-publish format-standard hentry category-linux category-shell">
-		<header class="entry-header">
-							<h2 class="entry-title"><a href="/moc-player-instalacao-em-mint-linux/" title="Permalink to Moc Player – Instalação em Mint Linux" rel="bookmark">Moc Player – Instalação em Mint Linux</a></h2>
-			
-			                <div class="entry-meta">
-                    <span class="sep">Posted on </span><a href="/moc-player-instalacao-em-mint-linux/" title="13:07" rel="bookmark"><time class="entry-date updated" datetime="2021-11-06T13:07:53-03:00" pubdate>November 6, 2021</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/alvarenga-milton/" title="View all posts by Alvarenga Milton" rel="author">Alvarenga Milton</a></span></span>                                        	<span class="sep sep-comment"> &mdash; </span>
-                        <span class="comments-link">
-                         	<a href="/moc-player-instalacao-em-mint-linux/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/moc-player-instalacao-em-mint-linux/"></fb:comments-count> Comments</a>                        </span>
-                                    </div><!-- .entry-meta -->
-					</header><!-- .entry-header -->
-
-		             <div class="entry-summary">
-                                <div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/moc-player-instalacao-em-mint-linux/" data-a2a-title="Moc Player – Instalação em Mint Linux"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmoc-player-instalacao-em-mint-linux%2F&amp;linkname=Moc%20Player%20%E2%80%93%20Instala%C3%A7%C3%A3o%20em%20Mint%20Linux" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmoc-player-instalacao-em-mint-linux%2F&amp;linkname=Moc%20Player%20%E2%80%93%20Instala%C3%A7%C3%A3o%20em%20Mint%20Linux" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmoc-player-instalacao-em-mint-linux%2F&amp;linkname=Moc%20Player%20%E2%80%93%20Instala%C3%A7%C3%A3o%20em%20Mint%20Linux" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmoc-player-instalacao-em-mint-linux%2F&amp;linkname=Moc%20Player%20%E2%80%93%20Instala%C3%A7%C3%A3o%20em%20Mint%20Linux" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmoc-player-instalacao-em-mint-linux%2F&amp;linkname=Moc%20Player%20%E2%80%93%20Instala%C3%A7%C3%A3o%20em%20Mint%20Linux" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmoc-player-instalacao-em-mint-linux%2F&amp;linkname=Moc%20Player%20%E2%80%93%20Instala%C3%A7%C3%A3o%20em%20Mint%20Linux" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmoc-player-instalacao-em-mint-linux%2F&amp;linkname=Moc%20Player%20%E2%80%93%20Instala%C3%A7%C3%A3o%20em%20Mint%20Linux" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><p>O Moc (Music On Console) é um excelente Music Player para consoles no Linux. E pronto! Simples e direto Para executar, basta na linha de comando rodar o comando mocp</p>
-            </div><!-- .entry-summary -->
-		
-		<footer class="entry-meta">
-												<span class="cat-links">
-				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/linux/" rel="category tag">Linux</a>, <a href="/category/shell/" rel="category tag">Shell</a>			</span>
-									
-									<span class="sep"> | </span>
-						<span class="comments-link"><a href="/moc-player-instalacao-em-mint-linux/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/moc-player-instalacao-em-mint-linux/"></fb:comments-count> Comments</a></span>
-			
-					</footer><!-- #entry-meta -->
-	</article><!-- #post-10017 -->
 				
-					
-	<article id="post-10012" class="post-10012 post type-post status-publish format-standard hentry category-algoritmo tag-tempo-real tag-colaborativo tag-programacao tag-realtime">
-		<header class="entry-header">
-							<h2 class="entry-title"><a href="/algoritmo-crdt/" title="Permalink to Algoritmo CRDT" rel="bookmark">Algoritmo CRDT</a></h2>
-			
-			                <div class="entry-meta">
-                    <span class="sep">Posted on </span><a href="/algoritmo-crdt/" title="20:11" rel="bookmark"><time class="entry-date updated" datetime="2021-10-23T20:11:28-03:00" pubdate>October 23, 2021</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/alvarenga-milton/" title="View all posts by Alvarenga Milton" rel="author">Alvarenga Milton</a></span></span>                                        	<span class="sep sep-comment"> &mdash; </span>
-                        <span class="comments-link">
-                         	<a href="/algoritmo-crdt/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/algoritmo-crdt/"></fb:comments-count> Comments</a>                        </span>
-                                    </div><!-- .entry-meta -->
-					</header><!-- .entry-header -->
-
-		             <div class="entry-summary">
-                                <div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/algoritmo-crdt/" data-a2a-title="Algoritmo CRDT"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Falgoritmo-crdt%2F&amp;linkname=Algoritmo%20CRDT" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Falgoritmo-crdt%2F&amp;linkname=Algoritmo%20CRDT" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Falgoritmo-crdt%2F&amp;linkname=Algoritmo%20CRDT" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Falgoritmo-crdt%2F&amp;linkname=Algoritmo%20CRDT" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Falgoritmo-crdt%2F&amp;linkname=Algoritmo%20CRDT" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Falgoritmo-crdt%2F&amp;linkname=Algoritmo%20CRDT" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Falgoritmo-crdt%2F&amp;linkname=Algoritmo%20CRDT" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><p>Conflict-free replicated data types (CRDT) para edição colaborativa são alternativas as abordagens oferecidas pelos algorítmos de operational transformation (OT). Uma simples diferenciação entre as duas abordagens é que o OT tenta transformar índices de posição para assegurar convergência (todos os <a class="more-link" href="/algoritmo-crdt/">Continue reading <span class="screen-reader-text">  Algoritmo CRDT</span><span class="meta-nav">&rarr;</span></a></p>
-            </div><!-- .entry-summary -->
-		
-		<footer class="entry-meta">
-												<span class="cat-links">
-				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/algoritmo/" rel="category tag">Algoritmo</a>			</span>
-									<span class="sep"> | </span>
-							<span class="tag-links">
-				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="/tag/tempo-real/" rel="tag">&quot;tempo real&quot;</a>, <a href="/tag/colaborativo/" rel="tag">colaborativo</a>, <a href="/tag/programacao/" rel="tag">programação</a>, <a href="/tag/realtime/" rel="tag">realtime</a>			</span>
-						
-									<span class="sep"> | </span>
-						<span class="comments-link"><a href="/algoritmo-crdt/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/algoritmo-crdt/"></fb:comments-count> Comments</a></span>
-			
-					</footer><!-- #entry-meta -->
-	</article><!-- #post-10012 -->
 				
-					
-	<article id="post-10007" class="post-10007 post type-post status-publish format-standard hentry category-debian tag-debian-2 tag-gcc tag-mint tag-ubuntu">
-		<header class="entry-header">
-							<h2 class="entry-title"><a href="/linux-fatal-error-stdio-h-no-such-file-or-directory/" title="Permalink to Linux &#8211; fatal error: stdio.h: No such file or directory" rel="bookmark">Linux &#8211; fatal error: stdio.h: No such file or directory</a></h2>
-			
-			                <div class="entry-meta">
-                    <span class="sep">Posted on </span><a href="/linux-fatal-error-stdio-h-no-such-file-or-directory/" title="14:30" rel="bookmark"><time class="entry-date updated" datetime="2021-10-23T14:30:52-03:00" pubdate>October 23, 2021</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/alvarenga-milton/" title="View all posts by Alvarenga Milton" rel="author">Alvarenga Milton</a></span></span>                                        	<span class="sep sep-comment"> &mdash; </span>
-                        <span class="comments-link">
-                         	<a href="/linux-fatal-error-stdio-h-no-such-file-or-directory/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/linux-fatal-error-stdio-h-no-such-file-or-directory/"></fb:comments-count> Comments</a>                        </span>
-                                    </div><!-- .entry-meta -->
-					</header><!-- .entry-header -->
+<article id="post-10028" class="post-10028 post type-post status-publish format-standard hentry category-windows tag-linha-de-comando tag-powershell">
+	<header class="entry-header">
+		<h1 class="entry-title">Windows &#8211; Como identificar discos via linha de comando</h1>
 
-		             <div class="entry-summary">
-                                <div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/linux-fatal-error-stdio-h-no-such-file-or-directory/" data-a2a-title="Linux – fatal error: stdio.h: No such file or directory"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Flinux-fatal-error-stdio-h-no-such-file-or-directory%2F&amp;linkname=Linux%20%E2%80%93%20fatal%20error%3A%20stdio.h%3A%20No%20such%20file%20or%20directory" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Flinux-fatal-error-stdio-h-no-such-file-or-directory%2F&amp;linkname=Linux%20%E2%80%93%20fatal%20error%3A%20stdio.h%3A%20No%20such%20file%20or%20directory" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Flinux-fatal-error-stdio-h-no-such-file-or-directory%2F&amp;linkname=Linux%20%E2%80%93%20fatal%20error%3A%20stdio.h%3A%20No%20such%20file%20or%20directory" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Flinux-fatal-error-stdio-h-no-such-file-or-directory%2F&amp;linkname=Linux%20%E2%80%93%20fatal%20error%3A%20stdio.h%3A%20No%20such%20file%20or%20directory" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Flinux-fatal-error-stdio-h-no-such-file-or-directory%2F&amp;linkname=Linux%20%E2%80%93%20fatal%20error%3A%20stdio.h%3A%20No%20such%20file%20or%20directory" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Flinux-fatal-error-stdio-h-no-such-file-or-directory%2F&amp;linkname=Linux%20%E2%80%93%20fatal%20error%3A%20stdio.h%3A%20No%20such%20file%20or%20directory" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Flinux-fatal-error-stdio-h-no-such-file-or-directory%2F&amp;linkname=Linux%20%E2%80%93%20fatal%20error%3A%20stdio.h%3A%20No%20such%20file%20or%20directory" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><p>Em distribuições Debian-like, Ubuntu e Mint por exemplo, quando este erro acontecer, basta: sudo apt-get install build-essential E pronto! Problema terá sido resolvido. Basta executar o comando de compilação novamente e o problema terá sido resolvido.</p>
-            </div><!-- .entry-summary -->
-		
-		<footer class="entry-meta">
-												<span class="cat-links">
-				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/debian/" rel="category tag">Debian</a>			</span>
-									<span class="sep"> | </span>
-							<span class="tag-links">
-				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="/tag/debian-2/" rel="tag">debian</a>, <a href="/tag/gcc/" rel="tag">gcc</a>, <a href="/tag/mint/" rel="tag">Mint</a>, <a href="/tag/ubuntu/" rel="tag">Ubuntu</a>			</span>
-						
-									<span class="sep"> | </span>
-						<span class="comments-link"><a href="/linux-fatal-error-stdio-h-no-such-file-or-directory/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/linux-fatal-error-stdio-h-no-such-file-or-directory/"></fb:comments-count> Comments</a></span>
-			
-					</footer><!-- #entry-meta -->
-	</article><!-- #post-10007 -->
-				
-					
-	<article id="post-10005" class="post-10005 post type-post status-publish format-standard hentry category-ruby tag-gerenciador-de-pacotes tag-package">
-		<header class="entry-header">
-							<h2 class="entry-title"><a href="/ruby-bundle-vs-gem-qual-a-diferenca/" title="Permalink to Ruby &#8211; Bundle vs Gem &#8211; Qual a diferença?" rel="bookmark">Ruby &#8211; Bundle vs Gem &#8211; Qual a diferença?</a></h2>
-			
-			                <div class="entry-meta">
-                    <span class="sep">Posted on </span><a href="/ruby-bundle-vs-gem-qual-a-diferenca/" title="12:35" rel="bookmark"><time class="entry-date updated" datetime="2021-10-19T12:35:07-03:00" pubdate>October 19, 2021</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/alvarenga-milton/" title="View all posts by Alvarenga Milton" rel="author">Alvarenga Milton</a></span></span>                                        	<span class="sep sep-comment"> &mdash; </span>
-                        <span class="comments-link">
-                         	<a href="/ruby-bundle-vs-gem-qual-a-diferenca/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/ruby-bundle-vs-gem-qual-a-diferenca/"></fb:comments-count> Comments</a>                        </span>
-                                    </div><!-- .entry-meta -->
-					</header><!-- .entry-header -->
+		            <div class="entry-meta">
+                <span class="sep">Posted on </span><a href="/windows-como-identificar-discos-via-linha-de-comando/" title="14:33" rel="bookmark"><time class="entry-date updated" datetime="2022-02-15T14:33:00-03:00" pubdate>February 15, 2022</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/alvarenga-milton/" title="View all posts by Alvarenga Milton" rel="author">Alvarenga Milton</a></span></span>                                    <span class="sep sep-comment"> &mdash; </span>
+                    <span class="comments-link">
+                        <a href="/windows-como-identificar-discos-via-linha-de-comando/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/windows-como-identificar-discos-via-linha-de-comando/"></fb:comments-count> Comments</a>                    </span>
+                            </div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
 
-		             <div class="entry-summary">
-                                <div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/ruby-bundle-vs-gem-qual-a-diferenca/" data-a2a-title="Ruby – Bundle vs Gem – Qual a diferença?"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fruby-bundle-vs-gem-qual-a-diferenca%2F&amp;linkname=Ruby%20%E2%80%93%20Bundle%20vs%20Gem%20%E2%80%93%20Qual%20a%20diferen%C3%A7a%3F" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fruby-bundle-vs-gem-qual-a-diferenca%2F&amp;linkname=Ruby%20%E2%80%93%20Bundle%20vs%20Gem%20%E2%80%93%20Qual%20a%20diferen%C3%A7a%3F" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fruby-bundle-vs-gem-qual-a-diferenca%2F&amp;linkname=Ruby%20%E2%80%93%20Bundle%20vs%20Gem%20%E2%80%93%20Qual%20a%20diferen%C3%A7a%3F" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fruby-bundle-vs-gem-qual-a-diferenca%2F&amp;linkname=Ruby%20%E2%80%93%20Bundle%20vs%20Gem%20%E2%80%93%20Qual%20a%20diferen%C3%A7a%3F" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fruby-bundle-vs-gem-qual-a-diferenca%2F&amp;linkname=Ruby%20%E2%80%93%20Bundle%20vs%20Gem%20%E2%80%93%20Qual%20a%20diferen%C3%A7a%3F" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fruby-bundle-vs-gem-qual-a-diferenca%2F&amp;linkname=Ruby%20%E2%80%93%20Bundle%20vs%20Gem%20%E2%80%93%20Qual%20a%20diferen%C3%A7a%3F" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fruby-bundle-vs-gem-qual-a-diferenca%2F&amp;linkname=Ruby%20%E2%80%93%20Bundle%20vs%20Gem%20%E2%80%93%20Qual%20a%20diferen%C3%A7a%3F" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><p>O &#8220;gem install&#8221; irá instalar um gem especificado no sistema. O &#8220;bundle install&#8221; irá ler o Gemfile e irá instalar todas as gems indicadas no arquivo.</p>
-            </div><!-- .entry-summary -->
-		
-		<footer class="entry-meta">
-												<span class="cat-links">
-				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/ruby/" rel="category tag">Ruby</a>			</span>
-									<span class="sep"> | </span>
-							<span class="tag-links">
-				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="/tag/gerenciador-de-pacotes/" rel="tag">&quot;gerenciador de pacotes&quot;</a>, <a href="/tag/package/" rel="tag">package</a>			</span>
-						
-									<span class="sep"> | </span>
-						<span class="comments-link"><a href="/ruby-bundle-vs-gem-qual-a-diferenca/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/ruby-bundle-vs-gem-qual-a-diferenca/"></fb:comments-count> Comments</a></span>
-			
-					</footer><!-- #entry-meta -->
-	</article><!-- #post-10005 -->
-				
-					
-	<article id="post-9999" class="post-9999 post type-post status-publish format-standard hentry category-curiosidades tag-codigo tag-matematica tag-programacao tag-source-code">
-		<header class="entry-header">
-							<h2 class="entry-title"><a href="/math-symbol-to-programming/" title="Permalink to Math Symbol to programming" rel="bookmark">Math Symbol to programming</a></h2>
-			
-			                <div class="entry-meta">
-                    <span class="sep">Posted on </span><a href="/math-symbol-to-programming/" title="23:36" rel="bookmark"><time class="entry-date updated" datetime="2021-10-07T23:36:16-03:00" pubdate>October 7, 2021</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/alvarenga-milton/" title="View all posts by Alvarenga Milton" rel="author">Alvarenga Milton</a></span></span>                                        	<span class="sep sep-comment"> &mdash; </span>
-                        <span class="comments-link">
-                         	<a href="/math-symbol-to-programming/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/math-symbol-to-programming/"></fb:comments-count> Comments</a>                        </span>
-                                    </div><!-- .entry-meta -->
-					</header><!-- .entry-header -->
+	<div class="entry-content">
+		<div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/windows-como-identificar-discos-via-linha-de-comando/" data-a2a-title="Windows – Como identificar discos via linha de comando"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fwindows-como-identificar-discos-via-linha-de-comando%2F&amp;linkname=Windows%20%E2%80%93%20Como%20identificar%20discos%20via%20linha%20de%20comando" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fwindows-como-identificar-discos-via-linha-de-comando%2F&amp;linkname=Windows%20%E2%80%93%20Como%20identificar%20discos%20via%20linha%20de%20comando" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fwindows-como-identificar-discos-via-linha-de-comando%2F&amp;linkname=Windows%20%E2%80%93%20Como%20identificar%20discos%20via%20linha%20de%20comando" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fwindows-como-identificar-discos-via-linha-de-comando%2F&amp;linkname=Windows%20%E2%80%93%20Como%20identificar%20discos%20via%20linha%20de%20comando" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fwindows-como-identificar-discos-via-linha-de-comando%2F&amp;linkname=Windows%20%E2%80%93%20Como%20identificar%20discos%20via%20linha%20de%20comando" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fwindows-como-identificar-discos-via-linha-de-comando%2F&amp;linkname=Windows%20%E2%80%93%20Como%20identificar%20discos%20via%20linha%20de%20comando" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fwindows-como-identificar-discos-via-linha-de-comando%2F&amp;linkname=Windows%20%E2%80%93%20Como%20identificar%20discos%20via%20linha%20de%20comando" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><div class="pdfprnt-buttons pdfprnt-buttons-post pdfprnt-top-right"><a href="/windows-como-identificar-discos-via-linha-de-comando/" class="pdfprnt-button pdfprnt-button-pdf" target="_blank"><img src="/wp-content/plugins/pdf-print/images/pdf.png" alt="image_pdf" title="View PDF" /></a><a href="/windows-como-identificar-discos-via-linha-de-comando/" class="pdfprnt-button pdfprnt-button-print" target="_blank"><img src="/wp-content/plugins/pdf-print/images/print.png" alt="image_print" title="Print Content" /></a></div>
+<p>Abra o powershell</p>
 
-		             <div class="entry-summary">
-                                <div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/math-symbol-to-programming/" data-a2a-title="Math Symbol to programming"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmath-symbol-to-programming%2F&amp;linkname=Math%20Symbol%20to%20programming" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmath-symbol-to-programming%2F&amp;linkname=Math%20Symbol%20to%20programming" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmath-symbol-to-programming%2F&amp;linkname=Math%20Symbol%20to%20programming" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmath-symbol-to-programming%2F&amp;linkname=Math%20Symbol%20to%20programming" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmath-symbol-to-programming%2F&amp;linkname=Math%20Symbol%20to%20programming" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmath-symbol-to-programming%2F&amp;linkname=Math%20Symbol%20to%20programming" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fmath-symbol-to-programming%2F&amp;linkname=Math%20Symbol%20to%20programming" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><p>Simbolos matemáticos para code / código:</p>
-            </div><!-- .entry-summary -->
-		
-		<footer class="entry-meta">
-												<span class="cat-links">
-				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/curiosidades/" rel="category tag">Curiosidades</a>			</span>
-									<span class="sep"> | </span>
-							<span class="tag-links">
-				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="/tag/codigo/" rel="tag">código</a>, <a href="/tag/matematica/" rel="tag">matemática</a>, <a href="/tag/programacao/" rel="tag">programação</a>, <a href="/tag/source-code/" rel="tag">source code</a>			</span>
-						
-									<span class="sep"> | </span>
-						<span class="comments-link"><a href="/math-symbol-to-programming/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/math-symbol-to-programming/"></fb:comments-count> Comments</a></span>
-			
-					</footer><!-- #entry-meta -->
-	</article><!-- #post-9999 -->
-				
-					
-	<article id="post-9990" class="post-9990 post type-post status-publish format-standard hentry category-kafka tag-fila">
-		<header class="entry-header">
-							<h2 class="entry-title"><a href="/kafka-terminologia/" title="Permalink to Kafka &#8211; Terminologia" rel="bookmark">Kafka &#8211; Terminologia</a></h2>
-			
-			                <div class="entry-meta">
-                    <span class="sep">Posted on </span><a href="/kafka-terminologia/" title="05:56" rel="bookmark"><time class="entry-date updated" datetime="2021-10-07T05:56:00-03:00" pubdate>October 7, 2021</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/alvarenga-milton/" title="View all posts by Alvarenga Milton" rel="author">Alvarenga Milton</a></span></span>                                        	<span class="sep sep-comment"> &mdash; </span>
-                        <span class="comments-link">
-                         	<a href="/kafka-terminologia/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/kafka-terminologia/"></fb:comments-count> Comments</a>                        </span>
-                                    </div><!-- .entry-meta -->
-					</header><!-- .entry-header -->
 
-		             <div class="entry-summary">
-                                <div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/kafka-terminologia/" data-a2a-title="Kafka – Terminologia"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fkafka-terminologia%2F&amp;linkname=Kafka%20%E2%80%93%20Terminologia" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fkafka-terminologia%2F&amp;linkname=Kafka%20%E2%80%93%20Terminologia" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fkafka-terminologia%2F&amp;linkname=Kafka%20%E2%80%93%20Terminologia" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fkafka-terminologia%2F&amp;linkname=Kafka%20%E2%80%93%20Terminologia" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fkafka-terminologia%2F&amp;linkname=Kafka%20%E2%80%93%20Terminologia" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fkafka-terminologia%2F&amp;linkname=Kafka%20%E2%80%93%20Terminologia" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fkafka-terminologia%2F&amp;linkname=Kafka%20%E2%80%93%20Terminologia" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><p>Producer Pode ser qualquer programa que pode publicar mensagens em um tópico. Consumer Qualquer programa que pode subscrever em um tópico e consumir mensagens. Topics É a categoria ou nome do feed no qual os registros são publicados. Partition Topics <a class="more-link" href="/kafka-terminologia/">Continue reading <span class="screen-reader-text">  Kafka &#8211; Terminologia</span><span class="meta-nav">&rarr;</span></a></p>
-            </div><!-- .entry-summary -->
-		
-		<footer class="entry-meta">
-												<span class="cat-links">
-				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/kafka/" rel="category tag">Kafka</a>			</span>
-									<span class="sep"> | </span>
-							<span class="tag-links">
-				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="/tag/fila/" rel="tag">fila</a>			</span>
-						
-									<span class="sep"> | </span>
-						<span class="comments-link"><a href="/kafka-terminologia/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/kafka-terminologia/"></fb:comments-count> Comments</a></span>
-			
-					</footer><!-- #entry-meta -->
-	</article><!-- #post-9990 -->
-				
-					
-	<article id="post-9988" class="post-9988 post type-post status-publish format-standard hentry category-windows tag-iptable tag-network tag-router">
-		<header class="entry-header">
-							<h2 class="entry-title"><a href="/port-forwarding-no-windows-10/" title="Permalink to Port forwarding no Windows 10" rel="bookmark">Port forwarding no Windows 10</a></h2>
-			
-			                <div class="entry-meta">
-                    <span class="sep">Posted on </span><a href="/port-forwarding-no-windows-10/" title="23:30" rel="bookmark"><time class="entry-date updated" datetime="2021-09-28T23:30:50-03:00" pubdate>September 28, 2021</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/alvarenga-milton/" title="View all posts by Alvarenga Milton" rel="author">Alvarenga Milton</a></span></span>                                        	<span class="sep sep-comment"> &mdash; </span>
-                        <span class="comments-link">
-                         	<a href="/port-forwarding-no-windows-10/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/port-forwarding-no-windows-10/"></fb:comments-count> Comments</a>                        </span>
-                                    </div><!-- .entry-meta -->
-					</header><!-- .entry-header -->
 
-		             <div class="entry-summary">
-                                <div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/port-forwarding-no-windows-10/" data-a2a-title="Port forwarding no Windows 10"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fport-forwarding-no-windows-10%2F&amp;linkname=Port%20forwarding%20no%20Windows%2010" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fport-forwarding-no-windows-10%2F&amp;linkname=Port%20forwarding%20no%20Windows%2010" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fport-forwarding-no-windows-10%2F&amp;linkname=Port%20forwarding%20no%20Windows%2010" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fport-forwarding-no-windows-10%2F&amp;linkname=Port%20forwarding%20no%20Windows%2010" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fport-forwarding-no-windows-10%2F&amp;linkname=Port%20forwarding%20no%20Windows%2010" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fport-forwarding-no-windows-10%2F&amp;linkname=Port%20forwarding%20no%20Windows%2010" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fport-forwarding-no-windows-10%2F&amp;linkname=Port%20forwarding%20no%20Windows%2010" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><p>Acesse o cmd como administrador Em seguida, execute o comando abaixo, adaptando a sua necessidade. Com o comando acima, tudo que chegar em localhost:8080 será redirecionado de maneira transparente para o usuário para 192.168.0.12:8080. Poderia ser qualquer porta ou ip <a class="more-link" href="/port-forwarding-no-windows-10/">Continue reading <span class="screen-reader-text">  Port forwarding no Windows 10</span><span class="meta-nav">&rarr;</span></a></p>
-            </div><!-- .entry-summary -->
-		
-		<footer class="entry-meta">
-												<span class="cat-links">
-				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/windows/" rel="category tag">Windows</a>			</span>
-									<span class="sep"> | </span>
-							<span class="tag-links">
-				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="/tag/iptable/" rel="tag">iptable</a>, <a href="/tag/network/" rel="tag">network</a>, <a href="/tag/router/" rel="tag">router</a>			</span>
-						
-									<span class="sep"> | </span>
-						<span class="comments-link"><a href="/port-forwarding-no-windows-10/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/port-forwarding-no-windows-10/"></fb:comments-count> Comments</a></span>
-			
-					</footer><!-- #entry-meta -->
-	</article><!-- #post-9988 -->
-				
-					
-	<article id="post-9955" class="post-9955 post type-post status-publish format-standard hentry category-debian tag-debian-2 tag-upgrade">
-		<header class="entry-header">
-							<h2 class="entry-title"><a href="/como-atualizar-do-debian-10-buster-para-debian-11-bullseye/" title="Permalink to Como atualizar do Debian 10 (Buster) para Debian 11 (Bullseye)" rel="bookmark">Como atualizar do Debian 10 (Buster) para Debian 11 (Bullseye)</a></h2>
-			
-			                <div class="entry-meta">
-                    <span class="sep">Posted on </span><a href="/como-atualizar-do-debian-10-buster-para-debian-11-bullseye/" title="19:34" rel="bookmark"><time class="entry-date updated" datetime="2021-09-22T19:34:49-03:00" pubdate>September 22, 2021</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/alvarenga-milton/" title="View all posts by Alvarenga Milton" rel="author">Alvarenga Milton</a></span></span>                                        	<span class="sep sep-comment"> &mdash; </span>
-                        <span class="comments-link">
-                         	<a href="/como-atualizar-do-debian-10-buster-para-debian-11-bullseye/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/como-atualizar-do-debian-10-buster-para-debian-11-bullseye/"></fb:comments-count> Comments</a>                        </span>
-                                    </div><!-- .entry-meta -->
-					</header><!-- .entry-header -->
+<p>Execute o comando:</p>
 
-		             <div class="entry-summary">
-                                <div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/como-atualizar-do-debian-10-buster-para-debian-11-bullseye/" data-a2a-title="Como atualizar do Debian 10 (Buster) para Debian 11 (Bullseye)"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fcomo-atualizar-do-debian-10-buster-para-debian-11-bullseye%2F&amp;linkname=Como%20atualizar%20do%20Debian%2010%20%28Buster%29%20para%20Debian%2011%20%28Bullseye%29" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fcomo-atualizar-do-debian-10-buster-para-debian-11-bullseye%2F&amp;linkname=Como%20atualizar%20do%20Debian%2010%20%28Buster%29%20para%20Debian%2011%20%28Bullseye%29" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fcomo-atualizar-do-debian-10-buster-para-debian-11-bullseye%2F&amp;linkname=Como%20atualizar%20do%20Debian%2010%20%28Buster%29%20para%20Debian%2011%20%28Bullseye%29" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fcomo-atualizar-do-debian-10-buster-para-debian-11-bullseye%2F&amp;linkname=Como%20atualizar%20do%20Debian%2010%20%28Buster%29%20para%20Debian%2011%20%28Bullseye%29" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fcomo-atualizar-do-debian-10-buster-para-debian-11-bullseye%2F&amp;linkname=Como%20atualizar%20do%20Debian%2010%20%28Buster%29%20para%20Debian%2011%20%28Bullseye%29" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fcomo-atualizar-do-debian-10-buster-para-debian-11-bullseye%2F&amp;linkname=Como%20atualizar%20do%20Debian%2010%20%28Buster%29%20para%20Debian%2011%20%28Bullseye%29" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fcomo-atualizar-do-debian-10-buster-para-debian-11-bullseye%2F&amp;linkname=Como%20atualizar%20do%20Debian%2010%20%28Buster%29%20para%20Debian%2011%20%28Bullseye%29" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><p>Pareceu ser muito simples este upgrade em relação a anteriores, uma vez que já faço upgrades de Debian no mínimo desde a 3.1. Desative ou atualize as listas extras do apt caso necessário. Em seguida execute os comandos abaixo como <a class="more-link" href="/como-atualizar-do-debian-10-buster-para-debian-11-bullseye/">Continue reading <span class="screen-reader-text">  Como atualizar do Debian 10 (Buster) para Debian 11 (Bullseye)</span><span class="meta-nav">&rarr;</span></a></p>
-            </div><!-- .entry-summary -->
-		
-		<footer class="entry-meta">
-												<span class="cat-links">
-				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/debian/" rel="category tag">Debian</a>			</span>
-									<span class="sep"> | </span>
-							<span class="tag-links">
-				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="/tag/debian-2/" rel="tag">debian</a>, <a href="/tag/upgrade/" rel="tag">upgrade</a>			</span>
-						
-									<span class="sep"> | </span>
-						<span class="comments-link"><a href="/como-atualizar-do-debian-10-buster-para-debian-11-bullseye/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/como-atualizar-do-debian-10-buster-para-debian-11-bullseye/"></fb:comments-count> Comments</a></span>
-			
-					</footer><!-- #entry-meta -->
-	</article><!-- #post-9955 -->
-				
-					
-	<article id="post-9945" class="post-9945 post type-post status-publish format-standard hentry category-curiosidades tag-programacao">
-		<header class="entry-header">
-							<h2 class="entry-title"><a href="/vocabulario-yak-shaving/" title="Permalink to Vocabulário &#8211; Yak Shaving" rel="bookmark">Vocabulário &#8211; Yak Shaving</a></h2>
-			
-			                <div class="entry-meta">
-                    <span class="sep">Posted on </span><a href="/vocabulario-yak-shaving/" title="18:45" rel="bookmark"><time class="entry-date updated" datetime="2021-08-07T18:45:51-03:00" pubdate>August 7, 2021</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/alvarenga-milton/" title="View all posts by Alvarenga Milton" rel="author">Alvarenga Milton</a></span></span>                                        	<span class="sep sep-comment"> &mdash; </span>
-                        <span class="comments-link">
-                         	<a href="/vocabulario-yak-shaving/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/vocabulario-yak-shaving/"></fb:comments-count> Comments</a>                        </span>
-                                    </div><!-- .entry-meta -->
-					</header><!-- .entry-header -->
 
-		             <div class="entry-summary">
-                                <div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/vocabulario-yak-shaving/" data-a2a-title="Vocabulário – Yak Shaving"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fvocabulario-yak-shaving%2F&amp;linkname=Vocabul%C3%A1rio%20%E2%80%93%20Yak%20Shaving" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fvocabulario-yak-shaving%2F&amp;linkname=Vocabul%C3%A1rio%20%E2%80%93%20Yak%20Shaving" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fvocabulario-yak-shaving%2F&amp;linkname=Vocabul%C3%A1rio%20%E2%80%93%20Yak%20Shaving" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fvocabulario-yak-shaving%2F&amp;linkname=Vocabul%C3%A1rio%20%E2%80%93%20Yak%20Shaving" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fvocabulario-yak-shaving%2F&amp;linkname=Vocabul%C3%A1rio%20%E2%80%93%20Yak%20Shaving" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fvocabulario-yak-shaving%2F&amp;linkname=Vocabul%C3%A1rio%20%E2%80%93%20Yak%20Shaving" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fvocabulario-yak-shaving%2F&amp;linkname=Vocabul%C3%A1rio%20%E2%80%93%20Yak%20Shaving" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><p>Uma série aparentemente interminável de pequenas tarefas que você precisa realizar antes de fazer o que realmente deseja. Qual DevOps, programador e pessoal da área de TI que nunca teve um dia de trabalho sem isto, em?</p>
-            </div><!-- .entry-summary -->
-		
-		<footer class="entry-meta">
-												<span class="cat-links">
-				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/curiosidades/" rel="category tag">Curiosidades</a>			</span>
-									<span class="sep"> | </span>
-							<span class="tag-links">
-				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="/tag/programacao/" rel="tag">programação</a>			</span>
-						
-									<span class="sep"> | </span>
-						<span class="comments-link"><a href="/vocabulario-yak-shaving/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/vocabulario-yak-shaving/"></fb:comments-count> Comments</a></span>
-			
-					</footer><!-- #entry-meta -->
-	</article><!-- #post-9945 -->
-				
-					
-	<article id="post-9942" class="post-9942 post type-post status-publish format-standard hentry category-shell tag-console">
-		<header class="entry-header">
-							<h2 class="entry-title"><a href="/noip-como-atualizar-seu-ip-no-noip-org-via-shell-console/" title="Permalink to NoIP- Como atualizar seu ip no noip.org via shell / console" rel="bookmark">NoIP- Como atualizar seu ip no noip.org via shell / console</a></h2>
-			
-			                <div class="entry-meta">
-                    <span class="sep">Posted on </span><a href="/noip-como-atualizar-seu-ip-no-noip-org-via-shell-console/" title="19:32" rel="bookmark"><time class="entry-date updated" datetime="2021-08-01T19:32:10-03:00" pubdate>August 1, 2021</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/alvarenga-milton/" title="View all posts by Alvarenga Milton" rel="author">Alvarenga Milton</a></span></span>                                        	<span class="sep sep-comment"> &mdash; </span>
-                        <span class="comments-link">
-                         	<a href="/noip-como-atualizar-seu-ip-no-noip-org-via-shell-console/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/noip-como-atualizar-seu-ip-no-noip-org-via-shell-console/"></fb:comments-count> Comments</a>                        </span>
-                                    </div><!-- .entry-meta -->
-					</header><!-- .entry-header -->
+<div class="wp-block-syntaxhighlighter-code"><pre class="brush: plain; title: ; notranslate" title="">
+wmic diskdrive list brief
+</pre></div>
 
-		 		<div class="entry-content">
-			<div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_25 addtoany_list" data-a2a-url="http://devblog.drall.com.br/noip-como-atualizar-seu-ip-no-noip-org-via-shell-console/" data-a2a-title="NoIP- Como atualizar seu ip no noip.org via shell / console"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fnoip-como-atualizar-seu-ip-no-noip-org-via-shell-console%2F&amp;linkname=NoIP-%20Como%20atualizar%20seu%20ip%20no%20noip.org%20via%20shell%20%2F%20console" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fnoip-como-atualizar-seu-ip-no-noip-org-via-shell-console%2F&amp;linkname=NoIP-%20Como%20atualizar%20seu%20ip%20no%20noip.org%20via%20shell%20%2F%20console" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fnoip-como-atualizar-seu-ip-no-noip-org-via-shell-console%2F&amp;linkname=NoIP-%20Como%20atualizar%20seu%20ip%20no%20noip.org%20via%20shell%20%2F%20console" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fnoip-como-atualizar-seu-ip-no-noip-org-via-shell-console%2F&amp;linkname=NoIP-%20Como%20atualizar%20seu%20ip%20no%20noip.org%20via%20shell%20%2F%20console" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fnoip-como-atualizar-seu-ip-no-noip-org-via-shell-console%2F&amp;linkname=NoIP-%20Como%20atualizar%20seu%20ip%20no%20noip.org%20via%20shell%20%2F%20console" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fnoip-como-atualizar-seu-ip-no-noip-org-via-shell-console%2F&amp;linkname=NoIP-%20Como%20atualizar%20seu%20ip%20no%20noip.org%20via%20shell%20%2F%20console" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_gmail" href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fdevblog.drall.com.br%2Fnoip-como-atualizar-seu-ip-no-noip-org-via-shell-console%2F&amp;linkname=NoIP-%20Como%20atualizar%20seu%20ip%20no%20noip.org%20via%20shell%20%2F%20console" title="Gmail" rel="nofollow noopener" target="_blank"></a></div></div><div class="pdfprnt-buttons pdfprnt-buttons-post pdfprnt-top-right"><a href="/noip-como-atualizar-seu-ip-no-noip-org-via-shell-console/" class="pdfprnt-button pdfprnt-button-pdf" target="_blank"><img src="/wp-content/plugins/pdf-print/images/pdf.png" alt="image_pdf" title="View PDF" /></a><a href="/noip-como-atualizar-seu-ip-no-noip-org-via-shell-console/" class="pdfprnt-button pdfprnt-button-print" target="_blank"><img src="/wp-content/plugins/pdf-print/images/print.png" alt="image_print" title="Print Content" /></a></div>
-<pre class="wp-block-code"><code>curl -u $USERNAME:$PASSWORD "http://dynupdate.no-ip.com/nic/update?hostname=$HOSTNAME"</code></pre>
-					</div><!-- .entry-content -->
+
+<p></p>
+
+
+
+<p>Os caminhos dos discos estão disponíveis nas colunas &#8216;DeviceID&#8217;. Geralmente no formato .\PHYSICALDRIVE*.</p>
+
+
+
+<p>Um exemplo de resultado:</p>
+
+
+
+<pre class="wp-block-preformatted">Caption                DeviceID            Model                  Partitions  Size
+KINGSTON SA400S37240G  \\.\PHYSICALDRIVE1  KINGSTON SA400S37240G  1           240054796800
+GC128                  \\.\PHYSICALDRIVE0  GC128                  3           128034708480</pre>
+<div class="cb_p6_patreon_button" style="text-align:center !important;margin-top:15px;margin-bottom:15px;"><div class="cb_p6_message_over_post_button" style="font-size:20px;margin-top:10px;margin-bottom:10px;">Gostou? Tire um minutinho e dê sua contribuição para Drall Dev Community no Patreon!</div><a rel="nofollow" href="https://www.patreon.com/drallconsult?utm_content=post_button&utm_medium=patron_button_and_widgets_plugin&utm_campaign=&utm_term=&utm_source=http://devblog.drall.com.br/windows-como-identificar-discos-via-linha-de-comando/" aria-label="Click to become a patron at Patreon!"><img style="margin-top: 10px;margin-bottom: 10px;max-width:200px;width:100%;height:auto;" src="/wp-content/plugins/patron-button-and-widgets-by-codebard/images/become_a_patron_button.png" alt="Become a patron at Patreon!"></a></div><div class='yarpp yarpp-related yarpp-related-website yarpp-template-thumbnails'>
+<!-- YARPP Thumbnails -->
+<h3>Artigos relacionados:</h3>
+<div class="yarpp-thumbnails-horizontal">
+<a class='yarpp-thumbnail' rel='norewrite' href='/como-adicionar-uma-linha-ao-crontab-tab-diretamente-pela-linha-de-comando/' title='Como adicionar uma linha ao crontab tab diretamente pela linha de comando'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Como adicionar uma linha ao crontab tab diretamente pela linha de comando</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/como-converter-um-html-em-pdf-usando-o-google-chrome-pela-linha-de-comando/' title='Como converter um HTML em PDF usando o Google Chrome pela linha de comando'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Como converter um HTML em PDF usando o Google Chrome pela linha de comando</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/como-saber-as-extensoes-carregadas-no-php-via-linha-de-comando/' title='Como saber as extensões carregadas no PHP via linha de comando'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Como saber as extensões carregadas no PHP via linha de comando</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/batch-script-comando-rem-no-windows/' title='Batch Script &#8211; Comando rem no Windows'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Batch Script &#8211; Comando rem no Windows</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/como-ajustar-a-velocidade-do-mouse-via-linha-de-comando-no-linux/' title='Como ajustar a velocidade do mouse via linha de comando no Linux'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Como ajustar a velocidade do mouse via linha de comando no Linux</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/como-efetuar-o-click-do-mouse-no-linux-via-linha-de-comando/' title='Como efetuar o click do mouse no linux via linha de comando'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Como efetuar o click do mouse no linux via linha de comando</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/como-alterar-o-brilho-da-tela-via-linha-de-comando-no-linux/' title='Como alterar o brilho da tela via linha de comando no Linux'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Como alterar o brilho da tela via linha de comando no Linux</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/como-conectar-via-linha-de-comando-do-linux-em-redes-wi-fi-wpawpa2/' title='Como conectar via linha de comando do Linux em redes wi-fi WPA/WPA2'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Como conectar via linha de comando do Linux em redes wi-fi WPA/WPA2</span></a>
+<a class='yarpp-thumbnail' rel='norewrite' href='/como-reinstalar-o-grub2-utilizando-a-linha-de-comando-de-um-livecd/' title='Como reinstalar o Grub2 utilizando a linha de comando de um LiveCD'>
+<span class="yarpp-thumbnail-default"><img src="/wp-content/uploads/2015/05/Logo_simplificado_fb-120x120.png" alt="Default Thumbnail" data-pin-nopin="true" /></span><span class="yarpp-thumbnail-title">Como reinstalar o Grub2 utilizando a linha de comando de um LiveCD</span></a>
+</div>
+</div>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="/category/windows/" rel="category tag">Windows</a> and tagged <a href="/tag/linha-de-comando/" rel="tag">linha de comando</a>, <a href="/tag/powershell/" rel="tag">powershell</a> by <a href="/author/alvarenga-milton/">Alvarenga Milton</a>. Bookmark the <a href="/windows-como-identificar-discos-via-linha-de-comando/" title="Permalink to Windows &#8211; Como identificar discos via linha de comando" rel="bookmark">permalink</a>.		
 		
-		<footer class="entry-meta">
-												<span class="cat-links">
-				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/shell/" rel="category tag">Shell</a>			</span>
-									<span class="sep"> | </span>
-							<span class="tag-links">
-				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="/tag/console/" rel="tag">console</a>			</span>
-						
-									<span class="sep"> | </span>
-						<span class="comments-link"><a href="/noip-como-atualizar-seu-ip-no-noip-org-via-shell-console/"><fb:comments-count xmlns="http://ogp.me/ns/fb#" href="/noip-como-atualizar-seu-ip-no-noip-org-via-shell-console/"></fb:comments-count> Comments</a></span>
-			
-					</footer><!-- #entry-meta -->
-	</article><!-- #post-9942 -->
-				
-						<nav id="nav-below">
-			<h3 class="screen-reader-text">Post navigation</h3>
-			<div class='wp-pagenavi' role='navigation'>
-<span class='pages'>Página 2 de 198</span><a class="previouspostslink" rel="prev" aria-label="Previous Page" href="/">«</a><a class="page smaller" title="Page 1" href="/">1</a><span aria-current='page' class='current'>2</span><a class="page larger" title="Page 3" href="/page/3/">3</a><span class='extend'>...</span><a class="nextpostslink" rel="next" aria-label="Next Page" href="/page/3/">»</a><a class="last" aria-label="Last Page" href="/page/198/">Última »</a>
-</div>		</nav><!-- #nav -->
-		
-			
+	</footer><!-- .entry-meta -->
+</article><!-- #post-10028 -->
+
+
+<div id="comments" class="comments-area">
+<div id="respond" class="comment-respond">
+<div class="fb-social-plugin comment-form fb-comments" id="commentform" data-href="http://devblog.drall.com.br/windows-como-identificar-discos-via-linha-de-comando/" data-width="470" data-order-by="social"></div>
+</div></div>
+
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="/ruby-como-checar-a-sintaxe-do-script-sem-executa-lo/" rel="prev"><span class="meta-nav" aria-hidden="true"><span class="nav-icon">&larr;</span> Previous</span> <span class="screen-reader-text">Previous post:</span> <span class="post-title">Ruby &#8211; Como checar a sintaxe do script sem executá-lo</span></a></div><div class="nav-next"><a href="/visualizacao-de-dados-fluxo-simplificado-de-decisao-para-transmissao-de-ideias-usando-graficos/" rel="next"><span class="meta-nav" aria-hidden="true">Next <span class="nav-icon">&rarr;</span></span> <span class="screen-reader-text">Next post:</span> <span class="post-title">Visualização de dados &#8211; Fluxo simplificado de decisão para transmissão de idéias usando gráficos</span></a></div></div>
+	</nav>
 		</div><!-- #content -->
         
 		            
@@ -887,6 +682,65 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
 </div><!-- #page -->
 
 <a href="#branding" id="scrollup"><span class="screen-reader-text">Scroll Up</span></a>
+	<script language="JavaScript">
+
+	function checkAll(field)
+	{
+	for (i = 0; i < field.length; i++)
+		field[i].checked = true ;
+	}
+
+	function uncheckAll(field)
+	{
+	for (i = 0; i < field.length; i++)
+		field[i].checked = false ;
+	}
+	</script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js' id='syntaxhighlighter-core-js'></script>
+<script type='text/javascript' src='/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js' id='syntaxhighlighter-brush-plain-js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://devblog.drall.com.br/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.head.appendChild( corecss );
+		var themecssurl = "http://devblog.drall.com.br/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		document.head.appendChild( themecss );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.all();
+
+	// Infinite scroll support
+	if ( typeof( jQuery ) !== 'undefined' ) {
+		jQuery( function( $ ) {
+			$( document.body ).on( 'post-load', function() {
+				SyntaxHighlighter.highlight();
+			} );
+		} );
+	}
+</script>
+<link rel='stylesheet' id='yarppRelatedCss-css' href='/wp-content/plugins/yet-another-related-posts-plugin/style/related.css' type='text/css' media='all' />
 <link rel='stylesheet' id='popularity-posts-widget-css' href='/wp-content/plugins/popularity-posts-widget/style/ppw.css' type='text/css' media='all' />
 <script type='text/javascript' src='/wp-content/plugins/contact-form-7/includes/swv/js/index.js' id='swv-js'></script>
 <script type='text/javascript' id='contact-form-7-js-extra'>
@@ -895,13 +749,6 @@ var wpcf7 = {"api":{"root":"http:\/\/devblog.drall.com.br\/wp-json\/","namespace
 /* ]]> */
 </script>
 <script type='text/javascript' src='/wp-content/plugins/contact-form-7/includes/js/index.js' id='contact-form-7-js'></script>
-<script type='text/javascript' src='/wp-content/themes/catch-box/js/jquery.cycle.all.min.js' id='jquery-cycle-js'></script>
-<script type='text/javascript' id='catchbox-slider-js-extra'>
-/* <![CDATA[ */
-var js_value = {"transition_effect":"fade","transition_delay":"4000","transition_duration":"1000"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='/wp-content/themes/catch-box/js/catchbox-slider.js' id='catchbox-slider-js'></script>
 <script type='text/javascript' src='/wp-content/themes/catch-box/js/skip-link-focus-fix.js' id='catchbox-skip-link-focus-fix-js'></script>
 <script type='text/javascript' src='/wp-content/themes/catch-box/js/catchbox-scrollup.min.js' id='catchbox-scrollup-js'></script>
 <script type='text/javascript' id='facebook-jssdk-js-extra'>
@@ -913,12 +760,7 @@ var FB_WP=FB_WP||{};FB_WP.queue={_methods:[],flushed:false,add:function(fn){FB_W
 <script type='text/javascript' src='/wp-content/plugins/youtube-embed-plus/scripts/fitvids.min.js' id='__ytprefsfitvids__-js'></script>
 <script type='text/javascript' src='/wp-includes/js/jquery/ui/core.min.js' id='jquery-ui-core-js'></script>
 <script type='text/javascript' src='/wp-includes/js/jquery/ui/datepicker.min.js' id='jquery-ui-datepicker-js'></script>
-<div id="fb-root"></div>
-<!--Plugin WP Missed Schedule Active - Secured with Genuine Authenticity KeyTag-->
-
-<!-- This site is patched against a big problem not solved since WordPress 2.5 -->
-
-		<script type="text/javascript">
+<div id="fb-root"></div>		<script type="text/javascript">
 			var bwpRecaptchaCallback = function() {
 				// render all collected recaptcha instances
 			};
