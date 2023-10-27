@@ -260,16 +260,16 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
 <p>Há muitos outros sistemas de arquivos de sobreposição que executam transformações mais avançadas. Abaixo está uma lista de alguns dos mais comuns. Se o seu caso de uso desejado não é coberto aqui, verifique o repositório de sistemas de arquivos FUSE na internet para ver se já não existe pronto e disponibilizado por alguém.</p>
 <h3>Log</h3>
 <ul>
-<li><a href="http://sourceforge.net/projects/loggedfs/">loggedfs</a> — Efetua o log de todos os acessos ao sistema de arquivo para propósito de monitoramento, debug, etc</li>
+<li><a href="http://sourceforge.net/projects/loggedfs">loggedfs</a> — Efetua o log de todos os acessos ao sistema de arquivo para propósito de monitoramento, debug, etc</li>
 </ul>
 <h3>Filtrar arquivos visíveis</h3>
 <ul>
-<li><a href="http://clamfs.sourceforge.net/">clamfs</a> — executa o anti-virus em arquivos ao serem lidos em disco</li>
-<li><a href="http://filterfs.sourceforge.net/">filterfs</a> — oculta partes do sistema de arquivo</li>
+<li><a href="http://clamfs.sourceforge.net">clamfs</a> — executa o anti-virus em arquivos ao serem lidos em disco</li>
+<li><a href="http://filterfs.sourceforge.net">filterfs</a> — oculta partes do sistema de arquivo</li>
 <li><a href="https://github.com/cognusion/fuse-rofs">rofs</a> — visão somente leitura (read-only view). Similar ao <code>bindfs -r</code>, apenas com uma implementação pouco mais leve.</li>
 <li><a href="http://en.wikipedia.org/wiki/Union_mount">Union mounts</a> — apresenta múltiplos sistemas de arquivos (chamados <em>branches</em>) em um simples diretório: Se arvore_diretorio_<code>1</code> contém <code>foo</code> and arvore_diretorio_<code>2</code> contém <code>bar, </code>então a união na visualização do conteúdo conterá ambos, <code>foo</code> e <code>bar</code>. Novos arquivos são salvos num branch específico, de acordo com regras configuradas. Há diversas implementações deste conceito, como abaixo citamos algumas:
 <ul>
-<li><a href="http://aufs.sourceforge.net/">aufs</a> — Implementação Linux kernel</li>
+<li><a href="http://aufs.sourceforge.net">aufs</a> — Implementação Linux kernel</li>
 <li><a href="http://funionfs.apiou.org/?lng=en">funionfs</a> — Implementação FUSE</li>
 <li><a href="http://svn.uvw.ru/mhddfs/trunk/README">mhddfs</a> — FUSE, gerencia múltiplos pontos de montagem escrevendo arquivos em discos baseado em espaço disponível livre</li>
 <li><a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/overlayfs.txt">overlay</a> — Implementação Linux kernel</li>
@@ -279,28 +279,28 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
 </ul>
 <h3>Modicar nomes e metadados de arquivos</h3>
 <ul>
-<li><a href="http://brain-dump.org/projects/ciopfs/">ciopfs</a> — sistema de arquivos case-insensitive (pode ser útil ao montar conjuntamente com sistemas de arquivo Windows)</li>
-<li><a href="http://fuse-convmvfs.sourceforge.net/">convmvfs</a> — converte os nomes de arquivos entre diferentes charsets de acordo com a configuração (<a href="http://unix.stackexchange.com/questions/67232/same-file-different-filename-due-to-encoding-problem/67273#67273">exemplos</a>)</li>
-<li><a href="http://sourceforge.net/projects/posixovl/">posixovl</a> — armazena nomes de arquivos Unix e outros metadados (permissão, propriedade, etc) em sistemas de arquivos mais restritos como VFAT</li>
+<li><a href="http://brain-dump.org/projects/ciopfs">ciopfs</a> — sistema de arquivos case-insensitive (pode ser útil ao montar conjuntamente com sistemas de arquivo Windows)</li>
+<li><a href="http://fuse-convmvfs.sourceforge.net">convmvfs</a> — converte os nomes de arquivos entre diferentes charsets de acordo com a configuração (<a href="http://unix.stackexchange.com/questions/67232/same-file-different-filename-due-to-encoding-problem/67273#67273">exemplos</a>)</li>
+<li><a href="http://sourceforge.net/projects/posixovl">posixovl</a> — armazena nomes de arquivos Unix e outros metadados (permissão, propriedade, etc) em sistemas de arquivos mais restritos como VFAT</li>
 </ul>
 <h3>Altera visualização de conteúdo de arquivos</h3>
 <ul>
-<li><a href="http://avf.sourceforge.net/">avfs</a> — é um sistema que permita a todos os programas olhar arquivos arquivados ou comprimido, ou arquivos de acesso remoto sem recompilar os programas ou alterar o kernel.</li>
-<li><a href="http://users.softlab.ntua.gr/~thkala/projects/fuseflt/">fuseflt</a> — executa arquivos através de pipeline quando lido. Exemplo de uso: recodificar arquivo de texto ou arquivos de mídia</li>
+<li><a href="http://avf.sourceforge.net">avfs</a> — é um sistema que permita a todos os programas olhar arquivos arquivados ou comprimido, ou arquivos de acesso remoto sem recompilar os programas ou alterar o kernel.</li>
+<li><a href="http://users.softlab.ntua.gr/~thkala/projects/fuseflt">fuseflt</a> — executa arquivos através de pipeline quando lido. Exemplo de uso: recodificar arquivo de texto ou arquivos de mídia</li>
 <li><a href="https://github.com/vasi/lzopfs">lzopfs</a> — descompressão transparente de arquivos compactados</li>
-<li><a href="http://khenriks.github.io/mp3fs/">mp3fs</a> — transcode arquivos FLAC para MP3 quando sendo em modo leitura</li>
-<li><a href="https://code.google.com/p/scriptfs/">scriptfs</a> — executa scripts para servir um conteúdo (como se fosse um local CGI)</li>
+<li><a href="http://khenriks.github.io/mp3fs">mp3fs</a> — transcode arquivos FLAC para MP3 quando sendo em modo leitura</li>
+<li><a href="https://code.google.com/p/scriptfs">scriptfs</a> — executa scripts para servir um conteúdo (como se fosse um local CGI)</li>
 </ul>
 <h3>Modifica o modo como o conteúdo é armazenado</h3>
 <ul>
-<li><a href="https://code.google.com/p/chironfs/">chironfs</a> — replica arquivos entre múltiplos sistemas de armazenamento (<a href="http://unix.stackexchange.com/questions/14544/raid-1-lvm-at-the-level-of-directories-aka-mknodding-a-directory">RAID-1 em nível de árvore de diretório</a>)</li>
+<li><a href="https://code.google.com/p/chironfs">chironfs</a> — replica arquivos entre múltiplos sistemas de armazenamento (<a href="http://unix.stackexchange.com/questions/14544/raid-1-lvm-at-the-level-of-directories-aka-mknodding-a-directory">RAID-1 em nível de árvore de diretório</a>)</li>
 <li><a href="http://n0x.org/copyfs">copyfs</a> — mantém uma cópia de todas as versões de todos os arquivos</li>
 <li><a href="http://www.arg0.net/encfs">encfs</a> — criptografa os arquivos</li>
-<li><a href="https://code.google.com/p/pcachefs/">pcachefs</a> — camada de cache em disco para sistema de arquivos remoto lento</li>
+<li><a href="https://code.google.com/p/pcachefs">pcachefs</a> — camada de cache em disco para sistema de arquivos remoto lento</li>
 <li><a href="https://github.com/vi/simplecowfs">simplecowfs</a> — salva as mudanças em memória, deixando o arquivo original em disco intacto até ser &#8216;fechado&#8217;, quando seria as alterações salvas (se o sistema de arquivo permitir)</li>
-<li><a href="http://wayback.sourceforge.net/">wayback</a> — mantém cópias de todas as versões dos arquivos</li>
+<li><a href="http://wayback.sourceforge.net">wayback</a> — mantém cópias de todas as versões dos arquivos</li>
 </ul>
-<div class="cb_p6_patreon_button" style="text-align:center !important;margin-top:15px;margin-bottom:15px;"><div class="cb_p6_message_over_post_button" style="font-size:20px;margin-top:10px;margin-bottom:10px;">Gostou? Tire um minutinho e dê sua contribuição para Drall Dev Community no Patreon!</div><a rel="nofollow" href="https://www.patreon.com/drallconsult?utm_content=post_button&utm_medium=patron_button_and_widgets_plugin&utm_campaign=&utm_term=&utm_source=http://devblog.drall.com.br/criando-camada-no-sistema-de-arquivos-do-linux-com-o-uso-do-poder-do-fuse-para-adicionar-funcionalidades-extras-ao-sistema-de-arquivo/"><img style="margin-top: 10px;margin-bottom: 10px;max-width:200px;width:100%;height:auto;" src="/wp-content/plugins/patron-button-and-widgets-by-codebard/images/become_a_patron_button.png"></a></div><div class='yarpp yarpp-related yarpp-related-website yarpp-template-thumbnails'>
+<div class="cb_p6_patreon_button" style="text-align:center !important;margin-top:15px;margin-bottom:15px;"><div class="cb_p6_message_over_post_button" style="font-size:20px;margin-top:10px;margin-bottom:10px;">Gostou? Tire um minutinho e dê sua contribuição para Drall Dev Community no Patreon!</div><a rel="nofollow" href="https://www.patreon.com/drallconsult?utm_content=post_button&utm_medium=patron_button_and_widgets_plugin&utm_campaign=&utm_term=&utm_source=http://devblog.drall.com.br/criando-camada-no-sistema-de-arquivos-do-linux-com-o-uso-do-poder-do-fuse-para-adicionar-funcionalidades-extras-ao-sistema-de-arquivo"><img style="margin-top: 10px;margin-bottom: 10px;max-width:200px;width:100%;height:auto;" src="/wp-content/plugins/patron-button-and-widgets-by-codebard/images/become_a_patron_button.png"></a></div><div class='yarpp yarpp-related yarpp-related-website yarpp-template-thumbnails'>
 <!-- YARPP Thumbnails -->
 <h3>Artigos relacionados:</h3>
 <div class="yarpp-thumbnails-horizontal">
@@ -686,7 +686,7 @@ p#si_captcha_code_p { clear: left; padding-top:10px; }
 			<nav class="social-profile" role="navigation" aria-label="Footer Social Links Menu">
  		 		<ul>
 				</ul>
-			</nav><!-- .social-profile --><div class="copyright">Copyright &copy; 2021 <a href="/" title="Drall Dev Community" ><span>Drall Dev Community</span></a>. All Rights Reserved. </div><div class="powered"><span class="theme-name">Theme: Catch Box by </span><span class="theme-author"><a href="https://catchthemes.com/" title="Catch Themes">Catch Themes</a></span></div>
+			</nav><!-- .social-profile --><div class="copyright">Copyright &copy; 2021 <a href="/" title="Drall Dev Community" ><span>Drall Dev Community</span></a>. All Rights Reserved. </div><div class="powered"><span class="theme-name">Theme: Catch Box by </span><span class="theme-author"><a href="https://catchthemes.com" title="Catch Themes">Catch Themes</a></span></div>
         </div> <!-- #site-generator -->
 
 	</footer><!-- #colophon -->
